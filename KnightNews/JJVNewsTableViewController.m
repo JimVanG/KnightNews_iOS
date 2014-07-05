@@ -10,7 +10,6 @@
 #import "JJVWebViewController.h"
 #import "JJVStoryItem.h"
 #import "JJVStoryItemStore.h"
-#import "NSString+HTML.h"
 
 NSString *const TITLE_CONSTANT = @"title_plain";
 NSString *const URL_CONSTANT = @"url";
@@ -21,6 +20,7 @@ NSString *const DATE_CONSTANT = @"date";
 NSString *const IMAGE_CONSTANT = @"image";
 NSString *const AUTHOR_CONSTANT = @"author";
 NSString *const NAME_CONSTANT = @"name";
+NSString *const CUSTOM_FIELD_CONSTANT = @"custom_fields";
 
 @interface JJVNewsTableViewController ()
 
@@ -113,7 +113,7 @@ NSString *const NAME_CONSTANT = @"name";
         NSDictionary *innerDictionary = post[AUTHOR_CONSTANT];
         storyItem.author = innerDictionary[NAME_CONSTANT];
         
-        innerDictionary = post[@"custom_fields"];
+        innerDictionary = post[CUSTOM_FIELD_CONSTANT];
         NSArray *customFieldsArray = innerDictionary[IMAGE_CONSTANT];
         //image url is inside of an array inside of a dictionary
         storyItem.imageUrl = customFieldsArray[0];
@@ -147,7 +147,7 @@ NSString *const NAME_CONSTANT = @"name";
     
     // NSDictionary *stories = self.items[indexPath.row];
     JJVStoryItem *story = [[JJVStoryItemStore sharedStore] getItemAt: indexPath.row];
-    NSString *title = [story.title stringByDecodingHTMLEntities];
+    NSString *title = story.title;
     cell.textLabel.text = title;
     
     return cell;

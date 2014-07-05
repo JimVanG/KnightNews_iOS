@@ -7,6 +7,7 @@
 //
 
 #import "JJVStoryItem.h"
+#import "NSString+HTML.h"
 
 @implementation JJVStoryItem
 
@@ -17,6 +18,11 @@
         
     }
     return self;
+}
+
+- (void)setTitle:(NSString *)title
+{
+    _title = [title stringByDecodingHTMLEntities];
 }
 
 @end
