@@ -42,7 +42,12 @@
     
     self.titleLabel.text = item.title;
     self.authorLabel.text = item.author;
-    [self.webView loadHTMLString:item.contents baseURL:nil];
+    self.webView.allowsInlineMediaPlayback = YES;
+    self.webView.mediaPlaybackRequiresUserAction = NO;
+    
+    [self.webView loadHTMLString:item.contents baseURL: [NSURL URLWithString:item.url]];
+    
+   // NSLog(@"**Contents: %@", item.contents);
 }
 
 
