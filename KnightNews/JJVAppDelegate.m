@@ -22,26 +22,9 @@
     //add our news controller to the navigation controller
     UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:nvc];
     
-    JJVWebViewController *wvc = [[JJVWebViewController alloc] init];
-    nvc.webViewController = wvc;
+    self.window.rootViewController = masterNav;
     
-    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-        //webview controller must be in a navigation controller
-        UINavigationController *detailView = [[UINavigationController alloc]
-                                              initWithRootViewController:wvc];
-        
-        UISplitViewController *svc = [[UISplitViewController alloc] init];
-        
-        //set the delegate of the splitview controller to the detail VC
-        svc.delegate = wvc;
-        
-        svc.viewControllers = @[masterNav, detailView];
-        
-        //set the root view controller of the window to the split viewcontroller
-        self.window.rootViewController = svc;
-    }else{
-        self.window.rootViewController = masterNav;
-    }
+    
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

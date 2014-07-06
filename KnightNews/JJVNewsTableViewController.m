@@ -10,6 +10,7 @@
 #import "JJVWebViewController.h"
 #import "JJVStoryItem.h"
 #import "JJVStoryItemStore.h"
+#import "JJVReaderViewController.h"
 
 NSString *const TITLE_CONSTANT = @"title_plain";
 NSString *const URL_CONSTANT = @"url";
@@ -53,6 +54,8 @@ NSString *const CUSTOM_FIELD_CONSTANT = @"custom_fields";
     [super viewDidLoad];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    
+    self.webViewController = [[JJVWebViewController alloc] init];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -158,13 +161,17 @@ NSString *const CUSTOM_FIELD_CONSTANT = @"custom_fields";
     JJVStoryItem *selectedStory = [[JJVStoryItemStore sharedStore] getItemAt:indexPath.row];
     NSURL *url = [NSURL URLWithString: selectedStory.url];
     
-    self.webViewController.title = selectedStory.title;
-    self.webViewController.URL = url;
     
-    if(!self.splitViewController){
-        [self.navigationController pushViewController:self.webViewController
-                                             animated:YES];
-    }
+    
+    JJVReaderViewController *readerView = [[JJVReaderViewController alloc] init];
+    
+    readerView.item = selectedStory;
+    
+//    self.webViewController.title = selectedStory.title;
+//    self.webViewController.URL = url;
+    
+    [self.navigationController pushViewController:readerView
+                                         animated:YES];
 }
 
 
