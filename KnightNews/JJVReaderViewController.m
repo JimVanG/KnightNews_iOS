@@ -10,6 +10,7 @@
 #import "JJVStoryItem.h"
 
 @interface JJVReaderViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -40,11 +41,15 @@
     
     JJVStoryItem *item = self.item;
     
+    self.position = item.position;
+    
     self.titleLabel.text = item.title;
     self.authorLabel.text = item.author;
+    self.authorLabel.font = [UIFont italicSystemFontOfSize: 16.0f];
     self.webView.allowsInlineMediaPlayback = YES;
     self.webView.mediaPlaybackRequiresUserAction = NO;
     
+    //very important to load the base url so videos play
     [self.webView loadHTMLString:item.contents baseURL: [NSURL URLWithString:item.url]];
     
    // NSLog(@"**Contents: %@", item.contents);

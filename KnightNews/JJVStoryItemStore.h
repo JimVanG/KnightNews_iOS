@@ -19,4 +19,5 @@
 + (instancetype)sharedStore;
 - (void)addItem:(JJVStoryItem *)storyItem;
 - (JJVStoryItem *)getItemAt:(NSInteger)position;
+- (NSUInteger)numberOfStories;
 @end

@@ -102,9 +102,12 @@ NSString *const CUSTOM_FIELD_CONSTANT = @"custom_fields";
     //get the list of posts (top most level of the JSON object)
     self.items = jsonObject[POSTS_CONSTANT];
     
+    int count = 0;
     //get each posts attributes, each post is stored in a dictionary
     for (NSDictionary *post in self.items) {
         JJVStoryItem *storyItem = [[JJVStoryItem alloc] init];
+        
+        storyItem.position = count++;
 
         storyItem.url = post[URL_CONSTANT];
         storyItem.title = post[TITLE_CONSTANT];

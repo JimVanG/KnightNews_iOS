@@ -10,6 +10,7 @@
 #import "JJVNewsTableViewController.h"
 #import "JJVWebViewController.h"
 
+
 @implementation JJVAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -23,7 +24,6 @@
     UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:nvc];
     
     self.window.rootViewController = masterNav;
-    
     
     
     self.window.backgroundColor = [UIColor whiteColor];

@@ -61,6 +61,10 @@
     return [self.privateItems objectAtIndex: position];
 }
 
+- (NSUInteger)numberOfStories
+{
+    return [self.privateItems count];
+}
 
 
 @end
