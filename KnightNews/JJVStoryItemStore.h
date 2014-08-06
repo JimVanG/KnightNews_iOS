@@ -12,12 +12,14 @@
 
 @interface JJVStoryItemStore : NSObject
 
-//ther readonly array of stories
+//the readonly array of stories
 @property (nonatomic, readonly) NSArray *allItems;
 
 //class method for retreving/initializing the array
 + (instancetype)sharedStore;
+
 - (void)addItem:(JJVStoryItem *)storyItem;
 - (JJVStoryItem *)getItemAt:(NSInteger)position;
 - (NSUInteger)numberOfStories;
+
 @end

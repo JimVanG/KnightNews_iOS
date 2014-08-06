@@ -52,7 +52,8 @@
     self.webView.mediaPlaybackRequiresUserAction = NO;
     
     //very important to load the base url so videos play
-    [self.webView loadHTMLString:item.contents baseURL: [NSURL URLWithString:item.url]];
+    [self.webView loadHTMLString: item.contents
+                         baseURL: [NSURL URLWithString: item.url]];
     
    // NSLog(@"**Contents: %@", item.contents);
 }

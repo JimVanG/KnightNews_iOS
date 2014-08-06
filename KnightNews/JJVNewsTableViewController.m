@@ -142,7 +142,7 @@ NSString *const CUSTOM_FIELD_CONSTANT = @"custom_fields";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [[[JJVStoryItemStore sharedStore] allItems] count];
+    return [[JJVStoryItemStore sharedStore] numberOfStories];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -151,28 +151,25 @@ NSString *const CUSTOM_FIELD_CONSTANT = @"custom_fields";
                                                             forIndexPath:indexPath];
     
     
-    // NSDictionary *stories = self.items[indexPath.row];
+    //configure the cells...
     JJVStoryItem *story = [[JJVStoryItemStore sharedStore] getItemAt: indexPath.row];
-    NSString *title = story.title;
-    cell.textLabel.text = title;
+    cell.textLabel.text = story.title;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //get the corresponding story item
     JJVStoryItem *selectedStory = [[JJVStoryItemStore sharedStore] getItemAt:indexPath.row];
-    NSURL *url = [NSURL URLWithString: selectedStory.url];
     
-    
-    
+    //initialize a readerView
     JJVReaderViewController *readerView = [[JJVReaderViewController alloc] init];
     
+    //pass the selected story along to the reader view
     readerView.item = selectedStory;
     
-//    self.webViewController.title = selectedStory.title;
-//    self.webViewController.URL = url;
-    
+    //push the reader view controller onto the screen
     [self.navigationController pushViewController:readerView
                                          animated:YES];
 }

@@ -9,6 +9,9 @@
 #import "JJVAppDelegate.h"
 #import "JJVNewsTableViewController.h"
 #import "JJVWebViewController.h"
+#import "JJVEventsTableViewController.h"
+#import "JJVPageRootViewController.h"
+#import "JJVPageModelController.h"
 
 
 @implementation JJVAppDelegate
@@ -18,7 +21,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    JJVNewsTableViewController *nvc = [[JJVNewsTableViewController alloc] init];
+    //JJVNewsTableViewController *nvc = [[JJVNewsTableViewController alloc] init];
+    JJVEventsTableViewController *nvc = [[JJVEventsTableViewController alloc] init];
     
     //add our news controller to the navigation controller
     UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:nvc];

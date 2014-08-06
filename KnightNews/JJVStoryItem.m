@@ -20,6 +20,9 @@
     return self;
 }
 
+/*
+ Overriden setter to additionaly parse out extra HTML entities (i.e. & becoming &amp;)
+ */
 - (void)setTitle:(NSString *)title
 {
     _title = [title stringByDecodingHTMLEntities];

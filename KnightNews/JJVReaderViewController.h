@@ -15,4 +15,5 @@
 
 @property (nonatomic, strong) JJVStoryItem *item;
 @property (nonatomic, assign) NSUInteger position;
+
 @end
