@@ -21,8 +21,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    //JJVNewsTableViewController *nvc = [[JJVNewsTableViewController alloc] init];
-    JJVEventsTableViewController *nvc = [[JJVEventsTableViewController alloc] init];
+    JJVNewsTableViewController *nvc = [[JJVNewsTableViewController alloc] init];
+    //JJVEventsTableViewController *nvc = [[JJVEventsTableViewController alloc] init];
     
     //add our news controller to the navigation controller
     UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:nvc];
