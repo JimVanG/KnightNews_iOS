@@ -31,9 +31,10 @@
     // Do any additional setup after loading the view from its nib.
     JJVStoryItem *item = self.item;
     
-    self.titleLabel.text = item.title;
     self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.titleLabel.numberOfLines = 0;
+    self.titleLabel.text = item.title;
+    [self.titleLabel sizeToFit];
     self.authorLabel.text = item.author;
     self.authorLabel.font = [UIFont italicSystemFontOfSize: 13.5f];
     self.excerptLabel.text = item.excerptParsed;
