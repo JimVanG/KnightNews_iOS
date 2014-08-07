@@ -7,9 +7,18 @@
 //
 
 #import "JJVPageModelController.h"
-
 #import "JJVReaderViewController.h"
 #import "JJVStoryItemStore.h"
+#import "JJVStoryItem.h"
+
+
+
+@interface JJVPageModelController ()
+
+@property (nonatomic) NSURLSession *session;
+@property (nonatomic, copy) NSArray *items;
+
+@end
 
 @implementation JJVPageModelController
 
@@ -18,29 +27,34 @@
     self = [super init];
     if (self) {
         // Create the data model.
+        
+
+        
 
     }
     return self;
 }
 
+#pragma mark - Convenience Methods for PageViewController
+
 - (JJVReaderViewController *)viewControllerAtIndex:(NSUInteger)index
 {
     // Return the data view controller for the given index.
-    if (([[JJVStoryItemStore sharedStore] numberOfStories] == 0) || (index >= [[JJVStoryItemStore sharedStore] numberOfStories])) {
+    if (([[JJVStoryItemStore sharedStore] numberOfStories] == 0) ||
+        (index >= [[JJVStoryItemStore sharedStore] numberOfStories])) {
         return nil;
     }
     
     // Create a new view controller and pass suitable data.
     JJVReaderViewController *dataViewController = [[JJVReaderViewController alloc] init];
-    //dataViewController.dataObject = self.pageData[index];
+    dataViewController.item = [[JJVStoryItemStore sharedStore] getItemAt: index];
     return dataViewController;
 }
 
 - (NSUInteger)indexOfViewController:(JJVReaderViewController *)viewController
 {
     // Return the index of the given data view controller.
-    // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
-    return viewController.position;
+    return [[JJVStoryItemStore sharedStore] indexOfStory: viewController.item];
 }
 
 #pragma mark - Page View Controller Data Source
@@ -69,6 +83,7 @@
     }
     return [self viewControllerAtIndex:index];
 }
+
 
 
 @end

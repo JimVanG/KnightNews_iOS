@@ -10,10 +10,17 @@
 
 #import "JJVPageModelController.h"
 #import "JJVReaderViewController.h"
+#import "JJVStoryItemStore.h"
+#import "JJVStoryItem.h"
+
 
 @interface JJVPageRootViewController ()
 
 @property (readonly, strong, nonatomic) JJVPageModelController *modelController;
+
+@property (nonatomic) NSURLSession *session;
+@property (nonatomic, copy) NSArray *items;
+@property (nonatomic, strong) JJVReaderViewController *startingViewController;
 
 @end
 
@@ -22,14 +29,21 @@
 @synthesize modelController = _modelController;
 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
         // Custom initialization
+//        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+//        _session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:nil];
+//        
+//        [self fetchFeed];
+        
+        self.startingViewController = [self.modelController viewControllerAtIndex:0];
     }
     return self;
 }
+
 
 - (void)viewDidLoad
 {
@@ -39,8 +53,8 @@
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageViewController.delegate = self;
     
-    JJVReaderViewController *startingViewController = [self.modelController viewControllerAtIndex:0];
-    NSArray *viewControllers = @[startingViewController];
+    
+    NSArray *viewControllers = @[self.startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     self.pageViewController.dataSource = self.modelController;
@@ -115,6 +129,7 @@
     
     return UIPageViewControllerSpineLocationMid;
 }
+
 
 
 @end

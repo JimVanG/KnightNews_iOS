@@ -66,5 +66,10 @@
     return [self.privateItems count];
 }
 
+-(NSUInteger)indexOfStory:(JJVStoryItem *)storyItem
+{
+    return [self.privateItems indexOfObject: storyItem];
+}
+
 
 @end

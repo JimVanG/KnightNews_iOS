@@ -12,25 +12,33 @@
 #import "JJVEventsTableViewController.h"
 #import "JJVPageRootViewController.h"
 #import "JJVPageModelController.h"
+#import "JJVReaderViewController.h"
+#import "JJVNetworking.h"
 
 
 @implementation JJVAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    JJVNewsTableViewController *nvc = [[JJVNewsTableViewController alloc] init];
+    JJVNetworking *net = [[JJVNetworking alloc] init];
+    
+    //JJVNewsTableViewController *nvc = [[JJVNewsTableViewController alloc] init];
     //JJVEventsTableViewController *nvc = [[JJVEventsTableViewController alloc] init];
+    JJVPageRootViewController *nvc = [[JJVPageRootViewController alloc] init];
     
     //add our news controller to the navigation controller
-    UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:nvc];
+    //UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:nvc];
     
-    self.window.rootViewController = masterNav;
+    //self.window.rootViewController = masterNav;
+    self.window.rootViewController = nvc;
     
     
-    self.window.backgroundColor = [UIColor whiteColor];
+    //self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -61,5 +69,6 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 @end

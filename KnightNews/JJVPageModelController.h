@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @class JJVReaderViewController;
 
 @interface JJVPageModelController : NSObject <UIPageViewControllerDataSource>
