@@ -72,6 +72,7 @@
 		7F685A22199321A9003E9177 /* JJVPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVPreviewViewController.h; sourceTree = "<group>"; };
 		7F685A23199321A9003E9177 /* JJVPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVPreviewViewController.m; sourceTree = "<group>"; };
 		7F685A24199321A9003E9177 /* JJVPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVPreviewViewController.xib; sourceTree = "<group>"; };
+		7F685A271993DCB6003E9177 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		7F98B3021954E5CE00C1A344 /* KnightNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnightNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F98B3051954E5CE00C1A344 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7F98B3071954E5CE00C1A344 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -162,6 +163,7 @@
 				7F685A22199321A9003E9177 /* JJVPreviewViewController.h */,
 				7F685A23199321A9003E9177 /* JJVPreviewViewController.m */,
 				7F685A24199321A9003E9177 /* JJVPreviewViewController.xib */,
+				7F685A271993DCB6003E9177 /* Constants.h */,
 				7F2B33D11968E782006888CC /* JJVPageDataViewController.h */,
 				7F2B33D21968E782006888CC /* JJVPageDataViewController.m */,
 				7F2B33D31968E782006888CC /* JJVPageDataViewController.xib */,
