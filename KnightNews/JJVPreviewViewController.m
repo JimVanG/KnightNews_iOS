@@ -38,7 +38,7 @@
     self.authorLabel.font = [UIFont italicSystemFontOfSize: 13.5f];
     self.excerptLabel.text = item.excerptParsed;
     self.excerptLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    //weird bug for 3.5inch iPhones when going to the previous page
+    //weird bug for 3.5inch iPhones, when going to the previous page
     //the excerpt tries to fit the entire text in the label and
     //overlaps the author and title labels.
     if (IS_IPHONE)
@@ -46,7 +46,8 @@
     else
         self.excerptLabel.numberOfLines = 0;
     
-
+    self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:
+                                                   [NSURL URLWithString:item.imageUrl]]];
     
     
 }
@@ -56,5 +57,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end
