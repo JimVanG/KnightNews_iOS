@@ -12,6 +12,7 @@
 #import "JJVReaderViewController.h"
 #import "JJVStoryItemStore.h"
 #import "JJVStoryItem.h"
+#import "JJVPreviewViewController.h"
 
 NSString *const TITLE_CONSTANT2 = @"title_plain";
 NSString *const URL_CONSTANT2 = @"url";
@@ -166,13 +167,13 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithRequest:req completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        NSLog(@"%@", jsonObject);
+        //NSLog(@"%@", jsonObject);
         
         
         [self parseJSONObject: jsonObject];
         
         
-        NSLog(@"%@", self.items);
+        //NSLog(@"%@", self.items);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self setUpUI];
