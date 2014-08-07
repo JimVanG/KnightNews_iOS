@@ -11,6 +11,7 @@
 #import "JJVStoryItem.h"
 #import "JJVStoryItemStore.h"
 #import "JJVReaderViewController.h"
+#import "JJVPageRootViewController.h"
 
 NSString *const TITLE_CONSTANT = @"title_plain";
 NSString *const URL_CONSTANT = @"url";
@@ -164,14 +165,18 @@ NSString *const CUSTOM_FIELD_CONSTANT = @"custom_fields";
     JJVStoryItem *selectedStory = [[JJVStoryItemStore sharedStore] getItemAt:indexPath.row];
     
     //initialize a readerView
-    JJVReaderViewController *readerView = [[JJVReaderViewController alloc] init];
+//    JJVReaderViewController *readerView = [[JJVReaderViewController alloc] init];
+//    
+//    //pass the selected story along to the reader view
+//    readerView.item = selectedStory;
+//    
+//    //push the reader view controller onto the screen
+//    [self.navigationController pushViewController:readerView
+//                                         animated:YES];
     
-    //pass the selected story along to the reader view
-    readerView.item = selectedStory;
+    JJVPageRootViewController *p = [[JJVPageRootViewController alloc] init];
+    [self.navigationController pushViewController:p animated:YES];
     
-    //push the reader view controller onto the screen
-    [self.navigationController pushViewController:readerView
-                                         animated:YES];
 }
 
 

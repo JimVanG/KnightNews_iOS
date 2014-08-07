@@ -76,9 +76,9 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     [self.view addSubview:self.pageViewController.view];
     
     // Set the page view controller's bounds using an inset rect so that self's view is visible around the edges of the pages.
-    CGRect pageViewRect = self.view.bounds;
-    pageViewRect = CGRectInset(pageViewRect, 40.0, 40.0);
-    self.pageViewController.view.frame = pageViewRect;
+//    CGRect pageViewRect = self.view.bounds;
+//    pageViewRect = CGRectInset(pageViewRect, 40.0, 40.0);
+//    self.pageViewController.view.frame = pageViewRect;
     
     [self.pageViewController didMoveToParentViewController:self];
     
@@ -163,9 +163,9 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         
         NSLog(@"%@", self.items);
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            //[self.tableView reloadData];
-        });
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            //[self.tableView reloadData];
+//        });
         
     }];
     [dataTask resume];
