@@ -66,6 +66,11 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageViewController.delegate = self;
     
+
+}
+
+-(void)setUpUI
+{
     self.startingViewController = [self.modelController viewControllerAtIndex:0];
     NSArray *viewControllers = @[self.startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
@@ -76,14 +81,20 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     [self.view addSubview:self.pageViewController.view];
     
     // Set the page view controller's bounds using an inset rect so that self's view is visible around the edges of the pages.
-//    CGRect pageViewRect = self.view.bounds;
-//    pageViewRect = CGRectInset(pageViewRect, 40.0, 40.0);
-//    self.pageViewController.view.frame = pageViewRect;
+    //    CGRect pageViewRect = self.view.bounds;
+    //    pageViewRect = CGRectInset(pageViewRect, 40.0, 40.0);
+    //    self.pageViewController.view.frame = pageViewRect;
     
     [self.pageViewController didMoveToParentViewController:self];
     
     // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
     self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -163,9 +174,9 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         
         NSLog(@"%@", self.items);
         
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            //[self.tableView reloadData];
-//        });
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self setUpUI];
+        });
         
     }];
     [dataTask resume];

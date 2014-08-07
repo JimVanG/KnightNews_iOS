@@ -24,9 +24,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
         
-    JJVNewsTableViewController *nvc = [[JJVNewsTableViewController alloc] init];
+    //JJVNewsTableViewController *nvc = [[JJVNewsTableViewController alloc] init];
     //JJVEventsTableViewController *nvc = [[JJVEventsTableViewController alloc] init];
-    //JJVPageRootViewController *nvc = [[JJVPageRootViewController alloc] init];
+    JJVPageRootViewController *nvc = [[JJVPageRootViewController alloc] init];
     
     //add our news controller to the navigation controller
     UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:nvc];
@@ -35,7 +35,7 @@
     //self.window.rootViewController = nvc;
     
     
-    //self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
