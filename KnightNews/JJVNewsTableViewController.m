@@ -151,7 +151,6 @@ NSString *const CUSTOM_FIELD_CONSTANT = @"custom_fields";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
                                                             forIndexPath:indexPath];
     
-    
     //configure the cells...
     JJVStoryItem *story = [[JJVStoryItemStore sharedStore] getItemAt: indexPath.row];
     cell.textLabel.text = story.title;

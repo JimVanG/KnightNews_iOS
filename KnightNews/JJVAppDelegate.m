@@ -8,6 +8,7 @@
 
 #import "JJVAppDelegate.h"
 #import "JJVPageRootViewController.h"
+#import "JJVEventsTableViewController.h"
 
 
 @implementation JJVAppDelegate
@@ -20,12 +21,13 @@
     // Override point for customization after application launch.
     
     JJVPageRootViewController *nvc = [[JJVPageRootViewController alloc] init];
+    JJVEventsTableViewController *evc = [[JJVEventsTableViewController alloc] init];
     
     //add our news controller to the navigation controller
-   // UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:nvc];
+    UITabBarController *tbc = [[UITabBarController alloc] init];
+    tbc.viewControllers = @[nvc, evc];
     
-    //self.window.rootViewController = masterNav;
-    self.window.rootViewController = nvc;
+    self.window.rootViewController = tbc;
     
     
     self.window.backgroundColor = [UIColor whiteColor];

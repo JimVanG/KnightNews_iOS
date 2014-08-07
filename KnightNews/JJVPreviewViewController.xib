@@ -39,7 +39,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Excerpt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j82-5l-dVa">
-                    <rect key="frame" x="20" y="325" width="280" height="233"/>
+                    <rect key="frame" x="20" y="325" width="280" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="280" id="ajy-Gc-2aj"/>
@@ -66,12 +66,13 @@
                 <constraint firstItem="j82-5l-dVa" firstAttribute="top" secondItem="6OB-qc-4zq" secondAttribute="bottom" constant="4" id="XUp-ty-eal"/>
                 <constraint firstItem="X9F-tc-wuk" firstAttribute="top" secondItem="wc8-uD-5sh" secondAttribute="bottom" constant="4" id="bMz-X4-HF7"/>
                 <constraint firstAttribute="trailing" secondItem="X9F-tc-wuk" secondAttribute="trailing" constant="20" id="dl1-b2-M6a"/>
-                <constraint firstAttribute="bottom" secondItem="j82-5l-dVa" secondAttribute="bottom" constant="10" id="eMb-PZ-Pdl"/>
                 <constraint firstItem="X9F-tc-wuk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="gNp-IO-oPw"/>
                 <constraint firstAttribute="trailing" secondItem="6OB-qc-4zq" secondAttribute="trailing" constant="20" id="jte-Vj-haO"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="j82-5l-dVa" secondAttribute="bottom" constant="40" id="t8N-ka-KtL"/>
                 <constraint firstItem="wc8-uD-5sh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="zqP-7n-vcG"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>

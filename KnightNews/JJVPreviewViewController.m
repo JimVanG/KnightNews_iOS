@@ -47,7 +47,7 @@
         self.excerptLabel.numberOfLines = 0;
     
     self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:
-                                                   [NSURL URLWithString:item.imageUrl]]];
+                                                   [NSURL URLWithString: item.imageUrl]]];
     
     
 }

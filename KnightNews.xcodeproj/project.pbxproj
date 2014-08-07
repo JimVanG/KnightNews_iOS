@@ -163,7 +163,6 @@
 				7F685A22199321A9003E9177 /* JJVPreviewViewController.h */,
 				7F685A23199321A9003E9177 /* JJVPreviewViewController.m */,
 				7F685A24199321A9003E9177 /* JJVPreviewViewController.xib */,
-				7F685A271993DCB6003E9177 /* Constants.h */,
 				7F2B33D11968E782006888CC /* JJVPageDataViewController.h */,
 				7F2B33D21968E782006888CC /* JJVPageDataViewController.m */,
 				7F2B33D31968E782006888CC /* JJVPageDataViewController.xib */,
@@ -189,6 +188,7 @@
 				7F61DE531991A02E00C90C83 /* JJVEventsTableViewController.m */,
 				7F61DE551991A05600C90C83 /* JJVEventItem.h */,
 				7F61DE561991A05600C90C83 /* JJVEventItem.m */,
+				7F685A271993DCB6003E9177 /* Constants.h */,
 				7F98B3171954E5CE00C1A344 /* Images.xcassets */,
 				7F98B30C1954E5CE00C1A344 /* Supporting Files */,
 			);

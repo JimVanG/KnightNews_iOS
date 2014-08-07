@@ -9,7 +9,6 @@
 #import "JJVPageRootViewController.h"
 
 #import "JJVPageModelController.h"
-#import "JJVReaderViewController.h"
 #import "JJVStoryItemStore.h"
 #import "JJVStoryItem.h"
 #import "JJVPreviewViewController.h"
@@ -141,7 +140,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     }
     
     // In landscape orientation: Set set the spine location to "mid" and the page view controller's view controllers array to contain two view controllers. If the current page is even, set it to contain the current and next view controllers; if it is odd, set the array to contain the previous and current view controllers.
-    JJVReaderViewController *currentViewController = self.pageViewController.viewControllers[0];
+    JJVPreviewViewController *currentViewController = self.pageViewController.viewControllers[0];
     NSArray *viewControllers = nil;
     
     NSUInteger indexOfCurrentViewController = [self.modelController indexOfViewController:currentViewController];

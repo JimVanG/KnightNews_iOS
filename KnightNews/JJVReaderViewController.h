@@ -10,13 +10,10 @@
 
 @class JJVStoryItem;
 
-@interface JJVReaderViewController : UIViewController<UIPageViewControllerDataSource>
+@interface JJVReaderViewController : UIViewController
 
 
 @property (nonatomic, strong) JJVStoryItem *item;
 @property (nonatomic, assign) NSUInteger position;
-@property (strong, nonatomic) UIPageViewController *pageController;
 
--(JJVReaderViewController *)viewControllerAtIndex:(NSUInteger)index;
--(NSUInteger)indexOfViewController:(JJVReaderViewController *)viewController;
 @end
