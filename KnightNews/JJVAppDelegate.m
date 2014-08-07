@@ -13,7 +13,6 @@
 #import "JJVPageRootViewController.h"
 #import "JJVPageModelController.h"
 #import "JJVReaderViewController.h"
-#import "JJVNetworking.h"
 
 
 @implementation JJVAppDelegate
@@ -24,9 +23,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    
-    JJVNetworking *net = [[JJVNetworking alloc] init];
-    
+        
     //JJVNewsTableViewController *nvc = [[JJVNewsTableViewController alloc] init];
     //JJVEventsTableViewController *nvc = [[JJVEventsTableViewController alloc] init];
     JJVPageRootViewController *nvc = [[JJVPageRootViewController alloc] init];

@@ -33,7 +33,6 @@
 		7F98B3391954F2AA00C1A344 /* JJVWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F98B3381954F2AA00C1A344 /* JJVWebViewController.m */; };
 		7FCF43551992B56C00D2087C /* JJVEventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF43531992B56C00D2087C /* JJVEventsTableViewCell.m */; };
 		7FCF43561992B56C00D2087C /* JJVEventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCF43541992B56C00D2087C /* JJVEventsTableViewCell.xib */; };
-		7FCF43591992FBE300D2087C /* JJVNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF43581992FBE300D2087C /* JJVNetworking.m */; };
 		B5967AF94EE24B619635321E /* libPods-KnightNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6995472A89423EA9451C68 /* libPods-KnightNews.a */; };
 /* End PBXBuildFile section */
 
@@ -91,8 +90,6 @@
 		7FCF43521992B56C00D2087C /* JJVEventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVEventsTableViewCell.h; sourceTree = "<group>"; };
 		7FCF43531992B56C00D2087C /* JJVEventsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVEventsTableViewCell.m; sourceTree = "<group>"; };
 		7FCF43541992B56C00D2087C /* JJVEventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVEventsTableViewCell.xib; sourceTree = "<group>"; };
-		7FCF43571992FBE300D2087C /* JJVNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVNetworking.h; sourceTree = "<group>"; };
-		7FCF43581992FBE300D2087C /* JJVNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVNetworking.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,8 +154,6 @@
 			children = (
 				7F98B3141954E5CE00C1A344 /* JJVAppDelegate.h */,
 				7F98B3151954E5CE00C1A344 /* JJVAppDelegate.m */,
-				7FCF43571992FBE300D2087C /* JJVNetworking.h */,
-				7FCF43581992FBE300D2087C /* JJVNetworking.m */,
 				7F2B33D11968E782006888CC /* JJVPageDataViewController.h */,
 				7F2B33D21968E782006888CC /* JJVPageDataViewController.m */,
 				7F2B33D31968E782006888CC /* JJVPageDataViewController.xib */,
@@ -357,7 +352,6 @@
 				7F98B3391954F2AA00C1A344 /* JJVWebViewController.m in Sources */,
 				7F2B33D41968E782006888CC /* JJVPageDataViewController.m in Sources */,
 				7F98B3361954E61A00C1A344 /* JJVNewsTableViewController.m in Sources */,
-				7FCF43591992FBE300D2087C /* JJVNetworking.m in Sources */,
 				7F0798BB195BBE8500D022A0 /* JJVStoryItem.m in Sources */,
 				7F61DE571991A05600C90C83 /* JJVEventItem.m in Sources */,
 				7F61DE541991A02E00C90C83 /* JJVEventsTableViewController.m in Sources */,
