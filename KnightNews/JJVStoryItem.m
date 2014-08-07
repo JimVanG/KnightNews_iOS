@@ -28,4 +28,21 @@
     _title = [title stringByDecodingHTMLEntities];
 }
 
+/*
+ Overriden setter that also sets the parsed excerpt
+ */
+- (void)setExcerpt:(NSString *)excerpt
+{
+    _excerpt = excerpt;
+    self.excerptParsed = excerpt;
+}
+
+/*
+ Overriden setter to additionaly parse out extra HTML
+ */
+- (void)setExcerptParsed:(NSString *)excerptParsed
+{
+    _excerptParsed = [excerptParsed stringByConvertingHTMLToPlainText];
+}
+
 @end
