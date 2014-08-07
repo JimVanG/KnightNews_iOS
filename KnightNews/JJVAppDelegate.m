@@ -23,7 +23,7 @@
     JJVPageRootViewController *nvc = [[JJVPageRootViewController alloc] init];
     JJVEventsTableViewController *evc = [[JJVEventsTableViewController alloc] init];
     
-    //add our news controller to the navigation controller
+    
     UITabBarController *tbc = [[UITabBarController alloc] init];
     tbc.viewControllers = @[nvc, evc];
     
