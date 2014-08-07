@@ -67,13 +67,16 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageViewController.delegate = self;
     
+    //the rest of the UI is set up after we've successfully retrieved our request.
 
 }
 
 -(void)setUpUI
 {
-    self.startingViewController = [self.modelController viewControllerAtIndex:0];
-    NSArray *viewControllers = @[self.startingViewController];
+    //self.startingViewController = [self.modelController viewControllerAtIndex:0];
+    JJVPreviewViewController *startingViewController = [self.modelController viewControllerAtIndex:0];
+
+    NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     self.pageViewController.dataSource = self.modelController;

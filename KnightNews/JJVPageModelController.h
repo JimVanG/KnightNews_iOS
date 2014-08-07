@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+#import "JJVPreviewViewController.h"
 
 @class JJVReaderViewController;
 
 @interface JJVPageModelController : NSObject <UIPageViewControllerDataSource>
 
--(JJVReaderViewController *)viewControllerAtIndex:(NSUInteger)index;
--(NSUInteger)indexOfViewController:(JJVReaderViewController *)viewController;
+-(JJVPreviewViewController *)viewControllerAtIndex:(NSUInteger)index;
+-(NSUInteger)indexOfViewController:(JJVPreviewViewController *)viewController;
 
 @end

@@ -10,7 +10,7 @@
 #import "JJVReaderViewController.h"
 #import "JJVStoryItemStore.h"
 #import "JJVStoryItem.h"
-#import "JJVPreviewViewController.h"
+
 
 
 
@@ -38,7 +38,7 @@
 
 #pragma mark - Convenience Methods for PageViewController
 
-- (JJVReaderViewController *)viewControllerAtIndex:(NSUInteger)index
+- (JJVPreviewViewController *)viewControllerAtIndex:(NSUInteger)index
 {
     // Return the data view controller for the given index.
     if (([[JJVStoryItemStore sharedStore] numberOfStories] == 0) ||
@@ -47,12 +47,12 @@
     }
     
     // Create a new view controller and pass suitable data.
-    JJVReaderViewController *dataViewController = [[JJVReaderViewController alloc] init];
+    JJVPreviewViewController *dataViewController = [[JJVPreviewViewController alloc] init];
     dataViewController.item = [[JJVStoryItemStore sharedStore] getItemAt: index];
     return dataViewController;
 }
 
-- (NSUInteger)indexOfViewController:(JJVReaderViewController *)viewController
+- (NSUInteger)indexOfViewController:(JJVPreviewViewController *)viewController
 {
     // Return the index of the given data view controller.
     return [[JJVStoryItemStore sharedStore] indexOfStory: viewController.item];
@@ -62,7 +62,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    NSUInteger index = [self indexOfViewController:(JJVReaderViewController *)viewController];
+    NSUInteger index = [self indexOfViewController:(JJVPreviewViewController *)viewController];
     if ((index == 0) || (index == NSNotFound)) {
         return nil;
     }
@@ -73,7 +73,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    NSUInteger index = [self indexOfViewController:(JJVReaderViewController *)viewController];
+    NSUInteger index = [self indexOfViewController:(JJVPreviewViewController *)viewController];
     if (index == NSNotFound) {
         return nil;
     }
