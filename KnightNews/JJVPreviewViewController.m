@@ -41,7 +41,7 @@
     //weird bug for 3.5inch iPhones, when going to the previous page
     //the excerpt tries to fit the entire text in the label and
     //overlaps the author and title labels.
-    if (IS_IPHONE)
+    if (!IS_IPHONE_5 && !IS_IPAD)
         self.excerptLabel.numberOfLines = 6;
     else
         self.excerptLabel.numberOfLines = 0;
