@@ -25,11 +25,15 @@
     JJVEventsTableViewController *evc = [[JJVEventsTableViewController alloc] init];
     JJVSportsViewController *svc = [[JJVSportsViewController alloc] init];
     
-    UINavigationController *navController = [[UINavigationController alloc]
+    UINavigationController *navController1 = [[UINavigationController alloc]
                                              initWithRootViewController:nvc];
+    UINavigationController *navController2 = [[UINavigationController alloc]
+                                              initWithRootViewController:evc];
+    UINavigationController *navController3 = [[UINavigationController alloc]
+                                              initWithRootViewController:svc];
     
     UITabBarController *tbc = [[UITabBarController alloc] init];
-    tbc.viewControllers = @[navController, evc, svc];
+    tbc.viewControllers = @[navController1, navController2, navController3];
     
     self.window.rootViewController = tbc;
     
