@@ -7,9 +7,18 @@
 //
 
 #import "JJVPageModelController.h"
-
 #import "JJVReaderViewController.h"
 #import "JJVStoryItemStore.h"
+#import "JJVStoryItem.h"
+
+
+
+
+@interface JJVPageModelController ()
+
+
+
+@end
 
 @implementation JJVPageModelController
 
@@ -18,36 +27,43 @@
     self = [super init];
     if (self) {
         // Create the data model.
+        
+
+        
 
     }
     return self;
 }
 
-- (JJVReaderViewController *)viewControllerAtIndex:(NSUInteger)index
+#pragma mark - Convenience Methods for PageViewController
+
+- (JJVPreviewViewController *)viewControllerAtIndex:(NSUInteger)index
 {
     // Return the data view controller for the given index.
-    if (([[JJVStoryItemStore sharedStore] numberOfStories] == 0) || (index >= [[JJVStoryItemStore sharedStore] numberOfStories])) {
+    if (([[JJVStoryItemStore sharedStore] numberOfStories] == 0) ||
+        (index >= [[JJVStoryItemStore sharedStore] numberOfStories])) {
         return nil;
     }
     
     // Create a new view controller and pass suitable data.
-    JJVReaderViewController *dataViewController = [[JJVReaderViewController alloc] init];
-    //dataViewController.dataObject = self.pageData[index];
+    JJVPreviewViewController *dataViewController = [[JJVPreviewViewController alloc] init];
+    dataViewController.item = [[JJVStoryItemStore sharedStore] getItemAt: index];
     return dataViewController;
 }
 
-- (NSUInteger)indexOfViewController:(JJVReaderViewController *)viewController
+- (NSUInteger)indexOfViewController:(JJVPreviewViewController *)viewController
 {
     // Return the index of the given data view controller.
-    // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
-    return viewController.position;
+    return [[JJVStoryItemStore sharedStore] indexOfStory: viewController.item];
+;
 }
 
 #pragma mark - Page View Controller Data Source
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    NSUInteger index = [self indexOfViewController:(JJVReaderViewController *)viewController];
+    NSUInteger index = [self indexOfViewController:(JJVPreviewViewController *)viewController];
+    self.currentPosition = index;
     if ((index == 0) || (index == NSNotFound)) {
         return nil;
     }
@@ -58,7 +74,8 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    NSUInteger index = [self indexOfViewController:(JJVReaderViewController *)viewController];
+    NSUInteger index = [self indexOfViewController:(JJVPreviewViewController *)viewController];
+    self.currentPosition = index;
     if (index == NSNotFound) {
         return nil;
     }
@@ -69,6 +86,7 @@
     }
     return [self viewControllerAtIndex:index];
 }
+
 
 
 @end

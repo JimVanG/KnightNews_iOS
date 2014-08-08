@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSString *author;
 @property (nonatomic, strong) NSString *date;
 @property (nonatomic, strong) NSString *excerpt;
+@property (nonatomic, strong) NSString *excerptParsed;
 @property (nonatomic, strong) NSString *contents;
 @property (nonatomic, strong) NSString *imageUrl;
 @property (nonatomic, strong) NSString *url;

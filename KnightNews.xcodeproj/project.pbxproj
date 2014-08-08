@@ -12,11 +12,12 @@
 		7F2B33C91968BAC1006888CC /* JJVReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B33C71968BAC1006888CC /* JJVReaderViewController.m */; };
 		7F2B33CA1968BAC1006888CC /* JJVReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F2B33C81968BAC1006888CC /* JJVReaderViewController.xib */; };
 		7F2B33D01968E734006888CC /* JJVPageModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B33CF1968E734006888CC /* JJVPageModelController.m */; };
-		7F2B33D41968E782006888CC /* JJVPageDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B33D21968E782006888CC /* JJVPageDataViewController.m */; };
-		7F2B33D51968E782006888CC /* JJVPageDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F2B33D31968E782006888CC /* JJVPageDataViewController.xib */; };
 		7F2B33D81968EE62006888CC /* JJVPageRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B33D71968EE62006888CC /* JJVPageRootViewController.m */; };
 		7F61DE541991A02E00C90C83 /* JJVEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F61DE531991A02E00C90C83 /* JJVEventsTableViewController.m */; };
 		7F61DE571991A05600C90C83 /* JJVEventItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F61DE561991A05600C90C83 /* JJVEventItem.m */; };
+		7F685A25199321A9003E9177 /* JJVPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F685A23199321A9003E9177 /* JJVPreviewViewController.m */; };
+		7F685A26199321A9003E9177 /* JJVPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F685A24199321A9003E9177 /* JJVPreviewViewController.xib */; };
+		7F685A2919941C4F003E9177 /* JJVEventsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F685A2819941C4F003E9177 /* JJVEventsTableViewController.xib */; };
 		7F98B3061954E5CE00C1A344 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F98B3051954E5CE00C1A344 /* Foundation.framework */; };
 		7F98B3081954E5CE00C1A344 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F98B3071954E5CE00C1A344 /* CoreGraphics.framework */; };
 		7F98B30A1954E5CE00C1A344 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F98B3091954E5CE00C1A344 /* UIKit.framework */; };
@@ -58,15 +59,17 @@
 		7F2B33C81968BAC1006888CC /* JJVReaderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVReaderViewController.xib; sourceTree = "<group>"; };
 		7F2B33CE1968E734006888CC /* JJVPageModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVPageModelController.h; sourceTree = "<group>"; };
 		7F2B33CF1968E734006888CC /* JJVPageModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVPageModelController.m; sourceTree = "<group>"; };
-		7F2B33D11968E782006888CC /* JJVPageDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVPageDataViewController.h; sourceTree = "<group>"; };
-		7F2B33D21968E782006888CC /* JJVPageDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVPageDataViewController.m; sourceTree = "<group>"; };
-		7F2B33D31968E782006888CC /* JJVPageDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVPageDataViewController.xib; sourceTree = "<group>"; };
 		7F2B33D61968EE62006888CC /* JJVPageRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVPageRootViewController.h; sourceTree = "<group>"; };
 		7F2B33D71968EE62006888CC /* JJVPageRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVPageRootViewController.m; sourceTree = "<group>"; };
 		7F61DE521991A02E00C90C83 /* JJVEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVEventsTableViewController.h; sourceTree = "<group>"; };
 		7F61DE531991A02E00C90C83 /* JJVEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVEventsTableViewController.m; sourceTree = "<group>"; };
 		7F61DE551991A05600C90C83 /* JJVEventItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVEventItem.h; sourceTree = "<group>"; };
 		7F61DE561991A05600C90C83 /* JJVEventItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVEventItem.m; sourceTree = "<group>"; };
+		7F685A22199321A9003E9177 /* JJVPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVPreviewViewController.h; sourceTree = "<group>"; };
+		7F685A23199321A9003E9177 /* JJVPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVPreviewViewController.m; sourceTree = "<group>"; };
+		7F685A24199321A9003E9177 /* JJVPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVPreviewViewController.xib; sourceTree = "<group>"; };
+		7F685A271993DCB6003E9177 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		7F685A2819941C4F003E9177 /* JJVEventsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVEventsTableViewController.xib; sourceTree = "<group>"; };
 		7F98B3021954E5CE00C1A344 /* KnightNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnightNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F98B3051954E5CE00C1A344 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7F98B3071954E5CE00C1A344 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -154,9 +157,9 @@
 			children = (
 				7F98B3141954E5CE00C1A344 /* JJVAppDelegate.h */,
 				7F98B3151954E5CE00C1A344 /* JJVAppDelegate.m */,
-				7F2B33D11968E782006888CC /* JJVPageDataViewController.h */,
-				7F2B33D21968E782006888CC /* JJVPageDataViewController.m */,
-				7F2B33D31968E782006888CC /* JJVPageDataViewController.xib */,
+				7F685A22199321A9003E9177 /* JJVPreviewViewController.h */,
+				7F685A23199321A9003E9177 /* JJVPreviewViewController.m */,
+				7F685A24199321A9003E9177 /* JJVPreviewViewController.xib */,
 				7F2B33CE1968E734006888CC /* JJVPageModelController.h */,
 				7F2B33CF1968E734006888CC /* JJVPageModelController.m */,
 				7F2B33D61968EE62006888CC /* JJVPageRootViewController.h */,
@@ -177,8 +180,10 @@
 				7FCF43541992B56C00D2087C /* JJVEventsTableViewCell.xib */,
 				7F61DE521991A02E00C90C83 /* JJVEventsTableViewController.h */,
 				7F61DE531991A02E00C90C83 /* JJVEventsTableViewController.m */,
+				7F685A2819941C4F003E9177 /* JJVEventsTableViewController.xib */,
 				7F61DE551991A05600C90C83 /* JJVEventItem.h */,
 				7F61DE561991A05600C90C83 /* JJVEventItem.m */,
+				7F685A271993DCB6003E9177 /* Constants.h */,
 				7F98B3171954E5CE00C1A344 /* Images.xcassets */,
 				7F98B30C1954E5CE00C1A344 /* Supporting Files */,
 			);
@@ -292,10 +297,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F685A2919941C4F003E9177 /* JJVEventsTableViewController.xib in Resources */,
 				7F98B3101954E5CE00C1A344 /* InfoPlist.strings in Resources */,
 				7F98B3181954E5CE00C1A344 /* Images.xcassets in Resources */,
-				7F2B33D51968E782006888CC /* JJVPageDataViewController.xib in Resources */,
 				7F2B33CA1968BAC1006888CC /* JJVReaderViewController.xib in Resources */,
+				7F685A26199321A9003E9177 /* JJVPreviewViewController.xib in Resources */,
 				7FCF43561992B56C00D2087C /* JJVEventsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,7 +356,7 @@
 			files = (
 				7FCF43551992B56C00D2087C /* JJVEventsTableViewCell.m in Sources */,
 				7F98B3391954F2AA00C1A344 /* JJVWebViewController.m in Sources */,
-				7F2B33D41968E782006888CC /* JJVPageDataViewController.m in Sources */,
+				7F685A25199321A9003E9177 /* JJVPreviewViewController.m in Sources */,
 				7F98B3361954E61A00C1A344 /* JJVNewsTableViewController.m in Sources */,
 				7F0798BB195BBE8500D022A0 /* JJVStoryItem.m in Sources */,
 				7F61DE571991A05600C90C83 /* JJVEventItem.m in Sources */,

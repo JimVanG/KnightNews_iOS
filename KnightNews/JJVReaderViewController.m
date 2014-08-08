@@ -9,11 +9,12 @@
 #import "JJVReaderViewController.h"
 #import "JJVStoryItem.h"
 
-@interface JJVReaderViewController ()
+@interface JJVReaderViewController () 
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+
 
 
 @end
@@ -25,6 +26,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+
     }
     return self;
 }
@@ -64,6 +66,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 
 @end
