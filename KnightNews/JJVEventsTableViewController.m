@@ -9,6 +9,7 @@
 #import "JJVEventsTableViewController.h"
 #import "JJVEventItem.h"
 #import "JJVEventsTableViewCell.h"
+#import "Constants.h"
 
 NSString *const EVENT_NAME = @"event_name";
 NSString *const EVENT_DATE = @"event_date";
@@ -38,6 +39,12 @@ NSString *const EVENT_DESC = @"event_desc";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (IS_OS_7_OR_LATER)
+        self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
+    
+    
+
     
     //load the NIB file for the tableview cells
     UINib *cellNib = [UINib nibWithNibName:@"JJVEventsTableViewCell" bundle: nil];

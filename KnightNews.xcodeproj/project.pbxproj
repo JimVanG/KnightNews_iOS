@@ -19,6 +19,7 @@
 		7F61DE571991A05600C90C83 /* JJVEventItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F61DE561991A05600C90C83 /* JJVEventItem.m */; };
 		7F685A25199321A9003E9177 /* JJVPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F685A23199321A9003E9177 /* JJVPreviewViewController.m */; };
 		7F685A26199321A9003E9177 /* JJVPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F685A24199321A9003E9177 /* JJVPreviewViewController.xib */; };
+		7F685A2919941C4F003E9177 /* JJVEventsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F685A2819941C4F003E9177 /* JJVEventsTableViewController.xib */; };
 		7F98B3061954E5CE00C1A344 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F98B3051954E5CE00C1A344 /* Foundation.framework */; };
 		7F98B3081954E5CE00C1A344 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F98B3071954E5CE00C1A344 /* CoreGraphics.framework */; };
 		7F98B30A1954E5CE00C1A344 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F98B3091954E5CE00C1A344 /* UIKit.framework */; };
@@ -73,6 +74,7 @@
 		7F685A23199321A9003E9177 /* JJVPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVPreviewViewController.m; sourceTree = "<group>"; };
 		7F685A24199321A9003E9177 /* JJVPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVPreviewViewController.xib; sourceTree = "<group>"; };
 		7F685A271993DCB6003E9177 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		7F685A2819941C4F003E9177 /* JJVEventsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVEventsTableViewController.xib; sourceTree = "<group>"; };
 		7F98B3021954E5CE00C1A344 /* KnightNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnightNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F98B3051954E5CE00C1A344 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7F98B3071954E5CE00C1A344 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -186,6 +188,7 @@
 				7FCF43541992B56C00D2087C /* JJVEventsTableViewCell.xib */,
 				7F61DE521991A02E00C90C83 /* JJVEventsTableViewController.h */,
 				7F61DE531991A02E00C90C83 /* JJVEventsTableViewController.m */,
+				7F685A2819941C4F003E9177 /* JJVEventsTableViewController.xib */,
 				7F61DE551991A05600C90C83 /* JJVEventItem.h */,
 				7F61DE561991A05600C90C83 /* JJVEventItem.m */,
 				7F685A271993DCB6003E9177 /* Constants.h */,
@@ -302,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F685A2919941C4F003E9177 /* JJVEventsTableViewController.xib in Resources */,
 				7F98B3101954E5CE00C1A344 /* InfoPlist.strings in Resources */,
 				7F98B3181954E5CE00C1A344 /* Images.xcassets in Resources */,
 				7F2B33D51968E782006888CC /* JJVPageDataViewController.xib in Resources */,

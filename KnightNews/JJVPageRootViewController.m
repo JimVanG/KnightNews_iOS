@@ -12,6 +12,7 @@
 #import "JJVStoryItemStore.h"
 #import "JJVStoryItem.h"
 #import "JJVPreviewViewController.h"
+#import "JJVReaderViewController.h"
 
 NSString *const TITLE_CONSTANT2 = @"title_plain";
 NSString *const URL_CONSTANT2 = @"url";
@@ -25,14 +26,14 @@ NSString *const NAME_CONSTANT2 = @"name";
 NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 
 
-@interface JJVPageRootViewController ()
+@interface JJVPageRootViewController () <UIGestureRecognizerDelegate>
 
 @property (readonly, strong, nonatomic) JJVPageModelController *modelController;
-
+@property (strong, nonatomic) JJVPreviewViewController *startingViewController;
 @property (nonatomic) NSURLSession *session;
 @property (nonatomic, copy) NSArray *items;
-@property (nonatomic, strong) JJVReaderViewController *startingViewController;
 
+@property (nonatomic, strong) UIScrollView *scrollView;
 
 
 @end
@@ -53,6 +54,9 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         [self fetchFeed];
         
         
+
+        
+    
     }
     return self;
 }
@@ -63,7 +67,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     // Configure the page view controller and add it as a child view controller.
-    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageViewController.delegate = self;
     
     //the rest of the UI is set up after we've successfully retrieved our request.
@@ -73,9 +77,9 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 -(void)setUpUI
 {
     //self.startingViewController = [self.modelController viewControllerAtIndex:0];
-    JJVPreviewViewController *startingViewController = [self.modelController viewControllerAtIndex:0];
+    self.startingViewController = [self.modelController viewControllerAtIndex:0];
 
-    NSArray *viewControllers = @[startingViewController];
+    NSArray *viewControllers = @[self.startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     self.pageViewController.dataSource = self.modelController;
@@ -91,6 +95,16 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     [self.pageViewController didMoveToParentViewController:self];
     
     // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
+    for (UIView *view in self.pageViewController.view.subviews) {
+        if([view isKindOfClass:[UIScrollView class]])
+        {
+            self.scrollView = (UIScrollView *)view;
+        }
+    }
+    tapRecognizer.delegate = self;
+    [self.scrollView addGestureRecognizer: tapRecognizer];
+    
     self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
 }
 
@@ -218,5 +232,22 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     
 }
 
+#pragma mark - Gesture recognizer methods
+
+-(void)tap:(UIGestureRecognizer *)gr
+{
+    NSLog(@"TAP");
+    //initialize a readerView
+    JJVReaderViewController *readerView = [[JJVReaderViewController alloc] init];
+    
+    //pass the selected story along to the reader view
+    JJVStoryItem *story = [[JJVStoryItemStore sharedStore] getItemAt: self.modelController.currentPosition];
+    
+    readerView.item = story;
+    
+    //push the reader view controller onto the screen
+    [self.navigationController pushViewController:readerView
+                                         animated:YES];
+}
 
 @end

@@ -23,9 +23,10 @@
     JJVPageRootViewController *nvc = [[JJVPageRootViewController alloc] init];
     JJVEventsTableViewController *evc = [[JJVEventsTableViewController alloc] init];
     
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:nvc];
     
     UITabBarController *tbc = [[UITabBarController alloc] init];
-    tbc.viewControllers = @[nvc, evc];
+    tbc.viewControllers = @[navController, evc];
     
     self.window.rootViewController = tbc;
     

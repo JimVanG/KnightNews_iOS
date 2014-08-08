@@ -16,8 +16,7 @@
 
 @interface JJVPageModelController ()
 
-@property (nonatomic) NSURLSession *session;
-@property (nonatomic, copy) NSArray *items;
+
 
 @end
 
@@ -56,6 +55,7 @@
 {
     // Return the index of the given data view controller.
     return [[JJVStoryItemStore sharedStore] indexOfStory: viewController.item];
+;
 }
 
 #pragma mark - Page View Controller Data Source
@@ -63,6 +63,7 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
     NSUInteger index = [self indexOfViewController:(JJVPreviewViewController *)viewController];
+    self.currentPosition = index;
     if ((index == 0) || (index == NSNotFound)) {
         return nil;
     }
@@ -74,6 +75,7 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
     NSUInteger index = [self indexOfViewController:(JJVPreviewViewController *)viewController];
+    self.currentPosition = index;
     if (index == NSNotFound) {
         return nil;
     }
