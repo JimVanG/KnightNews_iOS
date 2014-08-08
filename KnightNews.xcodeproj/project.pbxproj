@@ -31,9 +31,10 @@
 		7F98B3291954E5CE00C1A344 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F98B3271954E5CE00C1A344 /* InfoPlist.strings */; };
 		7F98B32B1954E5CE00C1A344 /* KnightNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F98B32A1954E5CE00C1A344 /* KnightNewsTests.m */; };
 		7F98B3361954E61A00C1A344 /* JJVNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F98B3351954E61A00C1A344 /* JJVNewsTableViewController.m */; };
-		7F98B3391954F2AA00C1A344 /* JJVWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F98B3381954F2AA00C1A344 /* JJVWebViewController.m */; };
 		7FCF43551992B56C00D2087C /* JJVEventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF43531992B56C00D2087C /* JJVEventsTableViewCell.m */; };
 		7FCF43561992B56C00D2087C /* JJVEventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCF43541992B56C00D2087C /* JJVEventsTableViewCell.xib */; };
+		7FF95888199479AA0029D39D /* JJVSportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF95886199479AA0029D39D /* JJVSportsViewController.m */; };
+		7FF95889199479AA0029D39D /* JJVSportsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF95887199479AA0029D39D /* JJVSportsViewController.xib */; };
 		B5967AF94EE24B619635321E /* libPods-KnightNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6995472A89423EA9451C68 /* libPods-KnightNews.a */; };
 /* End PBXBuildFile section */
 
@@ -88,11 +89,12 @@
 		7F98B32A1954E5CE00C1A344 /* KnightNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KnightNewsTests.m; sourceTree = "<group>"; };
 		7F98B3341954E61A00C1A344 /* JJVNewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVNewsTableViewController.h; sourceTree = "<group>"; };
 		7F98B3351954E61A00C1A344 /* JJVNewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVNewsTableViewController.m; sourceTree = "<group>"; };
-		7F98B3371954F2AA00C1A344 /* JJVWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVWebViewController.h; sourceTree = "<group>"; };
-		7F98B3381954F2AA00C1A344 /* JJVWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVWebViewController.m; sourceTree = "<group>"; };
 		7FCF43521992B56C00D2087C /* JJVEventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVEventsTableViewCell.h; sourceTree = "<group>"; };
 		7FCF43531992B56C00D2087C /* JJVEventsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVEventsTableViewCell.m; sourceTree = "<group>"; };
 		7FCF43541992B56C00D2087C /* JJVEventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVEventsTableViewCell.xib; sourceTree = "<group>"; };
+		7FF95885199479AA0029D39D /* JJVSportsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVSportsViewController.h; sourceTree = "<group>"; };
+		7FF95886199479AA0029D39D /* JJVSportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVSportsViewController.m; sourceTree = "<group>"; };
+		7FF95887199479AA0029D39D /* JJVSportsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVSportsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,8 +171,9 @@
 				7F2B33C61968BAC1006888CC /* JJVReaderViewController.h */,
 				7F2B33C71968BAC1006888CC /* JJVReaderViewController.m */,
 				7F2B33C81968BAC1006888CC /* JJVReaderViewController.xib */,
-				7F98B3371954F2AA00C1A344 /* JJVWebViewController.h */,
-				7F98B3381954F2AA00C1A344 /* JJVWebViewController.m */,
+				7FF95885199479AA0029D39D /* JJVSportsViewController.h */,
+				7FF95886199479AA0029D39D /* JJVSportsViewController.m */,
+				7FF95887199479AA0029D39D /* JJVSportsViewController.xib */,
 				7F0798B9195BBE8500D022A0 /* JJVStoryItem.h */,
 				7F0798BA195BBE8500D022A0 /* JJVStoryItem.m */,
 				7F0798BC195BC28800D022A0 /* JJVStoryItemStore.h */,
@@ -301,6 +304,7 @@
 				7F98B3101954E5CE00C1A344 /* InfoPlist.strings in Resources */,
 				7F98B3181954E5CE00C1A344 /* Images.xcassets in Resources */,
 				7F2B33CA1968BAC1006888CC /* JJVReaderViewController.xib in Resources */,
+				7FF95889199479AA0029D39D /* JJVSportsViewController.xib in Resources */,
 				7F685A26199321A9003E9177 /* JJVPreviewViewController.xib in Resources */,
 				7FCF43561992B56C00D2087C /* JJVEventsTableViewCell.xib in Resources */,
 			);
@@ -354,8 +358,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FF95888199479AA0029D39D /* JJVSportsViewController.m in Sources */,
 				7FCF43551992B56C00D2087C /* JJVEventsTableViewCell.m in Sources */,
-				7F98B3391954F2AA00C1A344 /* JJVWebViewController.m in Sources */,
 				7F685A25199321A9003E9177 /* JJVPreviewViewController.m in Sources */,
 				7F98B3361954E61A00C1A344 /* JJVNewsTableViewController.m in Sources */,
 				7F0798BB195BBE8500D022A0 /* JJVStoryItem.m in Sources */,

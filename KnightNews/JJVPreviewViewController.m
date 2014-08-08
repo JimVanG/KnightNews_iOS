@@ -23,11 +23,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
-        tapRecognizer.delaysTouchesBegan = YES;
-        tapRecognizer.delegate = self;
-        //[self.view addGestureRecognizer: tapRecognizer];
-        //[self.parentViewController.view addGestureRecognizer:tapRecognizer];
     }
     return self;
 }
@@ -64,26 +59,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Gesture recognizer methods
-
--(void)tap:(UIGestureRecognizer *)gr
-{
-    //NSLog(@"TAP");
-    //initialize a readerView
-    //JJVReaderViewController *readerView = [[JJVReaderViewController alloc] init];
-    
-    //    //pass the selected story along to the reader view
-    //    NSUInteger position = [self.modelController indexOfViewController: self.startingViewController];
-    //
-    //    JJVStoryItem *story = [[JJVStoryItemStore sharedStore] getItemAt: position];
-    //
-    //    readerView.item = story;
-    //
-    //    //push the reader view controller onto the screen
-    //    [self.navigationController pushViewController:readerView
-    //                                         animated:YES];
 }
 
 @end

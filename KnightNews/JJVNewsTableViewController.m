@@ -7,7 +7,6 @@
 //
 
 #import "JJVNewsTableViewController.h"
-#import "JJVWebViewController.h"
 #import "JJVStoryItem.h"
 #import "JJVStoryItemStore.h"
 #import "JJVReaderViewController.h"
@@ -56,7 +55,6 @@ NSString *const CUSTOM_FIELD_CONSTANT = @"custom_fields";
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
     
-    self.webViewController = [[JJVWebViewController alloc] init];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

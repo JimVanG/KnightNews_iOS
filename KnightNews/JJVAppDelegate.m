@@ -9,6 +9,7 @@
 #import "JJVAppDelegate.h"
 #import "JJVPageRootViewController.h"
 #import "JJVEventsTableViewController.h"
+#import "JJVSportsViewController.h"
 
 
 @implementation JJVAppDelegate
@@ -22,11 +23,13 @@
     
     JJVPageRootViewController *nvc = [[JJVPageRootViewController alloc] init];
     JJVEventsTableViewController *evc = [[JJVEventsTableViewController alloc] init];
+    JJVSportsViewController *svc = [[JJVSportsViewController alloc] init];
     
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:nvc];
+    UINavigationController *navController = [[UINavigationController alloc]
+                                             initWithRootViewController:nvc];
     
     UITabBarController *tbc = [[UITabBarController alloc] init];
-    tbc.viewControllers = @[navController, evc];
+    tbc.viewControllers = @[navController, evc, svc];
     
     self.window.rootViewController = tbc;
     

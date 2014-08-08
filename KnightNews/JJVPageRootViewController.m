@@ -53,10 +53,6 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         
         [self fetchFeed];
         
-        
-
-        
-    
     }
     return self;
 }
@@ -71,7 +67,6 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     self.pageViewController.delegate = self;
     
     //the rest of the UI is set up after we've successfully retrieved our request.
-
 }
 
 -(void)setUpUI
