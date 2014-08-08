@@ -53,6 +53,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         
         [self fetchFeed];
         
+        self.navigationItem.title = @"News";
     }
     return self;
 }
