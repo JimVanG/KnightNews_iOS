@@ -76,8 +76,8 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 
 -(void)setUpUI
 {
-    //self.startingViewController = [self.modelController viewControllerAtIndex:0];
-    self.startingViewController = [self.modelController viewControllerAtIndex:0];
+    
+    self.startingViewController = [self.modelController viewControllerAtIndex: 0];
 
     NSArray *viewControllers = @[self.startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
