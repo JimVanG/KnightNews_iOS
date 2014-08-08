@@ -86,16 +86,13 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
-    
-    // Set the page view controller's bounds using an inset rect so that self's view is visible around the edges of the pages.
-    //    CGRect pageViewRect = self.view.bounds;
-    //    pageViewRect = CGRectInset(pageViewRect, 40.0, 40.0);
-    //    self.pageViewController.view.frame = pageViewRect;
+
     
     [self.pageViewController didMoveToParentViewController:self];
     
     // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
+    //need to add the gesture recognizer to the scrollview in order for it to work with taps
     for (UIView *view in self.pageViewController.view.subviews) {
         if([view isKindOfClass:[UIScrollView class]])
         {
@@ -103,6 +100,8 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         }
     }
     tapRecognizer.delegate = self;
+    tapRecognizer.cancelsTouchesInView = NO;
+    tapRecognizer.delaysTouchesBegan = YES;
     [self.scrollView addGestureRecognizer: tapRecognizer];
     
     self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
@@ -236,7 +235,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 
 -(void)tap:(UIGestureRecognizer *)gr
 {
-    NSLog(@"TAP");
+    //NSLog(@"TAP");
     //initialize a readerView
     JJVReaderViewController *readerView = [[JJVReaderViewController alloc] init];
     

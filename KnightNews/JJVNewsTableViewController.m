@@ -161,7 +161,7 @@ NSString *const CUSTOM_FIELD_CONSTANT = @"custom_fields";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //get the corresponding story item
-    JJVStoryItem *selectedStory = [[JJVStoryItemStore sharedStore] getItemAt:indexPath.row];
+    //JJVStoryItem *selectedStory = [[JJVStoryItemStore sharedStore] getItemAt:indexPath.row];
     
     //initialize a readerView
 //    JJVReaderViewController *readerView = [[JJVReaderViewController alloc] init];
