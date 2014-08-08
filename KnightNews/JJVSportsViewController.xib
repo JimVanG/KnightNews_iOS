@@ -6,9 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JJVSportsViewController">
             <connections>
-                <outlet property="segmentControl" destination="0Ux-a6-mdS" id="LeE-o5-8au"/>
+                <outlet property="segmentControl" destination="0Ux-a6-mdS" id="xoI-zY-puR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="webView" destination="YcL-33-rIq" id="CWC-uf-3Jb"/>
+                <outlet property="webView2" destination="NPS-NK-gqJ" id="SBj-SK-GJx"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -28,6 +29,11 @@
                     </connections>
                 </segmentedControl>
                 <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YcL-33-rIq">
+                    <rect key="frame" x="0.0" y="105" width="320" height="412"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </webView>
+                <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NPS-NK-gqJ">
                     <rect key="frame" x="0.0" y="105" width="320" height="412"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentControl;
+@property (weak, nonatomic) IBOutlet UIWebView *webView2;
+
 
 - (IBAction)changeUrl:(id)sender;
 @end
@@ -36,10 +38,16 @@
     [self.webView loadRequest:[NSURLRequest requestWithURL:
                                [NSURL URLWithString:
                                 @"http://espn.go.com/college-football/team/_/id/2116/ucf-knights"]]];
+    self.webView.hidden = NO;
+    //initial url for webview2
+    [self.webView2 loadRequest:[NSURLRequest requestWithURL:
+                               [NSURL URLWithString:
+                                @"http://espn.go.com/mens-college-basketball/team/_/id/2116/ucf-knights"]]];
+    self.webView2.hidden = YES;
     
-    NSArray *segmentItems = [NSArray arrayWithObjects: @"Football", @"Basketball", nil];
+    //NSArray *segmentItems = [NSArray arrayWithObjects: @"Football", @"Basketball", nil];
     
-    self.segmentControl = [[UISegmentedControl alloc] initWithItems: segmentItems];
+    self.segmentControl = [[UISegmentedControl alloc] init];
     self.segmentControl.selectedSegmentIndex = 0;
 
 }
@@ -56,17 +64,16 @@
 
 - (IBAction)changeUrl:(id)sender {
     
-    switch (self.segmentControl.selectedSegmentIndex) {
+    UISegmentedControl *seg = (UISegmentedControl *)sender;
+    switch (seg.selectedSegmentIndex) {
         case 0:
-            [self.webView loadRequest:[NSURLRequest requestWithURL:
-                                       [NSURL URLWithString:
-                                        @"http://espn.go.com/college-football/team/_/id/2116/ucf-knights"]]];
+            self.webView2.hidden = YES;
+            self.webView.hidden = NO;
             break;
             
         case 1:
-            [self.webView loadRequest:[NSURLRequest requestWithURL:
-                                       [NSURL URLWithString:
-                                        @"http://espn.go.com/mens-college-basketball/team/_/id/2116/ucf-knights"]]];
+            self.webView.hidden = YES;
+            self.webView2.hidden = NO;
             break;
             
         default:
