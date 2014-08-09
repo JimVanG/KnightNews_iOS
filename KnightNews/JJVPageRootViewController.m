@@ -14,6 +14,7 @@
 #import "JJVPreviewViewController.h"
 #import "JJVReaderViewController.h"
 
+
 NSString *const TITLE_CONSTANT2 = @"title_plain";
 NSString *const URL_CONSTANT2 = @"url";
 NSString *const POSTS_CONSTANT2 = @"posts";
@@ -108,7 +109,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     self.tapRecognizer.delegate = self;
     self.tapRecognizer.cancelsTouchesInView = NO;
     self.tapRecognizer.delaysTouchesBegan = YES;
-    [self.tapRecognizer requireGestureRecognizerToFail: self.panRecognizer];
+    //[self.tapRecognizer requireGestureRecognizerToFail: self.panRecognizer];
     [self.scrollView addGestureRecognizer: self.panRecognizer];
     [self.scrollView addGestureRecognizer: self.tapRecognizer];
     
@@ -258,7 +259,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         CGPoint totalDist = [gr translationInView: self.view];
         //NSLog(@"Ended, total distance: %f", totalDist.x);
         
-        if (abs(totalDist.x) < 100) {
+        if (abs(totalDist.x) < 30) {
         
             JJVReaderViewController *readerView = [[JJVReaderViewController alloc]
                                                    initWithNibName:nil bundle:nil];
@@ -272,7 +273,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
             //push the reader view controller onto the screen
             [self.navigationController pushViewController:readerView
                                                  animated:YES];
-        }else if(totalDist.x < -100){
+        }else if(totalDist.x < -30){
             
             if ((self.currentPosition + 1) < [[JJVStoryItemStore sharedStore] numberOfStories]) {
                 self.currentPosition++;
@@ -282,7 +283,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
                                                                       self.currentPosition];
             
             [self.pageViewController setViewControllers:@[nextVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-        }else if(totalDist.x > 100){
+        }else if(totalDist.x > 30){
             
             if ((self.currentPosition - 1) >= 0) {
                 self.currentPosition--;
