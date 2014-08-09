@@ -11,7 +11,7 @@
 
 @interface JJVStoryItem : NSObject
 
-//make some public properties that define the story object
+//some public properties that define the story object
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *author;
 @property (nonatomic, strong) NSString *date;

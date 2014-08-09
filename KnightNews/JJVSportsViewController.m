@@ -14,7 +14,6 @@
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 @property (weak, nonatomic) IBOutlet UIWebView *webView2;
 
-
 - (IBAction)changeUrl:(id)sender;
 @end
 
@@ -44,8 +43,6 @@
                                [NSURL URLWithString:
                                 @"http://espn.go.com/mens-college-basketball/team/_/id/2116/ucf-knights"]]];
     self.webView2.hidden = YES;
-    
-    //NSArray *segmentItems = [NSArray arrayWithObjects: @"Football", @"Basketball", nil];
     
     self.segmentControl = [[UISegmentedControl alloc] init];
     self.segmentControl.selectedSegmentIndex = 0;
