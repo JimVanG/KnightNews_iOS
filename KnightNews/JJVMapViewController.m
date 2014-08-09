@@ -30,11 +30,11 @@
     
     CLLocationCoordinate2D ucf = {28.602025, -81.200820};
     
-    CLLocation *ucfLoc = [[CLLocation alloc] initWithLatitude:ucf.latitude longitude:ucf.longitude];
+    //CLLocation *ucfLoc = [[CLLocation alloc] initWithLatitude:ucf.latitude longitude:ucf.longitude];
     
     MKMapCamera *cam = [MKMapCamera cameraLookingAtCenterCoordinate:ucf
                                                   fromEyeCoordinate:ucf
-                                                        eyeAltitude:300];
+                                                        eyeAltitude:5000];
     
     [self.mapView setCamera:cam];
 }
