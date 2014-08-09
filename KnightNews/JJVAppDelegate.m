@@ -33,11 +33,11 @@
                                               initWithRootViewController:evc];
     UINavigationController *navController3 = [[UINavigationController alloc]
                                               initWithRootViewController:svc];
-    UINavigationController *navController4 = [[UINavigationController alloc]
-                                              initWithRootViewController:mvc];
+//    UINavigationController *navController4 = [[UINavigationController alloc]
+//                                              initWithRootViewController:mvc];
     
     UITabBarController *tbc = [[UITabBarController alloc] init];
-    tbc.viewControllers = @[navController1, navController2, navController3, navController4];
+    tbc.viewControllers = @[navController1, navController2, navController3, mvc];
     
     self.window.rootViewController = tbc;
     
