@@ -46,7 +46,7 @@
     }
     
     // Create a new view controller and pass suitable data.
-    JJVPreviewViewController *dataViewController = [[JJVPreviewViewController alloc] init];
+    JJVPreviewViewController *dataViewController = [[JJVPreviewViewController alloc] initWithNibName:@"JJVPreviewViewController" bundle:nil];
     dataViewController.item = [[JJVStoryItemStore sharedStore] getItemAt: index];
     return dataViewController;
 }
