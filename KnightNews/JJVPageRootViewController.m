@@ -109,7 +109,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     self.tapRecognizer.delegate = self;
     self.tapRecognizer.cancelsTouchesInView = NO;
     self.tapRecognizer.delaysTouchesBegan = YES;
-    //[self.tapRecognizer requireGestureRecognizerToFail: self.panRecognizer];
+    [self.tapRecognizer requireGestureRecognizerToFail: self.panRecognizer];
     [self.scrollView addGestureRecognizer: self.panRecognizer];
     [self.scrollView addGestureRecognizer: self.tapRecognizer];
     
@@ -143,19 +143,19 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 #pragma mark - UIPageViewController delegate methods
 
 
-- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
-{
-    // If the page did not turn
-    if (!completed)
-    {
-        //Do nothing because the page wasn't turned
-        return;
-    }
-    //get the current view controller being displayed
-    JJVPreviewViewController *current = [pageViewController.viewControllers lastObject];
-    
-    self.currentPosition = [[JJVStoryItemStore sharedStore] indexOfStory: current.item];
-}
+//- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
+//{
+//    // If the page did not turn
+//    if (!completed)
+//    {
+//        //Do nothing because the page wasn't turned
+//        return;
+//    }
+//    //get the current view controller being displayed
+//    JJVPreviewViewController *current = [pageViewController.viewControllers lastObject];
+//    
+//    self.currentPosition = [[JJVStoryItemStore sharedStore] indexOfStory: current.item];
+//}
 
 //Uncomment if using a page flip animation
 //

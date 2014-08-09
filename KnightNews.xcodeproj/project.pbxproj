@@ -15,6 +15,8 @@
 		7F2B33D81968EE62006888CC /* JJVPageRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B33D71968EE62006888CC /* JJVPageRootViewController.m */; };
 		7F61DE541991A02E00C90C83 /* JJVEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F61DE531991A02E00C90C83 /* JJVEventsTableViewController.m */; };
 		7F61DE571991A05600C90C83 /* JJVEventItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F61DE561991A05600C90C83 /* JJVEventItem.m */; };
+		7F67D13E1996B92A002743E5 /* JJVMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F67D13C1996B92A002743E5 /* JJVMapViewController.m */; };
+		7F67D13F1996B92A002743E5 /* JJVMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F67D13D1996B92A002743E5 /* JJVMapViewController.xib */; };
 		7F685A25199321A9003E9177 /* JJVPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F685A23199321A9003E9177 /* JJVPreviewViewController.m */; };
 		7F685A26199321A9003E9177 /* JJVPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F685A24199321A9003E9177 /* JJVPreviewViewController.xib */; };
 		7F685A2919941C4F003E9177 /* JJVEventsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F685A2819941C4F003E9177 /* JJVEventsTableViewController.xib */; };
@@ -66,6 +68,9 @@
 		7F61DE531991A02E00C90C83 /* JJVEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVEventsTableViewController.m; sourceTree = "<group>"; };
 		7F61DE551991A05600C90C83 /* JJVEventItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVEventItem.h; sourceTree = "<group>"; };
 		7F61DE561991A05600C90C83 /* JJVEventItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVEventItem.m; sourceTree = "<group>"; };
+		7F67D13B1996B92A002743E5 /* JJVMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVMapViewController.h; sourceTree = "<group>"; };
+		7F67D13C1996B92A002743E5 /* JJVMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVMapViewController.m; sourceTree = "<group>"; };
+		7F67D13D1996B92A002743E5 /* JJVMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVMapViewController.xib; sourceTree = "<group>"; };
 		7F685A22199321A9003E9177 /* JJVPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVPreviewViewController.h; sourceTree = "<group>"; };
 		7F685A23199321A9003E9177 /* JJVPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVPreviewViewController.m; sourceTree = "<group>"; };
 		7F685A24199321A9003E9177 /* JJVPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVPreviewViewController.xib; sourceTree = "<group>"; };
@@ -166,6 +171,9 @@
 				7F2B33CF1968E734006888CC /* JJVPageModelController.m */,
 				7F2B33D61968EE62006888CC /* JJVPageRootViewController.h */,
 				7F2B33D71968EE62006888CC /* JJVPageRootViewController.m */,
+				7F67D13B1996B92A002743E5 /* JJVMapViewController.h */,
+				7F67D13C1996B92A002743E5 /* JJVMapViewController.m */,
+				7F67D13D1996B92A002743E5 /* JJVMapViewController.xib */,
 				7F98B3341954E61A00C1A344 /* JJVNewsTableViewController.h */,
 				7F98B3351954E61A00C1A344 /* JJVNewsTableViewController.m */,
 				7F2B33C61968BAC1006888CC /* JJVReaderViewController.h */,
@@ -300,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F67D13F1996B92A002743E5 /* JJVMapViewController.xib in Resources */,
 				7F685A2919941C4F003E9177 /* JJVEventsTableViewController.xib in Resources */,
 				7F98B3101954E5CE00C1A344 /* InfoPlist.strings in Resources */,
 				7F98B3181954E5CE00C1A344 /* Images.xcassets in Resources */,
@@ -368,6 +377,7 @@
 				7F2B33D81968EE62006888CC /* JJVPageRootViewController.m in Sources */,
 				7F98B3121954E5CE00C1A344 /* main.m in Sources */,
 				7F98B3161954E5CE00C1A344 /* JJVAppDelegate.m in Sources */,
+				7F67D13E1996B92A002743E5 /* JJVMapViewController.m in Sources */,
 				7F2B33C91968BAC1006888CC /* JJVReaderViewController.m in Sources */,
 				7F0798BE195BC28800D022A0 /* JJVStoryItemStore.m in Sources */,
 				7F2B33D01968E734006888CC /* JJVPageModelController.m in Sources */,
