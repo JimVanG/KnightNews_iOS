@@ -83,14 +83,15 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 -(void)setUpUI
 {
     
-    self.startingViewController = [self.modelController viewControllerAtIndex: 0];
+//    self.startingViewController = [self.modelController viewControllerAtIndex: 0];
     
-    NSArray *viewControllers = @[self.startingViewController];
-    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    JJVPreviewViewController *startingVC = [self.previewControllers objectAtIndex: 0];
+    
+    [self.pageViewController setViewControllers: @[startingVC ] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     
     self.pageViewController.dataSource = self.modelController;
     
-    [self addChildViewController:self.pageViewController];
+    //[self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
     
     

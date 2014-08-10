@@ -38,7 +38,7 @@
     self.titleLabel.text = item.title;
     [self.titleLabel sizeToFit];
     self.authorLabel.text = item.author;
-    self.authorLabel.font = [UIFont italicSystemFontOfSize: 13.5f];
+    self.authorLabel.font = [UIFont italicSystemFontOfSize: 11];
     self.excerptLabel.text = item.excerptParsed;
     self.excerptLabel.lineBreakMode = NSLineBreakByWordWrapping;
     //weird bug for 3.5inch iPhones, when going to the previous page
