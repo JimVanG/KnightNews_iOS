@@ -209,9 +209,6 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         
         [self parseJSONObject: jsonObject];
         
-        
-        //NSLog(@"%@", self.items);
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self setUpUI];
         });
@@ -267,7 +264,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         CGPoint totalDist = [gr translationInView: self.view];
         //NSLog(@"Ended, total distance: %f", totalDist.x);
         
-        if (abs(totalDist.x) < 5) {
+        if (abs(totalDist.x) < 10) {
         
             JJVReaderViewController *readerView = [[JJVReaderViewController alloc]
                                                    initWithNibName:nil bundle:nil];
@@ -281,25 +278,25 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
             //push the reader view controller onto the screen
             [self.navigationController pushViewController:readerView
                                                  animated:YES];
-        }else if(totalDist.x < -5){
+        }else if(totalDist.x < -10){
             
-            if ((self.currentPosition + 1) < [[JJVStoryItemStore sharedStore] numberOfStories]) {
+            if ((self.currentPosition + 1) < [[JJVStoryItemStore sharedStore] numberOfStories])
                 self.currentPosition++;
-            }else{
+            else
                 return;
-            }
+            
             
 //            JJVPreviewViewController *nextVC = [self.modelController viewControllerAtIndex:
 //                                                                      self.currentPosition];
             
             [self.pageViewController setViewControllers:@[[self.previewControllers objectAtIndex: self.currentPosition]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-        }else if(totalDist.x > 5){
+        }else if(totalDist.x > 10){
             
-            if ((self.currentPosition - 1) >= 0) {
+            if ((self.currentPosition - 1) >= 0)
                 self.currentPosition--;
-            }else{
+            else
                 return;
-            }
+            
             
             
 //            JJVPreviewViewController *nextVC = [self.modelController viewControllerAtIndex:
