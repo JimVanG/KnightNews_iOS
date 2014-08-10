@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
     
-    CLLocationCoordinate2D ucf = {28.602025, -81.200820};
+    CLLocationCoordinate2D ucf = {28.602428, -81.200060};
     
     MKMapCamera *cam = [MKMapCamera cameraLookingAtCenterCoordinate:ucf
                                                   fromEyeCoordinate:ucf
