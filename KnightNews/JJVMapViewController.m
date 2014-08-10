@@ -20,6 +20,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.tabBarItem.image = [UIImage imageNamed:@"map_25"];
+        self.tabBarItem.title = @"Map";
     }
     return self;
 }

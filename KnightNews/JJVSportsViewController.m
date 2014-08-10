@@ -25,6 +25,8 @@
     if (self) {
         // Custom initialization
         self.navigationItem.title = @"Sports";
+        self.tabBarItem.image = [UIImage imageNamed:@"football_25"];
+        self.tabBarItem.title = @"Sports";
     }
     return self;
 }

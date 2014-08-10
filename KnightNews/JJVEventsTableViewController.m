@@ -31,6 +31,9 @@ NSString *const EVENT_DESC = @"event_desc";
     self = [super initWithStyle:style];
     if (self) {
         self.navigationItem.title = @"Events";
+        self.tabBarItem.image = [UIImage imageNamed:@"events_25"];
+        self.tabBarItem.title = @"Events";
+        
         
     }
     return self;
