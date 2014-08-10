@@ -290,7 +290,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 //            JJVPreviewViewController *nextVC = [self.modelController viewControllerAtIndex:
 //                                                                      self.currentPosition];
             
-            [self.pageViewController setViewControllers:@[[self.previewControllers objectAtIndex: self.currentPosition]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+            [self.pageViewController setViewControllers:@[[self.previewControllers objectAtIndex: self.currentPosition]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
         }else if(totalDist.x > 10){
             
             if ((self.currentPosition - 1) >= 0)
@@ -303,7 +303,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 //            JJVPreviewViewController *nextVC = [self.modelController viewControllerAtIndex:
 //                                                                      self.currentPosition];
             
-            [self.pageViewController setViewControllers:@[[self.previewControllers objectAtIndex: self.currentPosition]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+            [self.pageViewController setViewControllers:@[[self.previewControllers objectAtIndex: self.currentPosition]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
         }
 
         
@@ -326,6 +326,10 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     //push the reader view controller onto the screen
     [self.navigationController pushViewController:readerView
                                          animated:YES];
+}
+
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation == UIInterfaceOrientationPortrait) ;
 }
 
 

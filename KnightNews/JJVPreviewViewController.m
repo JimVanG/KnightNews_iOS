@@ -33,21 +33,35 @@
     // Do any additional setup after loading the view from its nib.
     JJVStoryItem *item = self.item;
     
-    self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.titleLabel.numberOfLines = 0;
-    self.titleLabel.text = item.title;
-    [self.titleLabel sizeToFit];
-    self.authorLabel.text = item.author;
-    self.authorLabel.font = [UIFont italicSystemFontOfSize: 11];
-    self.excerptLabel.text = item.excerptParsed;
-    self.excerptLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    //weird bug for 3.5inch iPhones, when going to the previous page
-    //the excerpt tries to fit the entire text in the label and
-    //overlaps the author and title labels.
-    if (!IS_IPHONE_5 && !IS_IPAD)
+    if (!IS_IPHONE_5 && !IS_IPAD){
+        self.titleLabel.font = [UIFont systemFontOfSize: 14];
+        self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        self.titleLabel.numberOfLines = 0;
+        self.titleLabel.text = item.title;
+        [self.titleLabel sizeToFit];
+        self.authorLabel.font = [UIFont italicSystemFontOfSize: 10];
+        self.authorLabel.text = item.author;
+        self.titleLabel.font = [UIFont systemFontOfSize: 12];
+        self.excerptLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.excerptLabel.numberOfLines = 6;
-    else
+        self.excerptLabel.text = item.excerptParsed;
+    }
+    else{
+        self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        self.titleLabel.numberOfLines = 0;
+        self.titleLabel.text = item.title;
+        [self.titleLabel sizeToFit];
+        self.authorLabel.font = [UIFont italicSystemFontOfSize: 11];
+        self.authorLabel.text = item.author;
+        self.excerptLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.excerptLabel.numberOfLines = 0;
+        self.excerptLabel.text = item.excerptParsed;
+
+    }
+    
+    
+        
+
     
     self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:
                                                    [NSURL URLWithString: item.imageUrl]]];
@@ -59,6 +73,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation == UIInterfaceOrientationPortrait) ;
 }
 
 @end
