@@ -39,6 +39,7 @@
     [self.webView loadRequest:[NSURLRequest requestWithURL:
                                [NSURL URLWithString:
                                 @"http://espn.go.com/college-football/team/_/id/2116/ucf-knights"]]];
+
     self.webView.hidden = NO;
     //initial url for webview2
     [self.webView2 loadRequest:[NSURLRequest requestWithURL:

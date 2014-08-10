@@ -32,7 +32,8 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 @property (readonly, strong, nonatomic) JJVPageModelController *modelController;
 @property (strong, nonatomic) JJVPreviewViewController *startingViewController;
 @property (nonatomic) NSURLSession *session;
-@property (nonatomic, copy) NSArray *items;
+@property (nonatomic, copy) NSMutableArray *items;
+@property (nonatomic, strong) NSMutableArray *previewControllers;
 @property (nonatomic, assign) NSInteger currentPosition;
 @property (nonatomic, assign) CGFloat startX;
 @property (nonatomic, assign) CGFloat endX;
@@ -221,6 +222,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 
 -(void)parseJSONObject:(NSDictionary *)jsonObject
 {
+    self.previewControllers = [[NSMutableArray alloc] init];
     //get the list of posts (top most level of the JSON object)
     self.items = jsonObject[POSTS_CONSTANT2];
     
@@ -248,6 +250,10 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         
         //add to our store
         [[JJVStoryItemStore sharedStore] addItem: storyItem];
+        
+        JJVPreviewViewController *pre = [[JJVPreviewViewController alloc] init];
+        pre.item = storyItem;
+        [self.previewControllers addObject: pre];
     }
     
 }
@@ -261,7 +267,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         CGPoint totalDist = [gr translationInView: self.view];
         //NSLog(@"Ended, total distance: %f", totalDist.x);
         
-        if (abs(totalDist.x) < 30) {
+        if (abs(totalDist.x) < 5) {
         
             JJVReaderViewController *readerView = [[JJVReaderViewController alloc]
                                                    initWithNibName:nil bundle:nil];
@@ -275,26 +281,31 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
             //push the reader view controller onto the screen
             [self.navigationController pushViewController:readerView
                                                  animated:YES];
-        }else if(totalDist.x < -30){
+        }else if(totalDist.x < -5){
             
             if ((self.currentPosition + 1) < [[JJVStoryItemStore sharedStore] numberOfStories]) {
                 self.currentPosition++;
+            }else{
+                return;
             }
             
-            JJVPreviewViewController *nextVC = [self.modelController viewControllerAtIndex:
-                                                                      self.currentPosition];
+//            JJVPreviewViewController *nextVC = [self.modelController viewControllerAtIndex:
+//                                                                      self.currentPosition];
             
-            [self.pageViewController setViewControllers:@[nextVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-        }else if(totalDist.x > 30){
+            [self.pageViewController setViewControllers:@[[self.previewControllers objectAtIndex: self.currentPosition]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+        }else if(totalDist.x > 5){
             
             if ((self.currentPosition - 1) >= 0) {
                 self.currentPosition--;
+            }else{
+                return;
             }
             
-            JJVPreviewViewController *nextVC = [self.modelController viewControllerAtIndex:
-                                                                      self.currentPosition];
             
-            [self.pageViewController setViewControllers:@[nextVC] direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
+//            JJVPreviewViewController *nextVC = [self.modelController viewControllerAtIndex:
+//                                                                      self.currentPosition];
+            
+            [self.pageViewController setViewControllers:@[[self.previewControllers objectAtIndex: self.currentPosition]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
         }
 
         

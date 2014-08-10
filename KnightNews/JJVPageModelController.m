@@ -48,6 +48,7 @@
     // Create a new view controller and pass suitable data.
     JJVPreviewViewController *dataViewController = [[JJVPreviewViewController alloc] initWithNibName:@"JJVPreviewViewController" bundle:nil];
     dataViewController.item = [[JJVStoryItemStore sharedStore] getItemAt: index];
+    self.currentViewController = dataViewController;
     return dataViewController;
 }
 
@@ -60,34 +61,34 @@
 
 #pragma mark - Page View Controller Data Source
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
-{
-    NSUInteger index = [self indexOfViewController:(JJVPreviewViewController *)viewController];
-    
-    if ((index == 0) || (index == NSNotFound)) {
-        return nil;
-    }
-    
-    index--;
-    
-    return [self viewControllerAtIndex:index];
-}
+//- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
+//{
+//    NSUInteger index = [self indexOfViewController:(JJVPreviewViewController *)viewController];
+//    
+//    if ((index == 0) || (index == NSNotFound)) {
+//        return nil;
+//    }
+//    
+//    index--;
+//    
+//    return [self viewControllerAtIndex:index];
+//}
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
-{
-    NSUInteger index = [self indexOfViewController:(JJVPreviewViewController *)viewController];
-    
-    if (index == NSNotFound) {
-        return nil;
-    }
-    
-    index++;
-    if (index == [[JJVStoryItemStore sharedStore] numberOfStories]) {
-        return nil;
-    }
-    
-    return [self viewControllerAtIndex:index];
-}
+//- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
+//{
+//    NSUInteger index = [self indexOfViewController:(JJVPreviewViewController *)viewController];
+//    
+//    if (index == NSNotFound) {
+//        return nil;
+//    }
+//    
+//    index++;
+//    if (index == [[JJVStoryItemStore sharedStore] numberOfStories]) {
+//        return nil;
+//    }
+//    
+//    return [self viewControllerAtIndex:index];
+//}
 
 
 
