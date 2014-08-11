@@ -49,7 +49,7 @@
     self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.titleLabel.numberOfLines = 0;
     self.authorLabel.text = item.author;
-    self.authorLabel.font = [UIFont italicSystemFontOfSize: 13.5f];
+    self.authorLabel.font = [UIFont italicSystemFontOfSize: 13.0f];
     self.webView.allowsInlineMediaPlayback = YES;
     self.webView.mediaPlaybackRequiresUserAction = NO;
     
