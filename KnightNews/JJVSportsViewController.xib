@@ -17,41 +17,42 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0Ux-a6-mdS">
-                    <rect key="frame" x="83" y="69" width="155" height="29"/>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0Ux-a6-mdS">
+                    <rect key="frame" x="0.0" y="64" width="320" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <segments>
                         <segment title="Football"/>
                         <segment title="Basketball"/>
                     </segments>
+                    <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <action selector="changeUrl:" destination="-1" eventType="valueChanged" id="2xE-iF-lub"/>
                     </connections>
                 </segmentedControl>
                 <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcL-33-rIq">
-                    <rect key="frame" x="0.0" y="105" width="320" height="412"/>
+                    <rect key="frame" x="0.0" y="93" width="320" height="424"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </webView>
                 <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPS-NK-gqJ">
-                    <rect key="frame" x="0.0" y="105" width="320" height="412"/>
+                    <rect key="frame" x="0.0" y="93" width="320" height="424"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </webView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="0Ux-a6-mdS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="83" id="Gf7-VB-HWW"/>
+                <constraint firstItem="0Ux-a6-mdS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Gf7-VB-HWW"/>
                 <constraint firstAttribute="trailing" secondItem="YcL-33-rIq" secondAttribute="trailing" id="IOa-np-ob4"/>
-                <constraint firstItem="0Ux-a6-mdS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="69" id="IQt-SX-aSc"/>
-                <constraint firstItem="NPS-NK-gqJ" firstAttribute="top" secondItem="0Ux-a6-mdS" secondAttribute="bottom" constant="8" id="XsU-iZ-Pub"/>
+                <constraint firstItem="0Ux-a6-mdS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="IQt-SX-aSc"/>
+                <constraint firstItem="NPS-NK-gqJ" firstAttribute="top" secondItem="0Ux-a6-mdS" secondAttribute="bottom" constant="1" id="XsU-iZ-Pub"/>
                 <constraint firstItem="YcL-33-rIq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZCE-Ws-YP1"/>
                 <constraint firstAttribute="bottom" secondItem="NPS-NK-gqJ" secondAttribute="bottom" constant="51" id="aH3-bk-IUo"/>
                 <constraint firstItem="NPS-NK-gqJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="csl-Fg-Qqg"/>
-                <constraint firstItem="YcL-33-rIq" firstAttribute="top" secondItem="0Ux-a6-mdS" secondAttribute="bottom" constant="8" id="eId-s1-dza"/>
+                <constraint firstItem="YcL-33-rIq" firstAttribute="top" secondItem="0Ux-a6-mdS" secondAttribute="bottom" constant="1" id="eId-s1-dza"/>
                 <constraint firstAttribute="bottom" secondItem="YcL-33-rIq" secondAttribute="bottom" constant="51" id="gkp-mt-MMj"/>
-                <constraint firstItem="NPS-NK-gqJ" firstAttribute="top" secondItem="0Ux-a6-mdS" secondAttribute="bottom" constant="8" id="uUx-UC-WvU"/>
-                <constraint firstAttribute="trailing" secondItem="0Ux-a6-mdS" secondAttribute="trailing" constant="82" id="ukO-4C-XRL"/>
+                <constraint firstAttribute="trailing" secondItem="0Ux-a6-mdS" secondAttribute="trailing" id="ukO-4C-XRL"/>
                 <constraint firstAttribute="trailing" secondItem="NPS-NK-gqJ" secondAttribute="trailing" id="y0q-9a-iuK"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
