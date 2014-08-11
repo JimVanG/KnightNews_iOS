@@ -65,6 +65,7 @@
                 <constraint firstAttribute="trailing" secondItem="Uij-7r-2oC" secondAttribute="trailing" constant="20" id="sVW-WQ-9hX"/>
                 <constraint firstAttribute="bottom" secondItem="wOn-Ul-p7b" secondAttribute="bottom" constant="51" id="zQh-bL-BnZ"/>
             </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

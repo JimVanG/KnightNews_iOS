@@ -13,6 +13,7 @@
 #import "JJVStoryItem.h"
 #import "JJVPreviewViewController.h"
 #import "JJVReaderViewController.h"
+#import "Constants.h"
 
 
 NSString *const TITLE_CONSTANT2 = @"title_plain";
@@ -249,7 +250,15 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         //add to our store
         [[JJVStoryItemStore sharedStore] addItem: storyItem];
         
-        JJVPreviewViewController *pre = [[JJVPreviewViewController alloc] init];
+        JJVPreviewViewController *pre = nil;
+        if (!IS_IPHONE_5 && !IS_IPAD) {
+            pre = [[JJVPreviewViewController alloc]
+                   initWithNibName:@"JJVPreviewViewController_iphone4" bundle:nil];
+        }
+        else{
+            pre = [[JJVPreviewViewController alloc]
+                   initWithNibName:@"JJVPreviewViewController" bundle:nil];
+        }
         pre.item = storyItem;
         [self.previewControllers addObject: pre];
     }

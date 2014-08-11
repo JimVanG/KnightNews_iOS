@@ -34,16 +34,13 @@
     JJVStoryItem *item = self.item;
     
     if (!IS_IPHONE_5 && !IS_IPAD){
-        self.titleLabel.font = [UIFont systemFontOfSize: 14];
         self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.titleLabel.numberOfLines = 0;
         self.titleLabel.text = item.title;
         [self.titleLabel sizeToFit];
-        self.authorLabel.font = [UIFont italicSystemFontOfSize: 10];
         self.authorLabel.text = item.author;
-        self.titleLabel.font = [UIFont systemFontOfSize: 12];
         self.excerptLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        self.excerptLabel.numberOfLines = 6;
+        self.excerptLabel.numberOfLines = 0;
         self.excerptLabel.text = item.excerptParsed;
     }
     else{
@@ -58,10 +55,6 @@
         self.excerptLabel.text = item.excerptParsed;
 
     }
-    
-    
-        
-
     
     self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:
                                                    [NSURL URLWithString: item.imageUrl]]];

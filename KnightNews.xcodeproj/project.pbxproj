@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7F0798BB195BBE8500D022A0 /* JJVStoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0798BA195BBE8500D022A0 /* JJVStoryItem.m */; };
 		7F0798BE195BC28800D022A0 /* JJVStoryItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0798BD195BC28800D022A0 /* JJVStoryItemStore.m */; };
+		7F1A940319985D350057873B /* JJVPreviewViewController_iphone4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F1A940219985D350057873B /* JJVPreviewViewController_iphone4.xib */; };
 		7F2B33C91968BAC1006888CC /* JJVReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B33C71968BAC1006888CC /* JJVReaderViewController.m */; };
 		7F2B33CA1968BAC1006888CC /* JJVReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F2B33C81968BAC1006888CC /* JJVReaderViewController.xib */; };
 		7F2B33D01968E734006888CC /* JJVPageModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B33CF1968E734006888CC /* JJVPageModelController.m */; };
@@ -56,6 +57,7 @@
 		7F0798BA195BBE8500D022A0 /* JJVStoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVStoryItem.m; sourceTree = "<group>"; };
 		7F0798BC195BC28800D022A0 /* JJVStoryItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVStoryItemStore.h; sourceTree = "<group>"; };
 		7F0798BD195BC28800D022A0 /* JJVStoryItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVStoryItemStore.m; sourceTree = "<group>"; };
+		7F1A940219985D350057873B /* JJVPreviewViewController_iphone4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVPreviewViewController_iphone4.xib; sourceTree = "<group>"; };
 		7F2B33C61968BAC1006888CC /* JJVReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVReaderViewController.h; sourceTree = "<group>"; };
 		7F2B33C71968BAC1006888CC /* JJVReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVReaderViewController.m; sourceTree = "<group>"; };
 		7F2B33C81968BAC1006888CC /* JJVReaderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVReaderViewController.xib; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				7F98B3151954E5CE00C1A344 /* JJVAppDelegate.m */,
 				7F685A22199321A9003E9177 /* JJVPreviewViewController.h */,
 				7F685A23199321A9003E9177 /* JJVPreviewViewController.m */,
+				7F1A940219985D350057873B /* JJVPreviewViewController_iphone4.xib */,
 				7F2B33CE1968E734006888CC /* JJVPageModelController.h */,
 				7F2B33CF1968E734006888CC /* JJVPageModelController.m */,
 				7F2B33D61968EE62006888CC /* JJVPageRootViewController.h */,
@@ -311,6 +314,7 @@
 				7F98B3181954E5CE00C1A344 /* Images.xcassets in Resources */,
 				7F2B33CA1968BAC1006888CC /* JJVReaderViewController.xib in Resources */,
 				7FF95889199479AA0029D39D /* JJVSportsViewController.xib in Resources */,
+				7F1A940319985D350057873B /* JJVPreviewViewController_iphone4.xib in Resources */,
 				7FCF43561992B56C00D2087C /* JJVEventsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
