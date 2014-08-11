@@ -25,6 +25,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     JJVPageRootViewController *nvc = [[JJVPageRootViewController alloc] init];
     JJVEventsTableViewController *evc = [[JJVEventsTableViewController alloc] init];
     JJVSportsViewController *svc = [[JJVSportsViewController alloc] init];
