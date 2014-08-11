@@ -15,18 +15,12 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tyc-Aq-zWe">
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tyc-Aq-zWe">
                     <rect key="frame" x="0.0" y="20" width="320" height="498"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </mapView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="bottom" secondItem="tyc-Aq-zWe" secondAttribute="bottom" constant="50" id="Oin-ws-Kx2"/>
-                <constraint firstItem="tyc-Aq-zWe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XLU-FU-9aD"/>
-                <constraint firstItem="tyc-Aq-zWe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="d3V-EC-4eM"/>
-                <constraint firstAttribute="trailing" secondItem="tyc-Aq-zWe" secondAttribute="trailing" id="mrI-U1-0aS"/>
-            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
