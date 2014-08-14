@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CB690014E53B417AAD18CF59"
+               BlueprintIdentifier = "8DDA1DE8D03B46EBBCE44723"
                BuildableName = "libPods-KnightNews-PPiFlatSegmentedControl.a"
                BlueprintName = "Pods-KnightNews-PPiFlatSegmentedControl"
                ReferencedContainer = "container:Pods.xcodeproj">

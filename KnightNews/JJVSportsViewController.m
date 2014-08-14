@@ -8,9 +8,9 @@
 
 #import "JJVSportsViewController.h"
 #import "PPiFlatSegmentedControl.h"
+#import "MBProgressHUD.h"
 
-
-@interface JJVSportsViewController ()
+@interface JJVSportsViewController () <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentControl;
@@ -40,12 +40,16 @@
 {
     [super viewDidLoad];
     
+    //show spinner
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     //initial url for webview
     [self.webView loadRequest:[NSURLRequest requestWithURL:
                                [NSURL URLWithString:
                                 @"http://espn.go.com/college-football/team/_/id/2116/ucf-knights"]]];
-
     self.webView.hidden = NO;
+    self.webView.delegate = self;
+    
     //initial url for webview2
     [self.webView2 loadRequest:[NSURLRequest requestWithURL:
                                [NSURL URLWithString:
@@ -54,7 +58,6 @@
     
     self.segmentControl = [[UISegmentedControl alloc] init];
     self.segmentControl.selectedSegmentIndex = 0;
-    
 
 }
 
@@ -63,9 +66,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
 
 
 - (IBAction)changeUrl:(id)sender {
@@ -85,5 +85,12 @@
         default:
             break;
     }
+}
+
+# pragma mark Webview Delegate method
+-(void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+
 }
 @end
