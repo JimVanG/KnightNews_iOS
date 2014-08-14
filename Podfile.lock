@@ -1,10 +1,22 @@
 PODS:
+  - FontAwesome+iOS (0.1.1)
+  - MBProgressHUD (0.9)
   - MWFeedParser/NSString+HTML (1.0.1)
+  - PPiAwesomeButton (1.4.7):
+    - FontAwesome+iOS
+  - PPiFlatSegmentedControl (1.3.8):
+    - PPiAwesomeButton
 
 DEPENDENCIES:
+  - MBProgressHUD (~> 0.8)
   - MWFeedParser/NSString+HTML
+  - PPiFlatSegmentedControl
 
 SPEC CHECKSUMS:
+  FontAwesome+iOS: 3c574273fb301c2e0a88f983551562bf8768b623
+  MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
   MWFeedParser: 003cbf5398e99a7f2057fbe9583054fd1b84be72
+  PPiAwesomeButton: efcaafab6c0207427a3216f34933c89c2bc93a70
+  PPiFlatSegmentedControl: 978ac3a6de615a734c5988b24101b1c14983ce13
 
 COCOAPODS: 0.33.1

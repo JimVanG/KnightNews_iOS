@@ -7,6 +7,8 @@
 //
 
 #import "JJVSportsViewController.h"
+#import "PPiFlatSegmentedControl.h"
+
 
 @interface JJVSportsViewController ()
 
@@ -14,7 +16,10 @@
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 @property (weak, nonatomic) IBOutlet UIWebView *webView2;
 
+@property (strong, nonatomic) PPiFlatSegmentedControl *seg;
+
 - (IBAction)changeUrl:(id)sender;
+
 @end
 
 @implementation JJVSportsViewController
@@ -49,6 +54,7 @@
     
     self.segmentControl = [[UISegmentedControl alloc] init];
     self.segmentControl.selectedSegmentIndex = 0;
+    
 
 }
 

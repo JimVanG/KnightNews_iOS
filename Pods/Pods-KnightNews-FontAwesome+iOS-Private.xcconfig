@@ -1,0 +1,5 @@
+#include "Pods-KnightNews-FontAwesome+iOS.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/FontAwesome+iOS" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/FontAwesome+iOS" "${PODS_ROOT}/Headers/MBProgressHUD" "${PODS_ROOT}/Headers/MWFeedParser" "${PODS_ROOT}/Headers/PPiAwesomeButton" "${PODS_ROOT}/Headers/PPiFlatSegmentedControl"
+OTHER_LDFLAGS = -ObjC ${PODS_KNIGHTNEWS_FONTAWESOME_IOS_OTHER_LDFLAGS}
+PODS_ROOT = ${SRCROOT}

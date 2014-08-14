@@ -34,7 +34,6 @@ NSString *const EVENT_DESC = @"event_desc";
         self.tabBarItem.image = [UIImage imageNamed:@"events_25"];
         self.tabBarItem.title = @"Events";
         
-        
     }
     return self;
 }

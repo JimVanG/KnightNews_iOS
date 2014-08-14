@@ -41,6 +41,7 @@
     
     //Customize the navigation bar
     [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+    
     [[UINavigationBar appearance] setTintColor:UIColorFromRGB(0xCFB53B)];
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                     UIColorFromRGB(0xCFB53B), NSForegroundColorAttributeName,

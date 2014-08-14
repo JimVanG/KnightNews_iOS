@@ -14,6 +14,7 @@
 #import "JJVPreviewViewController.h"
 #import "JJVReaderViewController.h"
 #import "Constants.h"
+#import "MBProgressHUD.h"
 
 
 NSString *const TITLE_CONSTANT2 = @"title_plain";
@@ -60,6 +61,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
         _session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:nil];
         
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [self fetchFeed];
         
         self.navigationItem.title = @"News";
@@ -212,6 +214,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         [self parseJSONObject: jsonObject];
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self setUpUI];
         });
         
@@ -250,6 +253,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         //add to our store
         [[JJVStoryItemStore sharedStore] addItem: storyItem];
         
+        //keeping items locally and preInitialized in order to speed up page viewer.
         JJVPreviewViewController *pre = nil;
         if (!IS_IPHONE_5 && !IS_IPAD) {
             pre = [[JJVPreviewViewController alloc]
@@ -337,9 +341,6 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
                                          animated:YES];
 }
 
--(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait) ;
-}
 
 
 @end
