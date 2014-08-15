@@ -265,6 +265,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
             pre = [[JJVPreviewViewController alloc]
                    initWithNibName:@"JJVPreviewViewController" bundle:nil];
         }
+
         pre.item = storyItem;
         [self.previewControllers addObject: pre];
     }

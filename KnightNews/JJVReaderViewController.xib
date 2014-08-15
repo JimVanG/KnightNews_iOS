@@ -29,7 +29,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLk-7K-RSQ">
-                    <rect key="frame" x="0.0" y="122" width="320" height="18"/>
+                    <rect key="frame" x="0.0" y="121" width="320" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="18" id="dHN-x7-suv"/>
@@ -40,7 +40,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <webView contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b69-rp-wEJ">
-                    <rect key="frame" x="0.0" y="141" width="320" height="427"/>
+                    <rect key="frame" x="0.0" y="140" width="320" height="428"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </webView>
@@ -49,7 +49,7 @@
             <constraints>
                 <constraint firstItem="b69-rp-wEJ" firstAttribute="top" secondItem="uLk-7K-RSQ" secondAttribute="bottom" constant="1" id="4wC-xy-HdO"/>
                 <constraint firstItem="uLk-7K-RSQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7Rb-H8-OVh"/>
-                <constraint firstItem="uLk-7K-RSQ" firstAttribute="top" secondItem="jUj-nD-LE2" secondAttribute="bottom" constant="2" id="8lX-f3-Nts"/>
+                <constraint firstItem="uLk-7K-RSQ" firstAttribute="top" secondItem="jUj-nD-LE2" secondAttribute="bottom" constant="1" id="8lX-f3-Nts"/>
                 <constraint firstAttribute="trailing" secondItem="b69-rp-wEJ" secondAttribute="trailing" id="IXc-d6-G8V"/>
                 <constraint firstItem="b69-rp-wEJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OpP-vO-yqe"/>
                 <constraint firstAttribute="trailing" secondItem="uLk-7K-RSQ" secondAttribute="trailing" id="Qoj-TP-Khp"/>

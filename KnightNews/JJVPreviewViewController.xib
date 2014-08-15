@@ -25,8 +25,8 @@
                         <constraint firstAttribute="height" constant="203" id="fUM-Oi-Q9R"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="kGT-1I-jiv">
-                    <rect key="frame" x="20" y="252" width="280" height="47"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="kGT-1I-jiv">
+                    <rect key="frame" x="0.0" y="250" width="320" height="47"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="47" id="xIf-gk-8Pa"/>
@@ -36,14 +36,14 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQg-1t-L1P">
-                    <rect key="frame" x="20" y="302" width="280" height="15"/>
+                    <rect key="frame" x="0.0" y="298" width="320" height="15"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Excerpt" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="wOn-Ul-p7b">
-                    <rect key="frame" x="20" y="320" width="280" height="197"/>
+                    <rect key="frame" x="20" y="314" width="280" height="254"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <nil key="highlightedColor"/>
@@ -51,19 +51,19 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="kGT-1I-jiv" secondAttribute="trailing" constant="20" id="1Z4-bu-Tn0"/>
+                <constraint firstAttribute="trailing" secondItem="kGT-1I-jiv" secondAttribute="trailing" id="1Z4-bu-Tn0"/>
                 <constraint firstItem="Uij-7r-2oC" firstAttribute="top" secondItem="Bvx-Kn-DPB" secondAttribute="top" constant="46" id="46Q-aF-zjO"/>
-                <constraint firstItem="kGT-1I-jiv" firstAttribute="top" secondItem="Uij-7r-2oC" secondAttribute="bottom" constant="3" id="59y-BV-ouY"/>
+                <constraint firstItem="kGT-1I-jiv" firstAttribute="top" secondItem="Uij-7r-2oC" secondAttribute="bottom" constant="1" id="59y-BV-ouY"/>
                 <constraint firstAttribute="trailing" secondItem="wOn-Ul-p7b" secondAttribute="trailing" constant="20" id="8uK-jO-z4t"/>
                 <constraint firstItem="wOn-Ul-p7b" firstAttribute="leading" secondItem="Bvx-Kn-DPB" secondAttribute="leading" constant="20" id="CAS-gm-x6E"/>
-                <constraint firstItem="hQg-1t-L1P" firstAttribute="top" secondItem="kGT-1I-jiv" secondAttribute="bottom" constant="3" id="Fju-rw-bgi"/>
-                <constraint firstItem="kGT-1I-jiv" firstAttribute="leading" secondItem="Bvx-Kn-DPB" secondAttribute="leading" constant="20" id="Ndi-NY-70N"/>
-                <constraint firstItem="hQg-1t-L1P" firstAttribute="leading" secondItem="Bvx-Kn-DPB" secondAttribute="leading" constant="20" id="PMC-QK-BGj"/>
+                <constraint firstItem="hQg-1t-L1P" firstAttribute="top" secondItem="kGT-1I-jiv" secondAttribute="bottom" constant="1" id="Fju-rw-bgi"/>
+                <constraint firstItem="kGT-1I-jiv" firstAttribute="leading" secondItem="Bvx-Kn-DPB" secondAttribute="leading" id="Ndi-NY-70N"/>
+                <constraint firstItem="hQg-1t-L1P" firstAttribute="leading" secondItem="Bvx-Kn-DPB" secondAttribute="leading" id="PMC-QK-BGj"/>
                 <constraint firstItem="Uij-7r-2oC" firstAttribute="leading" secondItem="Bvx-Kn-DPB" secondAttribute="leading" constant="20" id="dwn-Bg-hch"/>
-                <constraint firstItem="wOn-Ul-p7b" firstAttribute="top" secondItem="hQg-1t-L1P" secondAttribute="bottom" constant="3" id="n1u-1y-bLj"/>
-                <constraint firstAttribute="trailing" secondItem="hQg-1t-L1P" secondAttribute="trailing" constant="20" id="rmT-cF-ZhC"/>
+                <constraint firstItem="wOn-Ul-p7b" firstAttribute="top" secondItem="hQg-1t-L1P" secondAttribute="bottom" constant="1" id="n1u-1y-bLj"/>
+                <constraint firstAttribute="trailing" secondItem="hQg-1t-L1P" secondAttribute="trailing" id="rmT-cF-ZhC"/>
                 <constraint firstAttribute="trailing" secondItem="Uij-7r-2oC" secondAttribute="trailing" constant="20" id="sVW-WQ-9hX"/>
-                <constraint firstAttribute="bottom" secondItem="wOn-Ul-p7b" secondAttribute="bottom" constant="51" id="zQh-bL-BnZ"/>
+                <constraint firstAttribute="bottom" secondItem="wOn-Ul-p7b" secondAttribute="bottom" id="zQh-bL-BnZ"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
