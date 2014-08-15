@@ -48,7 +48,7 @@
         self.titleLabel.numberOfLines = 0;
         self.titleLabel.text = item.title;
         [self.titleLabel sizeToFit];
-        self.authorLabel.font = [UIFont italicSystemFontOfSize: 11];
+        self.authorLabel.font = [UIFont italicSystemFontOfSize: 14];
         self.authorLabel.text = item.author;
         self.excerptLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.excerptLabel.numberOfLines = 0;
