@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0Ux-a6-mdS">
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0Ux-a6-mdS">
                     <rect key="frame" x="0.0" y="64" width="320" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <segments>
@@ -28,18 +28,32 @@
                         <action selector="changeUrl:" destination="-1" eventType="valueChanged" id="2xE-iF-lub"/>
                     </connections>
                 </segmentedControl>
-                <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YcL-33-rIq">
-                    <rect key="frame" x="0.0" y="93" width="320" height="424"/>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcL-33-rIq">
+                    <rect key="frame" x="0.0" y="93" width="320" height="475"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </webView>
-                <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NPS-NK-gqJ">
-                    <rect key="frame" x="0.0" y="93" width="320" height="424"/>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPS-NK-gqJ">
+                    <rect key="frame" x="0.0" y="93" width="320" height="475"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </webView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="YcL-33-rIq" secondAttribute="bottom" id="0Mr-ya-h1O"/>
+                <constraint firstItem="NPS-NK-gqJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Fhq-nh-sJ9"/>
+                <constraint firstAttribute="trailing" secondItem="NPS-NK-gqJ" secondAttribute="trailing" id="NJ4-Va-ilz"/>
+                <constraint firstItem="YcL-33-rIq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bVr-RE-QKj"/>
+                <constraint firstItem="NPS-NK-gqJ" firstAttribute="top" secondItem="0Ux-a6-mdS" secondAttribute="bottom" constant="1" id="e98-AY-fCp"/>
+                <constraint firstItem="0Ux-a6-mdS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gNq-wb-Wrw"/>
+                <constraint firstAttribute="bottom" secondItem="NPS-NK-gqJ" secondAttribute="bottom" id="gnz-De-Org"/>
+                <constraint firstItem="NPS-NK-gqJ" firstAttribute="top" secondItem="0Ux-a6-mdS" secondAttribute="bottom" constant="1" id="ivS-x3-pbX"/>
+                <constraint firstAttribute="trailing" secondItem="0Ux-a6-mdS" secondAttribute="trailing" id="qoF-4f-oUM"/>
+                <constraint firstItem="YcL-33-rIq" firstAttribute="top" secondItem="0Ux-a6-mdS" secondAttribute="bottom" constant="1" id="qpy-jT-9mT"/>
+                <constraint firstItem="0Ux-a6-mdS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="tHu-ey-bQU"/>
+                <constraint firstAttribute="trailing" secondItem="YcL-33-rIq" secondAttribute="trailing" id="uHw-5P-8BY"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
