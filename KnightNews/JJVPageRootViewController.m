@@ -323,12 +323,8 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 //                                                                      self.currentPosition];
             
             [self.pageViewController setViewControllers:@[[self.previewControllers objectAtIndex: self.currentPosition]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
-            
         }
-
-        
     }
-    
 }
 
 -(void)tap:(UITapGestureRecognizer *)gr
