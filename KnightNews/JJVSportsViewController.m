@@ -96,7 +96,6 @@
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
-
 }
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType

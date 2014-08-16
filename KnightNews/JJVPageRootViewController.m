@@ -265,8 +265,11 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
             pre = [[JJVPreviewViewController alloc]
                    initWithNibName:@"JJVPreviewViewController" bundle:nil];
         }
-
+        //pass along our story item to the viewcontroller
         pre.item = storyItem;
+        //Download all the images ahead of time to speed up the paging
+        pre.imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:storyItem.imageUrl]];
+        
         [self.previewControllers addObject: pre];
     }
     

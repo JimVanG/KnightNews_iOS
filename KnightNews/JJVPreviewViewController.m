@@ -57,8 +57,7 @@
 
     }
     
-    self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:
-                                                   [NSURL URLWithString: item.imageUrl]]];
+    self.imageView.image = [UIImage imageWithData:self.imageData];
     
     
 }
