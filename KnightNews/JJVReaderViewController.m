@@ -25,7 +25,12 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
+        UIBarButtonItem *shareButton = [[UIBarButtonItem alloc]
+                                        initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                        target:self
+                                        action:@selector(shareAction:)];
+        self.navigationItem.rightBarButtonItem = shareButton;
 
     }
     return self;
@@ -67,6 +72,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)shareAction:(id)sender
+{
+    UIActivityViewController *controller = [[UIActivityViewController alloc]
+                                            initWithActivityItems: @[self.item.url]
+                                            applicationActivities: nil];
+    [self presentViewController: controller animated: YES completion: nil];
+}
 
 
 

@@ -94,7 +94,8 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-#pragma mark TabBar Image Drawing
+#pragma mark TabBar Image Drawing Method
+
 + (UIImage *)imageFromColor:(UIColor *)color forSize:(CGSize)size withCornerRadius:(CGFloat)radius
 {
     CGRect rect = CGRectMake(0, 0, size.width, size.height);
