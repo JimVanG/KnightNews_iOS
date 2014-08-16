@@ -8,6 +8,7 @@
 
 #import "JJVReaderViewController.h"
 #import "JJVStoryItem.h"
+#import "JJVWebViewController.h"
 
 @interface JJVReaderViewController () <UIWebViewDelegate>
 
@@ -86,7 +87,10 @@
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     if ( navigationType == UIWebViewNavigationTypeLinkClicked ) {
-        [[UIApplication sharedApplication] openURL:[request URL]];
+//        [[UIApplication sharedApplication] openURL:[request URL]];
+        JJVWebViewController *webVC = [[JJVWebViewController alloc] init];
+        webVC.urlRequest = request;
+        [self.navigationController pushViewController: webVC animated: YES];
         return NO;
     }
     

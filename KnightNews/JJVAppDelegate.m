@@ -27,6 +27,7 @@
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UISegmentedControl appearance] setTintColor:UIColorFromRGB(0xCFB53B)];
+    
     [[UIToolbar appearance] setTintColor:UIColorFromRGB(0xCFB53B)];
     [[UIToolbar appearance] setBarTintColor:[UIColor blackColor]];
     

@@ -38,6 +38,7 @@
 {
     [super viewDidLoad];
     
+    self.webView.scalesPageToFit = YES;
     [self.webView loadRequest: self.urlRequest];
 }
 
