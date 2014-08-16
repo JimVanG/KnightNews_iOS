@@ -7,7 +7,6 @@
 //
 
 #import "JJVSportsViewController.h"
-#import "PPiFlatSegmentedControl.h"
 #import "MBProgressHUD.h"
 
 @interface JJVSportsViewController () <UIWebViewDelegate>
@@ -15,8 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 @property (weak, nonatomic) IBOutlet UIWebView *webView2;
-
-@property (strong, nonatomic) PPiFlatSegmentedControl *seg;
 
 - (IBAction)changeUrl:(id)sender;
 

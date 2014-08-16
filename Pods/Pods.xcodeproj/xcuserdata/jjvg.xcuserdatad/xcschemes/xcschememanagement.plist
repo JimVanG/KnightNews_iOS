@@ -4,27 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-KnightNews-FontAwesome+iOS.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-KnightNews-MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-KnightNews-MWFeedParser.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-KnightNews-PPiAwesomeButton.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-KnightNews-PPiFlatSegmentedControl.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,32 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1915E15BD0A54EC39AC96C9F</key>
+		<key>53C062EB9C7A49E49FFD135F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4427847C10504E66A850B6F3</key>
+		<key>A650D625F9094A3E808B6D64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>55AF61080CF44B45AB7E8D51</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7679BA76271841E3B990B0CE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8DDA1DE8D03B46EBBCE44723</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CF9D811CF40D4EA6BCF9F925</key>
+		<key>F52FD8A001A84825A30A5821</key>
 		<dict>
 			<key>primary</key>
 			<true/>
