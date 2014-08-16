@@ -58,6 +58,7 @@
                                 @"http://espn.go.com/mens-college-basketball/team/_/id/2116/ucf-knights"]]
                                 ];
     self.webView2.hidden = YES;
+    self.webView2.delegate = self;
     
     self.segmentControl = [[UISegmentedControl alloc] init];
     self.segmentControl.selectedSegmentIndex = 0;
@@ -91,9 +92,21 @@
 }
 
 # pragma mark Webview Delegate method
+
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 
 }
+
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    if ( navigationType == UIWebViewNavigationTypeLinkClicked ) {
+        [[UIApplication sharedApplication] openURL:[request URL]];
+        return NO;
+    }
+    
+    return YES;
+}
+
 @end
