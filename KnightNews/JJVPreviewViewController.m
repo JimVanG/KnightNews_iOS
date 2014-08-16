@@ -44,6 +44,17 @@
         self.excerptLabel.numberOfLines = 0;
         self.excerptLabel.text = item.excerptParsed;
     }
+    else if (!IS_IPHONE && !IS_IPHONE_5 && IS_IPAD){
+        self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        self.titleLabel.numberOfLines = 0;
+        self.titleLabel.text = item.title;
+        [self.titleLabel sizeToFit];
+        self.authorLabel.font = [UIFont italicSystemFontOfSize: 16];
+        self.authorLabel.text = item.author;
+        self.excerptLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        self.excerptLabel.numberOfLines = 0;
+        self.excerptLabel.text = item.excerptParsed;
+    }
     else{
         self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.titleLabel.numberOfLines = 0;

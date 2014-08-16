@@ -260,6 +260,9 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         if (!IS_IPHONE_5 && !IS_IPAD) {
             pre = [[JJVPreviewViewController alloc]
                    initWithNibName:@"JJVPreviewViewController_iphone4" bundle:nil];
+        }else if (!IS_IPHONE && !IS_IPHONE_5 && IS_IPAD){
+            pre = [[JJVPreviewViewController alloc]
+                   initWithNibName:@"JJVPreviewViewController_iPad" bundle:nil];
         }
         else{
             pre = [[JJVPreviewViewController alloc]

@@ -33,6 +33,7 @@
 		7F98B3291954E5CE00C1A344 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F98B3271954E5CE00C1A344 /* InfoPlist.strings */; };
 		7F98B32B1954E5CE00C1A344 /* KnightNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F98B32A1954E5CE00C1A344 /* KnightNewsTests.m */; };
 		7F98B3361954E61A00C1A344 /* JJVNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F98B3351954E61A00C1A344 /* JJVNewsTableViewController.m */; };
+		7FA25308199FB3CE0069F2AB /* JJVPreviewViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA25307199FB3CE0069F2AB /* JJVPreviewViewController_iPad.xib */; };
 		7FCF43551992B56C00D2087C /* JJVEventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF43531992B56C00D2087C /* JJVEventsTableViewCell.m */; };
 		7FCF43561992B56C00D2087C /* JJVEventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCF43541992B56C00D2087C /* JJVEventsTableViewCell.xib */; };
 		7FF95888199479AA0029D39D /* JJVSportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF95886199479AA0029D39D /* JJVSportsViewController.m */; };
@@ -94,6 +95,7 @@
 		7F98B32A1954E5CE00C1A344 /* KnightNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KnightNewsTests.m; sourceTree = "<group>"; };
 		7F98B3341954E61A00C1A344 /* JJVNewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVNewsTableViewController.h; sourceTree = "<group>"; };
 		7F98B3351954E61A00C1A344 /* JJVNewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVNewsTableViewController.m; sourceTree = "<group>"; };
+		7FA25307199FB3CE0069F2AB /* JJVPreviewViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVPreviewViewController_iPad.xib; sourceTree = "<group>"; };
 		7FCF43521992B56C00D2087C /* JJVEventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVEventsTableViewCell.h; sourceTree = "<group>"; };
 		7FCF43531992B56C00D2087C /* JJVEventsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVEventsTableViewCell.m; sourceTree = "<group>"; };
 		7FCF43541992B56C00D2087C /* JJVEventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVEventsTableViewCell.xib; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				7F685A22199321A9003E9177 /* JJVPreviewViewController.h */,
 				7F685A23199321A9003E9177 /* JJVPreviewViewController.m */,
 				7F1A940219985D350057873B /* JJVPreviewViewController_iphone4.xib */,
+				7FA25307199FB3CE0069F2AB /* JJVPreviewViewController_iPad.xib */,
 				7F2B33CE1968E734006888CC /* JJVPageModelController.h */,
 				7F2B33CF1968E734006888CC /* JJVPageModelController.m */,
 				7F2B33D61968EE62006888CC /* JJVPageRootViewController.h */,
@@ -314,6 +317,7 @@
 				7F98B3181954E5CE00C1A344 /* Images.xcassets in Resources */,
 				7F2B33CA1968BAC1006888CC /* JJVReaderViewController.xib in Resources */,
 				7FF95889199479AA0029D39D /* JJVSportsViewController.xib in Resources */,
+				7FA25308199FB3CE0069F2AB /* JJVPreviewViewController_iPad.xib in Resources */,
 				7F1A940319985D350057873B /* JJVPreviewViewController_iphone4.xib in Resources */,
 				7FCF43561992B56C00D2087C /* JJVEventsTableViewCell.xib in Resources */,
 			);
