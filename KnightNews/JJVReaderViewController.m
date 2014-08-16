@@ -9,7 +9,7 @@
 #import "JJVReaderViewController.h"
 #import "JJVStoryItem.h"
 
-@interface JJVReaderViewController () 
+@interface JJVReaderViewController () <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
@@ -55,6 +55,7 @@
     self.titleLabel.numberOfLines = 0;
     self.authorLabel.text = item.author;
     self.authorLabel.font = [UIFont italicSystemFontOfSize: 13.0f];
+    self.webView.delegate = self;
     self.webView.allowsInlineMediaPlayback = YES;
     self.webView.mediaPlaybackRequiresUserAction = NO;
     
@@ -80,6 +81,16 @@
     [self presentViewController: controller animated: YES completion: nil];
 }
 
+#pragma mark UIWebview Delegate Methods
 
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    if ( navigationType == UIWebViewNavigationTypeLinkClicked ) {
+        [[UIApplication sharedApplication] openURL:[request URL]];
+        return NO;
+    }
+    
+    return YES;
+}
 
 @end

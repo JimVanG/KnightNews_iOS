@@ -10,8 +10,6 @@
 #import "PPiFlatSegmentedControl.h"
 #import "MBProgressHUD.h"
 
-#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-
 @interface JJVSportsViewController () <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -57,7 +55,8 @@
     //initial url for webview2
     [self.webView2 loadRequest:[NSURLRequest requestWithURL:
                                [NSURL URLWithString:
-                                @"http://espn.go.com/mens-college-basketball/team/_/id/2116/ucf-knights"]]];
+                                @"http://espn.go.com/mens-college-basketball/team/_/id/2116/ucf-knights"]]
+                                ];
     self.webView2.hidden = YES;
     
     self.segmentControl = [[UISegmentedControl alloc] init];
