@@ -27,6 +27,8 @@
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UISegmentedControl appearance] setTintColor:UIColorFromRGB(0xCFB53B)];
+    [[UIToolbar appearance] setTintColor:UIColorFromRGB(0xCFB53B)];
+    [[UIToolbar appearance] setBarTintColor:[UIColor blackColor]];
     
     JJVPageRootViewController *nvc = [[JJVPageRootViewController alloc] init];
     JJVEventsTableViewController *evc = [[JJVEventsTableViewController alloc] init];
@@ -53,12 +55,10 @@
     [[UITabBar appearance] setBackgroundImage:[JJVAppDelegate imageFromColor: [UIColor blackColor]
                                                                      forSize:CGSizeMake(320, 50)
                                                             withCornerRadius:0]];
-
-    tbc.viewControllers = @[navController1, navController2, navController3, mvc];
-    
     [[UITabBar appearance] setTintColor: UIColorFromRGB(0xCFB53B)];
 
 
+    tbc.viewControllers = @[navController1, navController2, navController3, mvc];
     
     self.window.rootViewController = tbc;
     

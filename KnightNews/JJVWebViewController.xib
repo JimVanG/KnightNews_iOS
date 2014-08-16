@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JJVWebViewController">
+            <connections>
+                <outlet property="backBarButton" destination="dAA-oa-jbZ" id="Lb3-JA-l9r"/>
+                <outlet property="cancelBarButton" destination="dhC-Cx-ZJn" id="nwU-Ct-4MM"/>
+                <outlet property="forwardBarButton" destination="P4w-02-xDl" id="Aiy-Rh-5o3"/>
+                <outlet property="refreshBarButton" destination="bs8-UY-HY2" id="8r6-db-rnY"/>
+                <outlet property="toolBar" destination="jof-Dc-dWd" id="evh-Xj-VSO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="uW5-nX-Dqp" id="5Zm-Lv-YnD"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uW5-nX-Dqp">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </webView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jof-Dc-dWd">
+                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <items>
+                        <barButtonItem systemItem="rewind" id="dAA-oa-jbZ">
+                            <connections>
+                                <action selector="goBack" destination="uW5-nX-Dqp" id="5bh-jy-dMg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="o64-ti-HjJ"/>
+                        <barButtonItem systemItem="stop" id="dhC-Cx-ZJn">
+                            <connections>
+                                <action selector="stopLoading" destination="uW5-nX-Dqp" id="zl9-D8-SCS"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="axm-2W-kPa"/>
+                        <barButtonItem systemItem="refresh" id="bs8-UY-HY2">
+                            <connections>
+                                <action selector="reload" destination="uW5-nX-Dqp" id="DLH-9o-cqu"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="bNB-EA-GiG"/>
+                        <barButtonItem systemItem="fastForward" id="P4w-02-xDl">
+                            <connections>
+                                <action selector="goForward" destination="uW5-nX-Dqp" id="azp-Il-SNx"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="uW5-nX-Dqp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="T5d-k0-1MP"/>
+                <constraint firstAttribute="trailing" secondItem="uW5-nX-Dqp" secondAttribute="trailing" id="dlm-7o-8Zc"/>
+                <constraint firstAttribute="bottom" secondItem="uW5-nX-Dqp" secondAttribute="bottom" id="kF5-oI-FS6"/>
+                <constraint firstItem="uW5-nX-Dqp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yXj-dx-FAr"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>
