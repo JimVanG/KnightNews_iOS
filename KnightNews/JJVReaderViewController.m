@@ -16,9 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
-
-
 @end
+
 
 @implementation JJVReaderViewController
 
@@ -64,7 +63,6 @@
     [self.webView loadHTMLString: item.contents
                          baseURL: [NSURL URLWithString: item.url]];
     
-   // NSLog(@"**Contents: %@", item.contents);
 }
 
 

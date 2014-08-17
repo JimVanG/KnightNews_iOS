@@ -29,7 +29,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.hidesBottomBarWhenPushed = YES;
-        self.toolBar.tintColor = UIColorFromRGB(0xCFB53B);
     }
     return self;
 }
@@ -38,6 +37,7 @@
 {
     [super viewDidLoad];
     
+    self.webView.delegate = self;
     self.webView.scalesPageToFit = YES;
     [self.webView loadRequest: self.urlRequest];
 }
