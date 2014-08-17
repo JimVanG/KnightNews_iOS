@@ -8,8 +8,6 @@
 
 #import "JJVWebViewController.h"
 
-#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-
 
 @interface JJVWebViewController () <UIWebViewDelegate>
 
@@ -29,6 +27,12 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.hidesBottomBarWhenPushed = YES;
+        
+        UIBarButtonItem *shareButton = [[UIBarButtonItem alloc]
+                                        initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                        target:self
+                                        action:@selector(shareAction:)];
+        self.navigationItem.rightBarButtonItem = shareButton;
     }
     return self;
 }
@@ -55,7 +59,16 @@
     self.cancelBarButton.enabled = self.webView.loading;
 }
 
-# pragma mark UIWebview Delegate method
+- (void)shareAction:(id)sender
+{
+    UIActivityViewController *controller = [[UIActivityViewController alloc]
+                                            initWithActivityItems:
+                                            @[self.webView.request.URL.absoluteString]
+                                            applicationActivities: nil];
+    [self presentViewController: controller animated: YES completion: nil];
+}
+
+# pragma mark UIWebview Delegate methods
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
@@ -72,5 +85,6 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self updateButtons];
 }
+
 
 @end
