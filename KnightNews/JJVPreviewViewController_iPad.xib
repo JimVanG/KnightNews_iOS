@@ -54,6 +54,7 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="t7b-57-hur" firstAttribute="top" secondItem="Qb3-gH-kZm" secondAttribute="top" constant="73" id="2Cg-mz-Q9n"/>
                 <constraint firstAttribute="trailing" secondItem="LWU-9d-9iA" secondAttribute="trailing" constant="20" id="3PE-fX-pcq"/>
                 <constraint firstItem="0r0-Eu-Em5" firstAttribute="leading" secondItem="Qb3-gH-kZm" secondAttribute="leading" constant="20" id="9Aa-1N-dfC"/>
                 <constraint firstItem="LWU-9d-9iA" firstAttribute="leading" secondItem="Qb3-gH-kZm" secondAttribute="leading" constant="20" id="9Ap-k7-Fr9"/>
@@ -61,7 +62,6 @@
                 <constraint firstAttribute="trailing" secondItem="gdf-1d-Dj9" secondAttribute="trailing" constant="20" id="M6t-BB-iCL"/>
                 <constraint firstAttribute="trailing" secondItem="t7b-57-hur" secondAttribute="trailing" constant="20" id="Omo-r3-jlO"/>
                 <constraint firstItem="0r0-Eu-Em5" firstAttribute="top" secondItem="LWU-9d-9iA" secondAttribute="bottom" constant="2" id="Tac-eJ-RRp"/>
-                <constraint firstItem="t7b-57-hur" firstAttribute="top" secondItem="Qb3-gH-kZm" secondAttribute="top" constant="73" id="Xi8-jU-7Bf"/>
                 <constraint firstItem="gdf-1d-Dj9" firstAttribute="top" secondItem="0r0-Eu-Em5" secondAttribute="bottom" constant="8" id="bEQ-Jh-kHS"/>
                 <constraint firstItem="gdf-1d-Dj9" firstAttribute="leading" secondItem="Qb3-gH-kZm" secondAttribute="leading" constant="20" id="k25-kp-qw9"/>
                 <constraint firstItem="t7b-57-hur" firstAttribute="leading" secondItem="Qb3-gH-kZm" secondAttribute="leading" constant="20" id="kzg-GY-yKr"/>
