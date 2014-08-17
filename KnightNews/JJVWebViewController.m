@@ -2,13 +2,21 @@
 //  JJVWebViewController.m
 //  KnightNews
 //
-//  Created by james van gaasbeck on 6/20/14.
+//  Created by james van gaasbeck on 8/16/14.
 //  Copyright (c) 2014 james van gaasbeck. All rights reserved.
 //
 
 #import "JJVWebViewController.h"
 
-@interface JJVWebViewController ()
+
+@interface JJVWebViewController () <UIWebViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backBarButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelBarButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *refreshBarButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *forwardBarButton;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 
 @end
 
@@ -18,7 +26,13 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.hidesBottomBarWhenPushed = YES;
+        
+        UIBarButtonItem *shareButton = [[UIBarButtonItem alloc]
+                                        initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                        target:self
+                                        action:@selector(shareAction:)];
+        self.navigationItem.rightBarButtonItem = shareButton;
     }
     return self;
 }
@@ -26,7 +40,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.webView.delegate = self;
+    self.webView.scalesPageToFit = YES;
+    [self.webView loadRequest: self.urlRequest];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,46 +52,39 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)loadView
+- (void)updateButtons
 {
-    UIWebView *webView = [[UIWebView alloc] init];
-    webView.scalesPageToFit = YES;
-    self.view = webView;
+    self.forwardBarButton.enabled = self.webView.canGoForward;
+    self.backBarButton.enabled = self.webView.canGoBack;
+    self.cancelBarButton.enabled = self.webView.loading;
 }
 
--(void)setURL:(NSURL *)URL
+- (void)shareAction:(id)sender
 {
-    _URL = URL;
-    if(_URL){
-        NSURLRequest *req = [NSURLRequest requestWithURL:_URL];
-        [(UIWebView *)self.view loadRequest:req];
-                             
-    }
+    UIActivityViewController *controller = [[UIActivityViewController alloc]
+                                            initWithActivityItems:
+                                            @[self.webView.request.URL.absoluteString]
+                                            applicationActivities: nil];
+    [self presentViewController: controller animated: YES completion: nil];
 }
 
--(void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc
+# pragma mark UIWebview Delegate methods
+
+- (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    barButtonItem.title = @"Courses";
-    
-    self.navigationItem.leftBarButtonItem = barButtonItem;
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [self updateButtons];
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [self updateButtons];
+}
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [self updateButtons];
 }
 
--(void)splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
-{
-    if (barButtonItem == self.navigationItem.leftBarButtonItem) {
-        self.navigationItem.leftBarButtonItem = nil;
-    }
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

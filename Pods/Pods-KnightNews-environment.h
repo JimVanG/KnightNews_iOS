@@ -6,6 +6,12 @@
 // project.
 
 
+// MBProgressHUD
+#define COCOAPODS_POD_AVAILABLE_MBProgressHUD
+#define COCOAPODS_VERSION_MAJOR_MBProgressHUD 0
+#define COCOAPODS_VERSION_MINOR_MBProgressHUD 9
+#define COCOAPODS_VERSION_PATCH_MBProgressHUD 0
+
 // MWFeedParser/NSString+HTML
 #define COCOAPODS_POD_AVAILABLE_MWFeedParser_NSString_HTML
 #define COCOAPODS_VERSION_MAJOR_MWFeedParser_NSString_HTML 1

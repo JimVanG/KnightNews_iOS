@@ -17,27 +17,49 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="jUj-nD-LE2">
-                    <rect key="frame" x="20" y="75" width="280" height="40"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="jUj-nD-LE2">
+                    <rect key="frame" x="0.0" y="65" width="320" height="55"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="iLo-0K-K1z"/>
+                        <constraint firstAttribute="width" constant="320" id="oJA-RE-MDb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLk-7K-RSQ">
-                    <rect key="frame" x="20" y="117" width="280" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLk-7K-RSQ">
+                    <rect key="frame" x="0.0" y="121" width="320" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="dHN-x7-suv"/>
+                        <constraint firstAttribute="width" constant="320" id="ooX-hb-TpM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b69-rp-wEJ">
-                    <rect key="frame" x="20" y="146" width="280" height="367"/>
+                <webView contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b69-rp-wEJ">
+                    <rect key="frame" x="0.0" y="140" width="320" height="428"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </webView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="b69-rp-wEJ" firstAttribute="top" secondItem="uLk-7K-RSQ" secondAttribute="bottom" constant="1" id="4wC-xy-HdO"/>
+                <constraint firstItem="uLk-7K-RSQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7Rb-H8-OVh"/>
+                <constraint firstItem="uLk-7K-RSQ" firstAttribute="top" secondItem="jUj-nD-LE2" secondAttribute="bottom" constant="1" id="8lX-f3-Nts"/>
+                <constraint firstAttribute="trailing" secondItem="b69-rp-wEJ" secondAttribute="trailing" id="IXc-d6-G8V"/>
+                <constraint firstItem="b69-rp-wEJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OpP-vO-yqe"/>
+                <constraint firstAttribute="trailing" secondItem="uLk-7K-RSQ" secondAttribute="trailing" id="Qoj-TP-Khp"/>
+                <constraint firstItem="jUj-nD-LE2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="YK7-Hb-WHp"/>
+                <constraint firstItem="jUj-nD-LE2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gau-re-UlX"/>
+                <constraint firstAttribute="trailing" secondItem="jUj-nD-LE2" secondAttribute="trailing" id="xnr-1G-Vda"/>
+                <constraint firstAttribute="bottom" secondItem="b69-rp-wEJ" secondAttribute="bottom" id="yKK-NP-zHX"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

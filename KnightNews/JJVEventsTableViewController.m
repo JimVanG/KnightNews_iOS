@@ -31,6 +31,8 @@ NSString *const EVENT_DESC = @"event_desc";
     self = [super initWithStyle:style];
     if (self) {
         self.navigationItem.title = @"Events";
+        self.tabBarItem.image = [UIImage imageNamed:@"events_25"];
+        self.tabBarItem.title = @"Events";
         
     }
     return self;
@@ -39,11 +41,6 @@ NSString *const EVENT_DESC = @"event_desc";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    if (IS_OS_7_OR_LATER)
-        self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
-    
-    
 
     
     //load the NIB file for the tableview cells
@@ -114,6 +111,8 @@ NSString *const EVENT_DESC = @"event_desc";
     else if ([elementName isEqualToString: EVENT_DESC]) {
         self.eventItem.description = self.tempDesc;
         
+        //The way that the XML is formed, after we have parsed the
+        //eventDescription we have parsed the entire event object.
         [self.items addObject: self.eventItem];
     }
 }
@@ -123,6 +122,7 @@ NSString *const EVENT_DESC = @"event_desc";
     [self.tableView reloadData];
     
 }
+
 
 #pragma mark - Table view data source
 

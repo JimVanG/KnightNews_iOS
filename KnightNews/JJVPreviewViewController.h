@@ -18,6 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *excerptLabel;
 
 @property (nonatomic, strong) JJVStoryItem *item;
-
+@property (nonatomic, strong) NSData *imageData;
 
 @end

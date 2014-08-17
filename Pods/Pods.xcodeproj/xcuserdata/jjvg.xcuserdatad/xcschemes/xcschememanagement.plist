@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-KnightNews-MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-KnightNews-MWFeedParser.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,17 +22,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>00BD7F9281014DF9A30DA307</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>53C062EB9C7A49E49FFD135F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A42FBBA98B904424854338AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

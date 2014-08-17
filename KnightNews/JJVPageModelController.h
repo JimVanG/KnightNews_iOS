@@ -14,7 +14,7 @@
 
 @interface JJVPageModelController : NSObject <UIPageViewControllerDataSource>
 
-@property (nonatomic, assign) NSUInteger currentPosition;
+@property (strong, nonatomic) JJVPreviewViewController *currentViewController;
 
 -(JJVPreviewViewController *)viewControllerAtIndex:(NSUInteger)index;
 -(NSUInteger)indexOfViewController:(JJVPreviewViewController *)viewController;

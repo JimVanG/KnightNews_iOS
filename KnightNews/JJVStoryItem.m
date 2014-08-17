@@ -21,7 +21,7 @@
 }
 
 /*
- Overriden setter to additionaly parse out extra HTML entities (i.e. & becoming &amp;)
+ Overriden setter to additionaly parse out extra HTML entities (i.e. & encoded as &amp;)
  */
 - (void)setTitle:(NSString *)title
 {
@@ -29,7 +29,7 @@
 }
 
 /*
- Overriden setter that also sets the parsed excerpt
+ Overriden setter that also sets the parsed excerpt variable
  */
 - (void)setExcerpt:(NSString *)excerpt
 {
