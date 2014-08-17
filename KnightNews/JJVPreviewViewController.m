@@ -68,7 +68,7 @@
 
     }
     
-    self.imageView.image = [UIImage imageWithData:self.imageData];
+    self.imageView.image = [UIImage imageWithData: item.imageData];
     
     
 }

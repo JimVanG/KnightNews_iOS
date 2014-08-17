@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSString *excerptParsed;
 @property (nonatomic, strong) NSString *contents;
 @property (nonatomic, strong) NSString *imageUrl;
+@property (nonatomic, strong) NSData *imageData;
 @property (nonatomic, strong) NSString *url;
 @property (nonatomic, assign) NSUInteger position;
 
