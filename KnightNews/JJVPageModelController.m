@@ -10,7 +10,7 @@
 #import "JJVReaderViewController.h"
 #import "JJVStoryItemStore.h"
 #import "JJVStoryItem.h"
-
+#import "Constants.h"
 
 
 
@@ -29,8 +29,6 @@
         // Create the data model.
         
 
-        
-
     }
     return self;
 }
@@ -46,11 +44,23 @@
     }
     
     // Create a new view controller and pass suitable data.
-    JJVPreviewViewController *dataViewController = [[JJVPreviewViewController alloc] initWithNibName:@"JJVPreviewViewController" bundle:nil];
+    JJVPreviewViewController *pre = nil;
+    if (!IS_IPHONE_5 && !IS_IPAD) {
+        pre = [[JJVPreviewViewController alloc]
+               initWithNibName:@"JJVPreviewViewController_iphone4" bundle:nil];
+    }else if (!IS_IPHONE && !IS_IPHONE_5 && IS_IPAD){
+        pre = [[JJVPreviewViewController alloc]
+               initWithNibName:@"JJVPreviewViewController_iPad" bundle:nil];
+    }
+    else{
+        pre = [[JJVPreviewViewController alloc]
+               initWithNibName:@"JJVPreviewViewController" bundle:nil];
+    }
+
     JJVStoryItem *story = [[JJVStoryItemStore sharedStore] getItemAt: index];
-    dataViewController.item = story;
-    self.currentViewController = dataViewController;
-    return dataViewController;
+    pre.item = story;
+    self.currentViewController = pre;
+    return pre;
 }
 
 - (NSUInteger)indexOfViewController:(JJVPreviewViewController *)viewController
