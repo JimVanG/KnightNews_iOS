@@ -25,10 +25,13 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </webView>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jof-Dc-dWd">
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jof-Dc-dWd">
                     <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="quR-V7-m9p"/>
+                    </constraints>
                     <items>
                         <barButtonItem systemItem="rewind" id="dAA-oa-jbZ">
                             <connections>
@@ -58,7 +61,10 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="jof-Dc-dWd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Dst-8f-175"/>
+                <constraint firstAttribute="bottom" secondItem="jof-Dc-dWd" secondAttribute="bottom" id="R5q-kF-XqO"/>
                 <constraint firstItem="uW5-nX-Dqp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="T5d-k0-1MP"/>
+                <constraint firstAttribute="trailing" secondItem="jof-Dc-dWd" secondAttribute="trailing" id="UKu-gV-qKU"/>
                 <constraint firstAttribute="trailing" secondItem="uW5-nX-Dqp" secondAttribute="trailing" id="dlm-7o-8Zc"/>
                 <constraint firstAttribute="bottom" secondItem="uW5-nX-Dqp" secondAttribute="bottom" id="kF5-oI-FS6"/>
                 <constraint firstItem="uW5-nX-Dqp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yXj-dx-FAr"/>
