@@ -88,11 +88,11 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 -(void)setUpUI
 {
     
-//    self.startingViewController = [self.modelController viewControllerAtIndex: 0];
+    self.startingViewController = [self.modelController viewControllerAtIndex: 0];
     
-    JJVPreviewViewController *startingVC = [self.previewControllers objectAtIndex: 0];
+    //JJVPreviewViewController *startingVC = [self.previewControllers objectAtIndex: 0];
     
-    [self.pageViewController setViewControllers: @[startingVC ] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    [self.pageViewController setViewControllers: @[self.startingViewController ] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     
     self.pageViewController.dataSource = self.modelController;
     
@@ -103,7 +103,8 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     [self.pageViewController didMoveToParentViewController:self];
     
     // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
-    self.panRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];
+//    self.panRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];
+    
     self.tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
     //need to add the gesture recognizer to the scrollview of the pageViewer in order for it to
     //work with the taps
@@ -113,13 +114,16 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
             self.scrollView = (UIScrollView *)view;
         }
     }
-    self.panRecognizer.delegate = self;
-    self.panRecognizer.cancelsTouchesInView = NO;
+//    self.panRecognizer.delegate = self;
+//    self.panRecognizer.cancelsTouchesInView = NO;
+    
     self.tapRecognizer.delegate = self;
     self.tapRecognizer.cancelsTouchesInView = NO;
     self.tapRecognizer.delaysTouchesBegan = YES;
-    [self.tapRecognizer requireGestureRecognizerToFail: self.panRecognizer];
-    [self.scrollView addGestureRecognizer: self.panRecognizer];
+    
+//    [self.tapRecognizer requireGestureRecognizerToFail: self.panRecognizer];
+//    [self.scrollView addGestureRecognizer: self.panRecognizer];
+    
     [self.scrollView addGestureRecognizer: self.tapRecognizer];
     
     self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
@@ -152,19 +156,19 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 #pragma mark - UIPageViewController delegate methods
 
 
-//- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
-//{
-//    // If the page did not turn
-//    if (!completed)
-//    {
-//        //Do nothing because the page wasn't turned
-//        return;
-//    }
-//    //get the current view controller being displayed
-//    JJVPreviewViewController *current = [pageViewController.viewControllers lastObject];
-//    
-//    self.currentPosition = [[JJVStoryItemStore sharedStore] indexOfStory: current.item];
-//}
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
+{
+    // If the page did not turn
+    if (!completed)
+    {
+        //Do nothing because the page wasn't turned
+        return;
+    }
+    //get the current view controller being displayed
+    JJVPreviewViewController *current = [pageViewController.viewControllers lastObject];
+    
+    self.currentPosition = [[JJVStoryItemStore sharedStore] indexOfStory: current.item];
+}
 
 //Uncomment if using a page flip animation
 //
@@ -251,84 +255,85 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         NSArray *customFieldsArray = innerDictionary[IMAGE_CONSTANT2];
         //image url is inside of an array inside of a dictionary
         storyItem.imageUrl = customFieldsArray[0];
+        storyItem.imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString: storyItem.imageUrl]];
         
         //add to our store
         [[JJVStoryItemStore sharedStore] addItem: storyItem];
         
-        //keeping items locally and preInitialized in order to speed up page viewer.
-        JJVPreviewViewController *pre = nil;
-        if (!IS_IPHONE_5 && !IS_IPAD) {
-            pre = [[JJVPreviewViewController alloc]
-                   initWithNibName:@"JJVPreviewViewController_iphone4" bundle:nil];
-        }else if (!IS_IPHONE && !IS_IPHONE_5 && IS_IPAD){
-            pre = [[JJVPreviewViewController alloc]
-                   initWithNibName:@"JJVPreviewViewController_iPad" bundle:nil];
-        }
-        else{
-            pre = [[JJVPreviewViewController alloc]
-                   initWithNibName:@"JJVPreviewViewController" bundle:nil];
-        }
-        //pass along our story item to the viewcontroller
-        pre.item = storyItem;
-        //Download all the images ahead of time to speed up the paging
-        pre.imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:storyItem.imageUrl]];
+//        //keeping items locally and preInitialized in order to speed up page viewer.
+//        JJVPreviewViewController *pre = nil;
+//        if (!IS_IPHONE_5 && !IS_IPAD) {
+//            pre = [[JJVPreviewViewController alloc]
+//                   initWithNibName:@"JJVPreviewViewController_iphone4" bundle:nil];
+//        }else if (!IS_IPHONE && !IS_IPHONE_5 && IS_IPAD){
+//            pre = [[JJVPreviewViewController alloc]
+//                   initWithNibName:@"JJVPreviewViewController_iPad" bundle:nil];
+//        }
+//        else{
+//            pre = [[JJVPreviewViewController alloc]
+//                   initWithNibName:@"JJVPreviewViewController" bundle:nil];
+//        }
+//        //pass along our story item to the viewcontroller
+//        pre.item = storyItem;
+//        //Download all the images ahead of time to speed up the paging
+//        pre.imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:storyItem.imageUrl]];
         
-        [self.previewControllers addObject: pre];
+//        [self.previewControllers addObject: pre];
     }
     
 }
 
 #pragma mark - Gesture recognizer methods
 
--(void)pan:(UIPanGestureRecognizer *)gr
-{
-    
-    if (gr.state == UIGestureRecognizerStateEnded) {
-        CGPoint totalDist = [gr translationInView: self.view];
-        //NSLog(@"Ended, total distance: %f", totalDist.x);
-        
-        if (abs(totalDist.x) < 10) {
-        
-            JJVReaderViewController *readerView = [[JJVReaderViewController alloc]
-                                                   initWithNibName:nil bundle:nil];
-            
-            //pass the selected story along to the reader view
-            JJVStoryItem *story = [[JJVStoryItemStore sharedStore]
-                                   getItemAt: self.currentPosition];
-            
-            readerView.item = story;
-            
-            //push the reader view controller onto the screen
-            [self.navigationController pushViewController:readerView
-                                                 animated:YES];
-        }else if(totalDist.x < -10){
-            
-            if ((self.currentPosition + 1) < [[JJVStoryItemStore sharedStore] numberOfStories])
-                self.currentPosition++;
-            else
-                return;
-            
-            
-//            JJVPreviewViewController *nextVC = [self.modelController viewControllerAtIndex:
-//                                                                      self.currentPosition];
-            
-            [self.pageViewController setViewControllers:@[[self.previewControllers objectAtIndex: self.currentPosition]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-        }else if(totalDist.x > 10){
-            
-            if ((self.currentPosition - 1) >= 0)
-                self.currentPosition--;
-            else
-                return;
-            
-            
-            
-//            JJVPreviewViewController *nextVC = [self.modelController viewControllerAtIndex:
-//                                                                      self.currentPosition];
-            
-            [self.pageViewController setViewControllers:@[[self.previewControllers objectAtIndex: self.currentPosition]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
-        }
-    }
-}
+//-(void)pan:(UIPanGestureRecognizer *)gr
+//{
+//    
+//    if (gr.state == UIGestureRecognizerStateEnded) {
+//        CGPoint totalDist = [gr translationInView: self.view];
+//        //NSLog(@"Ended, total distance: %f", totalDist.x);
+//        
+//        if (abs(totalDist.x) < 10) {
+//        
+//            JJVReaderViewController *readerView = [[JJVReaderViewController alloc]
+//                                                   initWithNibName:nil bundle:nil];
+//            
+//            //pass the selected story along to the reader view
+//            JJVStoryItem *story = [[JJVStoryItemStore sharedStore]
+//                                   getItemAt: self.currentPosition];
+//            
+//            readerView.item = story;
+//            
+//            //push the reader view controller onto the screen
+//            [self.navigationController pushViewController:readerView
+//                                                 animated:YES];
+//        }else if(totalDist.x < -10){
+//            
+//            if ((self.currentPosition + 1) < [[JJVStoryItemStore sharedStore] numberOfStories])
+//                self.currentPosition++;
+//            else
+//                return;
+//            
+//            
+////            JJVPreviewViewController *nextVC = [self.modelController viewControllerAtIndex:
+////                                                                      self.currentPosition];
+//            
+//            [self.pageViewController setViewControllers:@[[self.previewControllers objectAtIndex: self.currentPosition]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+//        }else if(totalDist.x > 10){
+//            
+//            if ((self.currentPosition - 1) >= 0)
+//                self.currentPosition--;
+//            else
+//                return;
+//            
+//            
+//            
+////            JJVPreviewViewController *nextVC = [self.modelController viewControllerAtIndex:
+////                                                                      self.currentPosition];
+//            
+//            [self.pageViewController setViewControllers:@[[self.previewControllers objectAtIndex: self.currentPosition]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
+//        }
+//    }
+//}
 
 -(void)tap:(UITapGestureRecognizer *)gr
 {
