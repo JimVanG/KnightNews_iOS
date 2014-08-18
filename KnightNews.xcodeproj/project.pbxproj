@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F0534EB19A1801E008CCDD9 /* JJVPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0534EA19A1801E008CCDD9 /* JJVPreviewViewController.xib */; };
 		7F0798BB195BBE8500D022A0 /* JJVStoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0798BA195BBE8500D022A0 /* JJVStoryItem.m */; };
 		7F0798BE195BC28800D022A0 /* JJVStoryItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0798BD195BC28800D022A0 /* JJVStoryItemStore.m */; };
 		7F1A940319985D350057873B /* JJVPreviewViewController_iphone4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F1A940219985D350057873B /* JJVPreviewViewController_iphone4.xib */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		1B6995472A89423EA9451C68 /* libPods-KnightNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KnightNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		204D10E97C3B476089833AD6 /* Pods-KnightNews.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightNews.xcconfig"; path = "Pods/Pods-KnightNews.xcconfig"; sourceTree = "<group>"; };
+		7F0534EA19A1801E008CCDD9 /* JJVPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVPreviewViewController.xib; sourceTree = "<group>"; };
 		7F0798B9195BBE8500D022A0 /* JJVStoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVStoryItem.h; sourceTree = "<group>"; };
 		7F0798BA195BBE8500D022A0 /* JJVStoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVStoryItem.m; sourceTree = "<group>"; };
 		7F0798BC195BC28800D022A0 /* JJVStoryItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVStoryItemStore.h; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				7F98B3151954E5CE00C1A344 /* JJVAppDelegate.m */,
 				7F685A22199321A9003E9177 /* JJVPreviewViewController.h */,
 				7F685A23199321A9003E9177 /* JJVPreviewViewController.m */,
+				7F0534EA19A1801E008CCDD9 /* JJVPreviewViewController.xib */,
 				7F1A940219985D350057873B /* JJVPreviewViewController_iphone4.xib */,
 				7FA25307199FB3CE0069F2AB /* JJVPreviewViewController_iPad.xib */,
 				7F2B33CE1968E734006888CC /* JJVPageModelController.h */,
@@ -326,6 +329,7 @@
 				7F98B3181954E5CE00C1A344 /* Images.xcassets in Resources */,
 				7F2B33CA1968BAC1006888CC /* JJVReaderViewController.xib in Resources */,
 				7FF95889199479AA0029D39D /* JJVSportsViewController.xib in Resources */,
+				7F0534EB19A1801E008CCDD9 /* JJVPreviewViewController.xib in Resources */,
 				7FA25308199FB3CE0069F2AB /* JJVPreviewViewController_iPad.xib in Resources */,
 				7F1A940319985D350057873B /* JJVPreviewViewController_iphone4.xib in Resources */,
 				7FCF43561992B56C00D2087C /* JJVEventsTableViewCell.xib in Resources */,

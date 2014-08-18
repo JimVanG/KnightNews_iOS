@@ -239,7 +239,8 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         NSArray *customFieldsArray = innerDictionary[IMAGE_CONSTANT2];
         //image url is inside of an array inside of a dictionary
         storyItem.imageUrl = customFieldsArray[0];
-        storyItem.imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString: storyItem.imageUrl]];
+        storyItem.imageData = [NSData dataWithContentsOfURL:
+                               [NSURL URLWithString: storyItem.imageUrl]];
         
         //add to our store
         [[JJVStoryItemStore sharedStore] addItem: storyItem];
