@@ -105,6 +105,7 @@
 		7FA25309199FBDFA0069F2AB /* JJVWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVWebViewController.h; sourceTree = "<group>"; };
 		7FA2530A199FBDFA0069F2AB /* JJVWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVWebViewController.m; sourceTree = "<group>"; };
 		7FA2530B199FBDFA0069F2AB /* JJVWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVWebViewController.xib; sourceTree = "<group>"; };
+		7FB2D92B19A5B4EB00B24BF6 /* icon_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_120.png; sourceTree = "<group>"; };
 		7FCF43521992B56C00D2087C /* JJVEventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVEventsTableViewCell.h; sourceTree = "<group>"; };
 		7FCF43531992B56C00D2087C /* JJVEventsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVEventsTableViewCell.m; sourceTree = "<group>"; };
 		7FCF43541992B56C00D2087C /* JJVEventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVEventsTableViewCell.xib; sourceTree = "<group>"; };
@@ -141,6 +142,7 @@
 		7F98B2F91954E5CE00C1A344 = {
 			isa = PBXGroup;
 			children = (
+				7FB2D92B19A5B4EB00B24BF6 /* icon_120.png */,
 				7F98B30B1954E5CE00C1A344 /* KnightNews */,
 				7F98B3241954E5CE00C1A344 /* KnightNewsTests */,
 				7F98B3041954E5CE00C1A344 /* Frameworks */,
@@ -525,7 +527,7 @@
 				GCC_PREFIX_HEADER = "KnightNews/KnightNews-Prefix.pch";
 				INFOPLIST_FILE = "KnightNews/KnightNews-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -539,7 +541,7 @@
 				GCC_PREFIX_HEADER = "KnightNews/KnightNews-Prefix.pch";
 				INFOPLIST_FILE = "KnightNews/KnightNews-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
