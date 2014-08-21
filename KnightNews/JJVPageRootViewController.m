@@ -14,6 +14,7 @@
 #import "JJVPreviewViewController.h"
 #import "JJVReaderViewController.h"
 #import "MBProgressHUD.h"
+#import "NSString+HTML.h"
 
 
 NSString *const TITLE_CONSTANT2 = @"title_plain";
@@ -35,6 +36,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 @property (nonatomic) NSURLSession *session;
 @property (nonatomic, copy) NSMutableArray *items;
 @property (nonatomic, assign) NSInteger currentPosition;
+@property (nonatomic, assign) BOOL shouldCallSetUpUI;
 
 @property (nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
 
@@ -59,8 +61,6 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
         _session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:nil];
         
-        [self fetchFeed];
-        
         self.navigationItem.title = @"News";
         self.tabBarItem.image = [UIImage imageNamed:@"newspaper_25"];
         self.tabBarItem.title = @"News";
@@ -72,12 +72,31 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"viewDidLoad");
+    
 	// Do any additional setup after loading the view, typically from a nib.
     // Configure the page view controller and add it as a child view controller.
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageViewController.delegate = self;
     
     //the rest of the UI is set up after we've successfully retrieved our request.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSLog(@"viewWillAppear");
+    
+    [self fetchFeed];
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSLog(@"viewDidAppear");
+    
 }
 
 -(void)setUpUI
@@ -114,11 +133,6 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -192,6 +206,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 
 - (void)fetchFeed
 {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: YES];
     NSString *requestString = @"http://knightnews.com/api/get_recent_posts/";
     NSURL *url = [NSURL URLWithString:requestString];
     NSURLRequest *req = [NSURLRequest requestWithURL: url];
@@ -201,22 +216,45 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         //NSLog(@"%@", jsonObject);
         
-        
         [self parseJSONObject: jsonObject];
         
+        if(!self.shouldCallSetUpUI){
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: NO];
+            [dataTask cancel];
+            return;
+        }
+        
         dispatch_async(dispatch_get_main_queue(), ^{
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: NO];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self setUpUI];
+            [dataTask cancel];
         });
         
     }];
     [dataTask resume];
+    
 }
 
 -(void)parseJSONObject:(NSDictionary *)jsonObject
 {
     //get the list of posts (top most level of the JSON object)
     self.items = jsonObject[POSTS_CONSTANT2];
+    
+    //check to make sure we aren't adding duplicate stories.
+    if ([[JJVStoryItemStore sharedStore] numberOfStories] > 0)
+    {
+        NSDictionary *testArray = self.items[0];
+        NSString *testString = [testArray[TITLE_CONSTANT2] stringByDecodingHTMLEntities];
+        if ([testString isEqualToString: [[JJVStoryItemStore sharedStore] getItemAt: 0].title]) {
+            self.shouldCallSetUpUI = NO;
+            return;
+        }else{
+            self.shouldCallSetUpUI = YES;
+        }
+    }else{
+        self.shouldCallSetUpUI = YES;
+    }
     
     int count = 0;
     //get each posts attributes, each post is stored in a dictionary
@@ -244,7 +282,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         
         //add to our store
         [[JJVStoryItemStore sharedStore] addItem: storyItem];
-    
+        
     }
     
 }
@@ -269,5 +307,42 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 }
 
 
+//-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+//{
+//
+//
+//    if( UIInterfaceOrientationIsLandscape(toInterfaceOrientation)
+//        && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+//    {
+//        [[NSBundle mainBundle] loadNibNamed: @"JJVPreviewViewController_iPad-landscape"
+//                                      owner: [[JJVPreviewViewController alloc] init]
+//                                    options: nil];
+//        [self viewDidLoad];
+//
+//    }
+//    else if( UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)
+//               && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+//    {
+//        [[NSBundle mainBundle] loadNibNamed: @"JJVPreviewViewController_iPad"
+//                                      owner: [JJVPreviewViewController class]
+//                                    options: nil];
+//        [self viewDidLoad];
+//    }
+//}
+//
+//
+//+ (id)loadNibNamed:(NSString *)nibName ofClass:(Class)objClass {
+//    if (nibName && objClass) {
+//        NSArray *objects = [[NSBundle mainBundle] loadNibNamed:nibName
+//                                                         owner:nil
+//                                                       options:nil];
+//        for (id currentObject in objects ){
+//            if ([currentObject isKindOfClass:objClass])
+//                return currentObject;
+//        }
+//    }
+//
+//    return nil;
+//}
 
 @end
