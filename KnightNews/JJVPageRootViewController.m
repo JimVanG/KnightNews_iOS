@@ -233,7 +233,6 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         
     }];
     [dataTask resume];
-    
 }
 
 -(void)parseJSONObject:(NSDictionary *)jsonObject
@@ -244,30 +243,36 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     //check to make sure we aren't adding duplicate stories.
     if ([[JJVStoryItemStore sharedStore] numberOfStories] > 0)
     {
+        //check the titles to see if they're the same
         NSDictionary *testArray = self.items[0];
         NSString *testString = [testArray[TITLE_CONSTANT2] stringByDecodingHTMLEntities];
         if ([testString isEqualToString: [[JJVStoryItemStore sharedStore] getItemAt: 0].title]) {
+            //There's nothing new so return and don't re-do to the UI
             self.shouldCallSetUpUI = NO;
             return;
         }else{
+            //There's new stories, so get rid of them all to make sure
+            //there are no duplicates
+            [[JJVStoryItemStore sharedStore] removeAllStories];
             self.shouldCallSetUpUI = YES;
         }
     }else{
+        //It's the first time we are fetching our data
         self.shouldCallSetUpUI = YES;
     }
     
-    int count = 0;
+    //int count = 0;
     //get each posts attributes, each post is stored in a dictionary
     for (NSDictionary *post in self.items) {
         JJVStoryItem *storyItem = [[JJVStoryItem alloc] init];
         
-        storyItem.position = count++;
+        //storyItem.position = count++;
         
         storyItem.url = post[URL_CONSTANT2];
         storyItem.title = post[TITLE_CONSTANT2];
         storyItem.contents = post[CONTENT_CONSTANT2];
         storyItem.excerpt = post[EXCERPT_CONSTANT2];
-        storyItem.date = post[DATE_CONSTANT2];
+        //storyItem.date = post[DATE_CONSTANT2];
         
         //these fields are in their own seperate dictionaries
         NSDictionary *innerDictionary = post[AUTHOR_CONSTANT2];

@@ -26,11 +26,24 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
+    //set status bar to light, application wide
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    //set Application wide tint color to OldGold
     [[UISegmentedControl appearance] setTintColor:UIColorFromRGB(0xCFB53B)];
-    
+    //application wide ToolBar appearence
     [[UIToolbar appearance] setTintColor:UIColorFromRGB(0xCFB53B)];
     [[UIToolbar appearance] setBarTintColor:[UIColor blackColor]];
+    //Customize the navigation bar
+    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+    [[UINavigationBar appearance] setTintColor:UIColorFromRGB(0xCFB53B)];
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                          UIColorFromRGB(0xCFB53B), NSForegroundColorAttributeName,
+                                                          [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
+    //Customize the TabBar
+    [[UITabBar appearance] setBackgroundImage:[JJVAppDelegate imageFromColor: [UIColor blackColor]
+                                                                     forSize:CGSizeMake(320, 50)
+                                                            withCornerRadius:0]];
+    [[UITabBar appearance] setTintColor: UIColorFromRGB(0xCFB53B)];
     
     JJVPageRootViewController *nvc = [[JJVPageRootViewController alloc] init];
     JJVEventsTableViewController *evc = [[JJVEventsTableViewController alloc] init];
@@ -44,21 +57,7 @@
     UINavigationController *navController3 = [[UINavigationController alloc]
                                               initWithRootViewController:svc];
     
-    //Customize the navigation bar
-    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
-    
-    [[UINavigationBar appearance] setTintColor:UIColorFromRGB(0xCFB53B)];
-    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                    UIColorFromRGB(0xCFB53B), NSForegroundColorAttributeName,
-                                                          [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
-
     UITabBarController *tbc = [[UITabBarController alloc] init];
-    
-    [[UITabBar appearance] setBackgroundImage:[JJVAppDelegate imageFromColor: [UIColor blackColor]
-                                                                     forSize:CGSizeMake(320, 50)
-                                                            withCornerRadius:0]];
-    [[UITabBar appearance] setTintColor: UIColorFromRGB(0xCFB53B)];
-
 
     tbc.viewControllers = @[navController1, navController2, navController3, mvc];
     

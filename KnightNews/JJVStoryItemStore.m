@@ -86,6 +86,10 @@
     return [self.privateItems indexOfObject: storyItem];
 }
 
+- (void)removeAllStories{
+    [self.privateItems removeAllObjects];
+}
+
 //+(BOOL)shouldUpdateUI
 //{
 //    return doneWithRequest;

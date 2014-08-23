@@ -32,6 +32,7 @@
 - (JJVStoryItem *)getItemAt:(NSInteger)position;
 - (NSUInteger)numberOfStories;
 - (NSUInteger)indexOfStory:(JJVStoryItem *)storyItem;
+- (void)removeAllStories;
 
 //+ (void)fetchFeed;
 //+(BOOL)shouldUpdateUI;
