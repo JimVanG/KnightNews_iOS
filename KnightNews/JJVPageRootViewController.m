@@ -72,7 +72,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"viewDidLoad");
+    //NSLog(@"viewDidLoad");
     
 	// Do any additional setup after loading the view, typically from a nib.
     // Configure the page view controller and add it as a child view controller.
@@ -85,7 +85,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSLog(@"viewWillAppear");
+    //NSLog(@"viewWillAppear");
     
     [self fetchFeed];
     
@@ -95,7 +95,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    NSLog(@"viewDidAppear");
+   // NSLog(@"viewDidAppear");
     
 }
 
