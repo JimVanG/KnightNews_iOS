@@ -14,7 +14,7 @@
 #import "JJVPreviewViewController.h"
 #import "JJVReaderViewController.h"
 #import "MBProgressHUD.h"
-#import "NSString+HTML.h"
+
 
 
 NSString *const TITLE_CONSTANT2 = @"title_plain";
@@ -105,7 +105,9 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     
     self.startingViewController = [self.modelController viewControllerAtIndex: 0];
     
-    [self.pageViewController setViewControllers: @[self.startingViewController ] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    [self.pageViewController setViewControllers: @[self.startingViewController ] direction:UIPageViewControllerNavigationDirectionForward
+                                       animated:YES
+                                     completion:nil];
     
     self.pageViewController.dataSource = self.modelController;
     
