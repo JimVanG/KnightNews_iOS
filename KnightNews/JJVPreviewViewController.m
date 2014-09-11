@@ -68,7 +68,12 @@
 
     }
     
-    self.imageView.image = [UIImage imageWithData: item.imageData];
+    if (item.imageData) {
+        self.imageView.image = [UIImage imageWithData: item.imageData];
+    }else{
+        self.imageView.image = [UIImage imageNamed:@"news_error.png"];
+    }
+
     
     
 }

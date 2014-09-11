@@ -258,6 +258,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         storyItem.imageUrl = customFieldsArray[0];
         storyItem.imageData = [NSData dataWithContentsOfURL:
                                [NSURL URLWithString: storyItem.imageUrl]];
+
         
         //add to our store
         [[JJVStoryItemStore sharedStore] addItem: storyItem];
