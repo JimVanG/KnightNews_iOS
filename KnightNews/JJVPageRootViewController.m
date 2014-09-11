@@ -36,7 +36,6 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 @property (nonatomic) NSURLSession *session;
 @property (nonatomic, copy) NSMutableArray *items;
 @property (nonatomic, assign) NSInteger currentPosition;
-@property (nonatomic, assign) BOOL shouldCallSetUpUI;
 
 @property (nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
 
@@ -60,6 +59,9 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
         _session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:nil];
+        
+        [self fetchFeed];
+
         
         self.navigationItem.title = @"News";
         self.tabBarItem.image = [UIImage imageNamed:@"newspaper_25"];
@@ -87,7 +89,6 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     [super viewWillAppear:animated];
     //NSLog(@"viewWillAppear");
     
-    [self fetchFeed];
     
     
 }
@@ -218,12 +219,6 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         
         [self parseJSONObject: jsonObject];
         
-        if(!self.shouldCallSetUpUI){
-            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: NO];
-            [dataTask cancel];
-            return;
-        }
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: NO];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -239,27 +234,6 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 {
     //get the list of posts (top most level of the JSON object)
     self.items = jsonObject[POSTS_CONSTANT2];
-    
-    //check to make sure we aren't adding duplicate stories.
-    if ([[JJVStoryItemStore sharedStore] numberOfStories] > 0)
-    {
-        //check the titles to see if they're the same
-        NSDictionary *testArray = self.items[0];
-        NSString *testString = [testArray[TITLE_CONSTANT2] stringByDecodingHTMLEntities];
-        if ([testString isEqualToString: [[JJVStoryItemStore sharedStore] getItemAt: 0].title]) {
-            //There's nothing new so return and don't re-do to the UI
-            self.shouldCallSetUpUI = NO;
-            return;
-        }else{
-            //There's new stories, so get rid of them all to make sure
-            //there are no duplicates
-            [[JJVStoryItemStore sharedStore] removeAllStories];
-            self.shouldCallSetUpUI = YES;
-        }
-    }else{
-        //It's the first time we are fetching our data
-        self.shouldCallSetUpUI = YES;
-    }
     
     //int count = 0;
     //get each posts attributes, each post is stored in a dictionary
