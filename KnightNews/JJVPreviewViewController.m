@@ -9,6 +9,7 @@
 #import "JJVPreviewViewController.h"
 #import "JJVStoryItem.h"
 #import "Constants.h"
+#import "AFNetworking.h"
 
 
 @interface JJVPreviewViewController () <UIGestureRecognizerDelegate>
@@ -65,15 +66,25 @@
         self.excerptLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.excerptLabel.numberOfLines = 10;
         self.excerptLabel.text = item.excerptParsed;
-
+        
     }
     
-    if (item.imageData) {
-        self.imageView.image = [UIImage imageWithData: item.imageData];
-    }else{
+    AFHTTPRequestOperation *request = [[AFHTTPRequestOperation alloc] initWithRequest:
+                                       [NSURLRequest requestWithURL:
+                                        [NSURL URLWithString: item.imageUrl]]];
+    request.responseSerializer = [AFImageResponseSerializer serializer];
+    [request setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *op, id response){
+        
+        self.imageView.image = response;
+        
+    }failure:^(AFHTTPRequestOperation *op, NSError *error){
+        
         self.imageView.image = [UIImage imageNamed:@"news_error.png"];
-    }
-
+    }];
+    [request start];
+    
+    
+    
     
     
 }
