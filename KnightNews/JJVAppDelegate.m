@@ -26,11 +26,10 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    //Parse Push notifications
     [Parse setApplicationId:@"keKOe5UZxrEWyX3UX4NQMLXsajd1xmG2t7op7FhP"
                   clientKey:@"0qqLP5RyNi2iF9OuHzeMJhs2VxmDOLc77uZ7yX7C"];
-    
-    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    [currentInstallation saveInBackground];
     
     [application registerForRemoteNotificationTypes: UIRemoteNotificationTypeAlert
                                                     | UIRemoteNotificationTypeBadge |
