@@ -11,6 +11,9 @@
 		7F0534ED19A1B187008CCDD9 /* JJVPreviewViewController_iPad-landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0534EC19A1B187008CCDD9 /* JJVPreviewViewController_iPad-landscape.xib */; };
 		7F0798BB195BBE8500D022A0 /* JJVStoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0798BA195BBE8500D022A0 /* JJVStoryItem.m */; };
 		7F0798BE195BC28800D022A0 /* JJVStoryItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0798BD195BC28800D022A0 /* JJVStoryItemStore.m */; };
+		7F13FD2619C3A798005649FD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F13FD2519C3A798005649FD /* Social.framework */; };
+		7F13FD2819C3A7A8005649FD /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F13FD2719C3A7A8005649FD /* Accounts.framework */; };
+		7F13FD2A19C3A8D2005649FD /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F13FD2919C3A8D2005649FD /* FacebookSDK.framework */; };
 		7F1A940319985D350057873B /* JJVPreviewViewController_iphone4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F1A940219985D350057873B /* JJVPreviewViewController_iphone4.xib */; };
 		7F2B33C91968BAC1006888CC /* JJVReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B33C71968BAC1006888CC /* JJVReaderViewController.m */; };
 		7F2B33CA1968BAC1006888CC /* JJVReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F2B33C81968BAC1006888CC /* JJVReaderViewController.xib */; };
@@ -40,6 +43,16 @@
 		7FA2530D199FBDFA0069F2AB /* JJVWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA2530B199FBDFA0069F2AB /* JJVWebViewController.xib */; };
 		7FCF43551992B56C00D2087C /* JJVEventsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF43531992B56C00D2087C /* JJVEventsTableViewCell.m */; };
 		7FCF43561992B56C00D2087C /* JJVEventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCF43541992B56C00D2087C /* JJVEventsTableViewCell.xib */; };
+		7FCFED0F19C3A281003EA65D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCFED0E19C3A281003EA65D /* Parse.framework */; };
+		7FCFED1119C3A321003EA65D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCFED1019C3A321003EA65D /* AudioToolbox.framework */; };
+		7FCFED1319C3A32C003EA65D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCFED1219C3A32C003EA65D /* CFNetwork.framework */; };
+		7FCFED1519C3A33A003EA65D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCFED1419C3A33A003EA65D /* CoreLocation.framework */; };
+		7FCFED1719C3A345003EA65D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCFED1619C3A345003EA65D /* libz.dylib */; };
+		7FCFED1919C3A350003EA65D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCFED1819C3A350003EA65D /* MobileCoreServices.framework */; };
+		7FCFED1B19C3A356003EA65D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCFED1A19C3A356003EA65D /* QuartzCore.framework */; };
+		7FCFED1D19C3A35B003EA65D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCFED1C19C3A35B003EA65D /* Security.framework */; };
+		7FCFED1F19C3A361003EA65D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCFED1E19C3A361003EA65D /* StoreKit.framework */; };
+		7FCFED2119C3A369003EA65D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCFED2019C3A369003EA65D /* SystemConfiguration.framework */; };
 		7FF95888199479AA0029D39D /* JJVSportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF95886199479AA0029D39D /* JJVSportsViewController.m */; };
 		7FF95889199479AA0029D39D /* JJVSportsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF95887199479AA0029D39D /* JJVSportsViewController.xib */; };
 		B5967AF94EE24B619635321E /* libPods-KnightNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6995472A89423EA9451C68 /* libPods-KnightNews.a */; };
@@ -64,6 +77,9 @@
 		7F0798BA195BBE8500D022A0 /* JJVStoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVStoryItem.m; sourceTree = "<group>"; };
 		7F0798BC195BC28800D022A0 /* JJVStoryItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVStoryItemStore.h; sourceTree = "<group>"; };
 		7F0798BD195BC28800D022A0 /* JJVStoryItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVStoryItemStore.m; sourceTree = "<group>"; };
+		7F13FD2519C3A798005649FD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		7F13FD2719C3A7A8005649FD /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		7F13FD2919C3A8D2005649FD /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		7F1A940219985D350057873B /* JJVPreviewViewController_iphone4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVPreviewViewController_iphone4.xib; sourceTree = "<group>"; };
 		7F2B33C61968BAC1006888CC /* JJVReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVReaderViewController.h; sourceTree = "<group>"; };
 		7F2B33C71968BAC1006888CC /* JJVReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVReaderViewController.m; sourceTree = "<group>"; };
@@ -108,6 +124,17 @@
 		7FCF43521992B56C00D2087C /* JJVEventsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVEventsTableViewCell.h; sourceTree = "<group>"; };
 		7FCF43531992B56C00D2087C /* JJVEventsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVEventsTableViewCell.m; sourceTree = "<group>"; };
 		7FCF43541992B56C00D2087C /* JJVEventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVEventsTableViewCell.xib; sourceTree = "<group>"; };
+		7FCFED0C19C3A276003EA65D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		7FCFED0E19C3A281003EA65D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		7FCFED1019C3A321003EA65D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		7FCFED1219C3A32C003EA65D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7FCFED1419C3A33A003EA65D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7FCFED1619C3A345003EA65D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		7FCFED1819C3A350003EA65D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		7FCFED1A19C3A356003EA65D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7FCFED1C19C3A35B003EA65D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		7FCFED1E19C3A361003EA65D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		7FCFED2019C3A369003EA65D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7FF95885199479AA0029D39D /* JJVSportsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVSportsViewController.h; sourceTree = "<group>"; };
 		7FF95886199479AA0029D39D /* JJVSportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVSportsViewController.m; sourceTree = "<group>"; };
 		7FF95887199479AA0029D39D /* JJVSportsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVSportsViewController.xib; sourceTree = "<group>"; };
@@ -118,9 +145,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F98B3081954E5CE00C1A344 /* CoreGraphics.framework in Frameworks */,
-				7F98B30A1954E5CE00C1A344 /* UIKit.framework in Frameworks */,
+				7F13FD2819C3A7A8005649FD /* Accounts.framework in Frameworks */,
+				7F13FD2A19C3A8D2005649FD /* FacebookSDK.framework in Frameworks */,
+				7F13FD2619C3A798005649FD /* Social.framework in Frameworks */,
 				7F98B3061954E5CE00C1A344 /* Foundation.framework in Frameworks */,
+				7FCFED0F19C3A281003EA65D /* Parse.framework in Frameworks */,
+				7FCFED2119C3A369003EA65D /* SystemConfiguration.framework in Frameworks */,
+				7FCFED1F19C3A361003EA65D /* StoreKit.framework in Frameworks */,
+				7FCFED1D19C3A35B003EA65D /* Security.framework in Frameworks */,
+				7FCFED1B19C3A356003EA65D /* QuartzCore.framework in Frameworks */,
+				7FCFED1919C3A350003EA65D /* MobileCoreServices.framework in Frameworks */,
+				7FCFED1719C3A345003EA65D /* libz.dylib in Frameworks */,
+				7FCFED1519C3A33A003EA65D /* CoreLocation.framework in Frameworks */,
+				7F98B3081954E5CE00C1A344 /* CoreGraphics.framework in Frameworks */,
+				7FCFED1319C3A32C003EA65D /* CFNetwork.framework in Frameworks */,
+				7FCFED1119C3A321003EA65D /* AudioToolbox.framework in Frameworks */,
+				7F98B30A1954E5CE00C1A344 /* UIKit.framework in Frameworks */,
 				B5967AF94EE24B619635321E /* libPods-KnightNews.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,6 +201,20 @@
 		7F98B3041954E5CE00C1A344 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7F13FD2919C3A8D2005649FD /* FacebookSDK.framework */,
+				7F13FD2719C3A7A8005649FD /* Accounts.framework */,
+				7F13FD2519C3A798005649FD /* Social.framework */,
+				7FCFED2019C3A369003EA65D /* SystemConfiguration.framework */,
+				7FCFED1E19C3A361003EA65D /* StoreKit.framework */,
+				7FCFED1C19C3A35B003EA65D /* Security.framework */,
+				7FCFED1A19C3A356003EA65D /* QuartzCore.framework */,
+				7FCFED1819C3A350003EA65D /* MobileCoreServices.framework */,
+				7FCFED1619C3A345003EA65D /* libz.dylib */,
+				7FCFED1419C3A33A003EA65D /* CoreLocation.framework */,
+				7FCFED1219C3A32C003EA65D /* CFNetwork.framework */,
+				7FCFED1019C3A321003EA65D /* AudioToolbox.framework */,
+				7FCFED0E19C3A281003EA65D /* Parse.framework */,
+				7FCFED0C19C3A276003EA65D /* Bolts.framework */,
 				7F98B3051954E5CE00C1A344 /* Foundation.framework */,
 				7F98B3071954E5CE00C1A344 /* CoreGraphics.framework */,
 				7F98B3091954E5CE00C1A344 /* UIKit.framework */,
@@ -525,7 +579,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: james van gaasbeck (GSE7TLYMH7)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KnightNews/KnightNews-Prefix.pch";
 				INFOPLIST_FILE = "KnightNews/KnightNews-Info.plist";
@@ -541,7 +599,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: james van gaasbeck (GSE7TLYMH7)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KnightNews/KnightNews-Prefix.pch";
 				INFOPLIST_FILE = "KnightNews/KnightNews-Info.plist";

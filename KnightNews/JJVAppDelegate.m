@@ -12,6 +12,7 @@
 #import "JJVSportsViewController.h"
 #import "JJVMapViewController.h"
 #import "JJVStoryItemStore.h"
+#import <Parse/Parse.h>
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -25,6 +26,17 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    [Parse setApplicationId:@"keKOe5UZxrEWyX3UX4NQMLXsajd1xmG2t7op7FhP"
+                  clientKey:@"0qqLP5RyNi2iF9OuHzeMJhs2VxmDOLc77uZ7yX7C"];
+    
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation saveInBackground];
+    
+    [application registerForRemoteNotificationTypes: UIRemoteNotificationTypeAlert
+                                                    | UIRemoteNotificationTypeBadge |
+                                                    UIRemoteNotificationTypeSound];
+    
+    
     
     //set status bar to light, application wide
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
@@ -97,6 +109,21 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    currentInstallation.channels = @[@"global"];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [PFPush handlePush:userInfo];
 }
 
 #pragma mark TabBar Image Drawing Method
