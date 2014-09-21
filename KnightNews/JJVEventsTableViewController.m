@@ -109,7 +109,7 @@ NSString *const EVENT_DESC = @"event_desc";
         self.eventItem.date = self.tempDate;
     }
     else if ([elementName isEqualToString: EVENT_DESC]) {
-        self.eventItem.description = self.tempDesc;
+        self.eventItem.desc = self.tempDesc;
         
         //The way that the XML is formed, after we have parsed the
         //eventDescription we have parsed the entire event object.
@@ -146,7 +146,7 @@ NSString *const EVENT_DESC = @"event_desc";
     JJVEventItem *e = [self.items objectAtIndex: indexPath.item];
     // Configure the cell...
     cell.nameLabel.text = e.title;
-    cell.descriptionLabel.text = e.description;
+    cell.descriptionLabel.text = e.desc;
     cell.dateLabel.text = e.date;
     
     return cell;

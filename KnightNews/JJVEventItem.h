@@ -11,7 +11,7 @@
 @interface JJVEventItem : NSObject
 
 @property (nonatomic, strong) NSMutableString *title;
-@property (nonatomic, strong) NSMutableString *description;
+@property (nonatomic, strong) NSMutableString *desc;
 @property (nonatomic, strong) NSMutableString *date;
 
 @end

@@ -48,8 +48,7 @@
         }
     }
     
-    
-    
+
     //set status bar to light, application wide
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     //set Application wide tint color to OldGold
