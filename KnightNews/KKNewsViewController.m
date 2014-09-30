@@ -13,9 +13,10 @@
 #import "JJVStoryItemStore.h"
 #import "JJVStoryItem.h"
 
-@interface KKNewsViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface KKNewsViewController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UICollectionView *collectionView;
 
 @property (nonatomic, strong) NSArray *newsArticles;
 @end
@@ -26,7 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self setUpTableView];
+    //[self setUpTableView];
     
     self.navigationItem.title = @"News";
     self.tabBarItem.image = [UIImage imageNamed:@"newspaper_25"];
@@ -36,7 +37,7 @@
         self.newsArticles = [[JJVStoryItemStore sharedStore] allItems];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-               [self.tableView reloadData];
+               //[self.tableView reloadData];
         });
      
     }];
@@ -62,6 +63,11 @@
         [self.tableView registerNib:[UINib nibWithNibName:@"KKNewsFeaturedTableViewCell" bundle:nil]forCellReuseIdentifier:@"FeaturedNewsCell"];
     
     [self.view addSubview:self.tableView];
+}
+
+-(void)setUpCollectionView
+{
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
 }
 
 #pragma mark - UITableViewDataSource Methods
@@ -117,7 +123,9 @@
     
     [[KKNewsAPI sharedUtilities] downloadImageForUrl:item.imageUrl withCompletionBlock:^(BOOL success, NSError *error, UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            cell.articleImageView.clipsToBounds = YES;
             cell.articleImageView.image = image;
+            cell.articleImageView.frame = CGRectMake(0, 0, self.view.frame.size.width, 300);
         });
     }];
     
@@ -170,5 +178,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - UICollectionViewDataSource
+
 
 @end

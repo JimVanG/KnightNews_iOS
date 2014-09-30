@@ -121,6 +121,7 @@
         //self.imageView.image = response;
         if (completionBlock)
         {
+            NSLog(@"%@", response);
             completionBlock(YES, nil, response);
         }
         

@@ -194,6 +194,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		276AA40419DB11FA001C3611 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				27DA778B19DA657300C7C92A /* KKNewsTableViewCell.xib */,
+				27DA778D19DA674000C7C92A /* KKNewsTableViewCell.h */,
+				27DA778E19DA674000C7C92A /* KKNewsTableViewCell.m */,
+				27DA779019DA784500C7C92A /* KKNewsFeaturedTableViewCell.h */,
+				27DA779119DA784500C7C92A /* KKNewsFeaturedTableViewCell.m */,
+				27DA779219DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
 		27DA778019DA5BF700C7C92A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,12 +219,7 @@
 		27DA778A19DA655E00C7C92A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				27DA778B19DA657300C7C92A /* KKNewsTableViewCell.xib */,
-				27DA778D19DA674000C7C92A /* KKNewsTableViewCell.h */,
-				27DA778E19DA674000C7C92A /* KKNewsTableViewCell.m */,
-				27DA779019DA784500C7C92A /* KKNewsFeaturedTableViewCell.h */,
-				27DA779119DA784500C7C92A /* KKNewsFeaturedTableViewCell.m */,
-				27DA779219DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib */,
+				276AA40419DB11FA001C3611 /* TableView */,
 			);
 			name = View;
 			sourceTree = "<group>";
