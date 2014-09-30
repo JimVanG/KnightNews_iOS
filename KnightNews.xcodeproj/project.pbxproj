@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		27DA778319DA5CCE00C7C92A /* KKNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA778219DA5CCE00C7C92A /* KKNewsViewController.m */; };
-		27DA778519DA5D7900C7C92A /* KKNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27DA778419DA5D7900C7C92A /* KKNewsViewController.xib */; };
 		7F0534EB19A1801E008CCDD9 /* JJVPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0534EA19A1801E008CCDD9 /* JJVPreviewViewController.xib */; };
 		7F0534ED19A1B187008CCDD9 /* JJVPreviewViewController_iPad-landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0534EC19A1B187008CCDD9 /* JJVPreviewViewController_iPad-landscape.xib */; };
 		7F0798BB195BBE8500D022A0 /* JJVStoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0798BA195BBE8500D022A0 /* JJVStoryItem.m */; };
@@ -75,7 +74,6 @@
 		204D10E97C3B476089833AD6 /* Pods-KnightNews.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightNews.xcconfig"; path = "Pods/Pods-KnightNews.xcconfig"; sourceTree = "<group>"; };
 		27DA778119DA5CCE00C7C92A /* KKNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNewsViewController.h; sourceTree = "<group>"; };
 		27DA778219DA5CCE00C7C92A /* KKNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNewsViewController.m; sourceTree = "<group>"; };
-		27DA778419DA5D7900C7C92A /* KKNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKNewsViewController.xib; sourceTree = "<group>"; };
 		7F0534EA19A1801E008CCDD9 /* JJVPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVPreviewViewController.xib; sourceTree = "<group>"; };
 		7F0534EC19A1B187008CCDD9 /* JJVPreviewViewController_iPad-landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "JJVPreviewViewController_iPad-landscape.xib"; sourceTree = "<group>"; };
 		7F0798B9195BBE8500D022A0 /* JJVStoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVStoryItem.h; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 			children = (
 				27DA778119DA5CCE00C7C92A /* KKNewsViewController.h */,
 				27DA778219DA5CCE00C7C92A /* KKNewsViewController.m */,
-				27DA778419DA5D7900C7C92A /* KKNewsViewController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -407,7 +404,6 @@
 				7FF95889199479AA0029D39D /* JJVSportsViewController.xib in Resources */,
 				7F0534EB19A1801E008CCDD9 /* JJVPreviewViewController.xib in Resources */,
 				7FA25308199FB3CE0069F2AB /* JJVPreviewViewController_iPad.xib in Resources */,
-				27DA778519DA5D7900C7C92A /* KKNewsViewController.xib in Resources */,
 				7F0534ED19A1B187008CCDD9 /* JJVPreviewViewController_iPad-landscape.xib in Resources */,
 				7F1A940319985D350057873B /* JJVPreviewViewController_iphone4.xib in Resources */,
 				7FCF43561992B56C00D2087C /* JJVEventsTableViewCell.xib in Resources */,
