@@ -10,6 +10,7 @@
 #import "JJVStoryItem.h"
 #import "JJVStoryItemStore.h"
 #import "Constants.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface KKNewsAPI()
 
@@ -109,9 +110,25 @@
     
 }
 
--(void)downloadImageForUrl:(NSString*)aUrl withCompletionBlock:(KKNewsRetrievedCompletionBlock)completionBlock
+-(void)downloadImageForUrl:(NSString*)aUrl withCompletionBlock:(KKImageRetrievedCompletionBlock)completionBlock
 {
-    
+    AFHTTPRequestOperation *request = [[AFHTTPRequestOperation alloc] initWithRequest:
+                                       [NSURLRequest requestWithURL:
+                                        [NSURL URLWithString: aUrl]]];
+    request.responseSerializer = [AFImageResponseSerializer serializer];
+    [request setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *op, id response){
+        
+        //self.imageView.image = response;
+        if (completionBlock)
+        {
+            completionBlock(YES, nil, response);
+        }
+        
+    }failure:^(AFHTTPRequestOperation *op, NSError *error){
+        
+        //self.imageView.image = [UIImage imageNamed:@"news_error.png"];
+    }];
+    [request start];
 }
 
 @end

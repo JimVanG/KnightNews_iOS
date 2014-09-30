@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,35 +16,68 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="news_error" translatesAutoresizingMaskIntoConstraints="NO" id="1hi-HH-oSW">
-                        <rect key="frame" x="0.0" y="-1" width="320" height="160"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news_error" translatesAutoresizingMaskIntoConstraints="NO" id="1hi-HH-oSW">
+                        <rect key="frame" x="0.0" y="-1" width="320" height="161"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This Really is a super long headline to test multiple liens" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQP-48-Fb8">
-                        <rect key="frame" x="8" y="165" width="320" height="44"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By John Doe, Title here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMH-m2-dJf">
-                        <rect key="frame" x="9" y="210" width="199" height="21"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="By John Doe, Title here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMH-m2-dJf">
+                        <rect key="frame" x="9" y="205" width="199" height="21"/>
+                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="12"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3 d" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itj-ss-SHq">
-                        <rect key="frame" x="268" y="210" width="42" height="21"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 d" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itj-ss-SHq">
+                        <rect key="frame" x="268" y="210.5" width="42" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="29k-xv-Kub"/>
+                            <constraint firstAttribute="height" constant="21" id="FHc-Ks-JAo"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="12"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Hong Kong streets are pakced with thousands of demonstrators bracing for the possiblity of a police crackdown." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYf-0y-15f">
-                        <rect key="frame" x="9" y="226" width="296" height="74"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Hong Kong streets are pakced with thousands of demonstrators bracing for the possiblity of a police crackdown." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYf-0y-15f">
+                        <rect key="frame" x="8" y="225" width="296" height="73.5"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This Really is a super long headline to test multiple lien" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQP-48-Fb8">
+                        <rect key="frame" x="8" y="161" width="482" height="44"/>
+                        <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="Itj-ss-SHq" firstAttribute="firstBaseline" secondItem="aMH-m2-dJf" secondAttribute="firstBaseline" id="0WR-UH-FQq"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="aMH-m2-dJf" secondAttribute="bottom" constant="60" id="38A-MD-UuH"/>
+                    <constraint firstItem="VQP-48-Fb8" firstAttribute="top" secondItem="1hi-HH-oSW" secondAttribute="bottom" constant="8" id="DYU-Vz-1Ol"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="1hi-HH-oSW" secondAttribute="trailing" constant="-8" id="GY4-Td-ZfW"/>
+                    <constraint firstItem="aMH-m2-dJf" firstAttribute="top" secondItem="VQP-48-Fb8" secondAttribute="bottom" constant="1" id="K66-JH-WJA"/>
+                    <constraint firstItem="Itj-ss-SHq" firstAttribute="baseline" secondItem="aMH-m2-dJf" secondAttribute="baseline" id="L0A-7a-Uxi"/>
+                    <constraint firstItem="xYf-0y-15f" firstAttribute="top" secondItem="VQP-48-Fb8" secondAttribute="bottom" constant="14" id="MHF-5V-REx"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="VQP-48-Fb8" secondAttribute="trailing" constant="-16" id="Osv-YY-X8T"/>
+                    <constraint firstItem="xYf-0y-15f" firstAttribute="leading" secondItem="aMH-m2-dJf" secondAttribute="leading" id="QOu-t7-bBK"/>
+                    <constraint firstItem="aMH-m2-dJf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="1" id="SyB-KP-0S3"/>
+                    <constraint firstItem="1hi-HH-oSW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="VxR-a6-2eB"/>
+                    <constraint firstItem="VQP-48-Fb8" firstAttribute="top" secondItem="1hi-HH-oSW" secondAttribute="bottom" constant="8" id="WKF-vl-DJj"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Itj-ss-SHq" secondAttribute="trailing" constant="2" id="bNV-S8-84A"/>
+                    <constraint firstItem="aMH-m2-dJf" firstAttribute="top" secondItem="VQP-48-Fb8" secondAttribute="bottom" constant="2" id="lMV-iy-e05"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="xYf-0y-15f" secondAttribute="bottom" constant="-7.5" id="nt3-MK-hKZ"/>
+                    <constraint firstItem="1hi-HH-oSW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-9" id="ovk-8T-vqQ"/>
+                    <constraint firstItem="Itj-ss-SHq" firstAttribute="top" secondItem="1hi-HH-oSW" secondAttribute="bottom" constant="51" id="pDE-KR-4Uy"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="xYf-0y-15f" secondAttribute="trailing" constant="7" id="poq-Qf-awW"/>
+                    <constraint firstItem="Itj-ss-SHq" firstAttribute="leading" secondItem="aMH-m2-dJf" secondAttribute="trailing" constant="60" id="sjl-KK-5Ep"/>
+                    <constraint firstItem="aMH-m2-dJf" firstAttribute="top" secondItem="VQP-48-Fb8" secondAttribute="bottom" constant="1" id="slP-6r-JX1"/>
+                    <constraint firstItem="VQP-48-Fb8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="yjf-RV-gbX"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="K66-JH-WJA"/>
+                        <exclude reference="slP-6r-JX1"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="articleAuthorLabel" destination="aMH-m2-dJf" id="WOF-8D-qj6"/>

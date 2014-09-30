@@ -34,7 +34,11 @@
     
     [[KKNewsAPI sharedUtilities] downloadNewsFeedWithCompletionBlock:^(BOOL success, NSError *error) {
         self.newsArticles = [[JJVStoryItemStore sharedStore] allItems];
-        [self.tableView reloadData];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+               [self.tableView reloadData];
+        });
+     
     }];
     
 }
@@ -110,6 +114,12 @@
     cell.articleAuthorLabel.text = item.author;
     cell.articleTitle.text = item.title;
     cell.articleTimeLabel.text = item.date;
+    
+    [[KKNewsAPI sharedUtilities] downloadImageForUrl:item.imageUrl withCompletionBlock:^(BOOL success, NSError *error, UIImage *image) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            cell.articleImageView.image = image;
+        });
+    }];
     
     
     cell.backgroundColor = [UIColor clearColor];

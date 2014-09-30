@@ -17,6 +17,7 @@ typedef void (^KKImageRetrievedCompletionBlock)(BOOL success, NSError *error, UI
 +(instancetype) sharedUtilities;
 
 -(void)downloadNewsFeedWithCompletionBlock:(KKNewsRetrievedCompletionBlock)completionBlock;
+-(void)downloadImageForUrl:(NSString*)aUrl withCompletionBlock:(KKImageRetrievedCompletionBlock)completionBlock;
 
 
 @end
