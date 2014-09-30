@@ -15,8 +15,6 @@
 #import "JJVReaderViewController.h"
 #import "MBProgressHUD.h"
 
-
-
 NSString *const TITLE_CONSTANT2 = @"title_plain";
 NSString *const URL_CONSTANT2 = @"url";
 NSString *const POSTS_CONSTANT2 = @"posts";
@@ -27,6 +25,9 @@ NSString *const IMAGE_CONSTANT2 = @"image";
 NSString *const AUTHOR_CONSTANT2 = @"author";
 NSString *const NAME_CONSTANT2 = @"name";
 NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
+
+
+
 
 
 @interface JJVPageRootViewController () <UIGestureRecognizerDelegate>

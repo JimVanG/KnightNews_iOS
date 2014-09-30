@@ -9,10 +9,14 @@
 #import "KKNewsViewController.h"
 #import "KKNewsFeaturedTableViewCell.h"
 #import "KKNewsTableViewCell.h"
+#import "KKNewsAPI.h"
+#import "JJVStoryItemStore.h"
 
 @interface KKNewsViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
+
+@property (nonatomic, strong) NSArray *newsArticles; 
 @end
 
 @implementation KKNewsViewController
@@ -26,6 +30,12 @@
     self.navigationItem.title = @"News";
     self.tabBarItem.image = [UIImage imageNamed:@"newspaper_25"];
     self.tabBarItem.title = @"News";
+    
+    [[KKNewsAPI sharedUtilities] downloadNewsFeedWithCompletionBlock:^(BOOL success, NSError *error)
+    {
+        //TODO: reload data.
+        NSLog(@"-----%d", [[JJVStoryItemStore sharedStore] allItems].count);
+    }];
     
 }
 
