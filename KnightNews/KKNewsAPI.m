@@ -109,4 +109,9 @@
     
 }
 
+-(void)downloadImageForUrl:(NSString*)aUrl withCompletionBlock:(KKNewsRetrievedCompletionBlock)completionBlock
+{
+    
+}
+
 @end

@@ -10,4 +10,9 @@
 
 @interface KKNewsFeaturedTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *articleImageView;
+@property (weak, nonatomic) IBOutlet UILabel *articleTitle;
+@property (weak, nonatomic) IBOutlet UILabel *articleAuthorLabel;
+@property (weak, nonatomic) IBOutlet UILabel *articleTimeLabel;
+@property (weak, nonatomic) IBOutlet UITextView *articlePreviewTextView;
 @end

@@ -10,6 +10,7 @@
 
 
 typedef void (^KKNewsRetrievedCompletionBlock)(BOOL success, NSError *error);
+typedef void (^KKImageRetrievedCompletionBlock)(BOOL success, NSError *error, UIImage *image);
 
 @interface KKNewsAPI : NSObject
 

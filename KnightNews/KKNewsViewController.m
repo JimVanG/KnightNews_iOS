@@ -11,12 +11,13 @@
 #import "KKNewsTableViewCell.h"
 #import "KKNewsAPI.h"
 #import "JJVStoryItemStore.h"
+#import "JJVStoryItem.h"
 
 @interface KKNewsViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 
-@property (nonatomic, strong) NSArray *newsArticles; 
+@property (nonatomic, strong) NSArray *newsArticles;
 @end
 
 @implementation KKNewsViewController
@@ -31,10 +32,9 @@
     self.tabBarItem.image = [UIImage imageNamed:@"newspaper_25"];
     self.tabBarItem.title = @"News";
     
-    [[KKNewsAPI sharedUtilities] downloadNewsFeedWithCompletionBlock:^(BOOL success, NSError *error)
-    {
-        //TODO: reload data.
-        NSLog(@"-----%d", [[JJVStoryItemStore sharedStore] allItems].count);
+    [[KKNewsAPI sharedUtilities] downloadNewsFeedWithCompletionBlock:^(BOOL success, NSError *error) {
+        self.newsArticles = [[JJVStoryItemStore sharedStore] allItems];
+        [self.tableView reloadData];
     }];
     
 }
@@ -68,7 +68,10 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
+    if (self.newsArticles)
+        return self.newsArticles.count;
+    else
+        return 1;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -76,7 +79,7 @@
     switch (indexPath.section)
     {
         case 0:
-            return [self setUpFeaturedTableViewCellForTableView:tableView];
+            return [self setUpFeaturedTableViewCellForTableView:tableView atIndexPath:indexPath];
             break;
         case 1:
             return [self setUpNewsTableViewCellForTableView:tableView];
@@ -98,9 +101,16 @@
     return cell;
 }
 
--(KKNewsFeaturedTableViewCell *)setUpFeaturedTableViewCellForTableView:(UITableView *)tableView
+-(KKNewsFeaturedTableViewCell *)setUpFeaturedTableViewCellForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath*)indexPath
 {
     KKNewsFeaturedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeaturedNewsCell"];
+    
+    JJVStoryItem *item = (JJVStoryItem*)[self.newsArticles objectAtIndex:indexPath.section];
+    
+    cell.articleAuthorLabel.text = item.author;
+    cell.articleTitle.text = item.title;
+    cell.articleTimeLabel.text = item.date;
+    
     
     cell.backgroundColor = [UIColor clearColor];
     cell.contentView.backgroundColor = [UIColor darkGrayColor];
@@ -112,7 +122,8 @@
 {
     if (indexPath.section == 0)
         return 300.0f;
-    return 170.0f;
+    else
+        return 170.0f;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
