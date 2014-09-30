@@ -7,6 +7,8 @@
 //
 
 #import "KKNewsViewController.h"
+#import "KKNewsFeaturedTableViewCell.h"
+#import "KKNewsTableViewCell.h"
 
 @interface KKNewsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -20,6 +22,10 @@
     // Do any additional setup after loading the view.
     
     [self setUpTableView];
+    
+    self.navigationItem.title = @"News";
+    self.tabBarItem.image = [UIImage imageNamed:@"newspaper_25"];
+    self.tabBarItem.title = @"News";
     
 }
 
@@ -39,6 +45,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"KKNewsTableViewCell" bundle:nil]forCellReuseIdentifier:@"NewsCell"];
+        [self.tableView registerNib:[UINib nibWithNibName:@"KKNewsFeaturedTableViewCell" bundle:nil]forCellReuseIdentifier:@"FeaturedNewsCell"];
     
     [self.view addSubview:self.tableView];
 }
@@ -56,17 +63,45 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsCell"];
+    switch (indexPath.section)
+    {
+        case 0:
+            return [self setUpFeaturedTableViewCellForTableView:tableView];
+            break;
+        case 1:
+            return [self setUpNewsTableViewCellForTableView:tableView];
+            break;
+            
+        default:
+            return [self setUpNewsTableViewCellForTableView:tableView];
+            break;
+    }
+}
+
+-(KKNewsTableViewCell *)setUpNewsTableViewCellForTableView:(UITableView *)tableView
+{
+    KKNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsCell"];
     
     cell.backgroundColor = [UIColor clearColor];
     cell.contentView.backgroundColor = [UIColor darkGrayColor];
     
     return cell;
+}
+
+-(KKNewsFeaturedTableViewCell *)setUpFeaturedTableViewCellForTableView:(UITableView *)tableView
+{
+    KKNewsFeaturedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeaturedNewsCell"];
     
+    cell.backgroundColor = [UIColor clearColor];
+    cell.contentView.backgroundColor = [UIColor darkGrayColor];
+    
+    return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section == 0)
+        return 300.0f;
     return 170.0f;
 }
 

@@ -10,6 +10,8 @@
 		27DA778319DA5CCE00C7C92A /* KKNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA778219DA5CCE00C7C92A /* KKNewsViewController.m */; };
 		27DA778C19DA657300C7C92A /* KKNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27DA778B19DA657300C7C92A /* KKNewsTableViewCell.xib */; };
 		27DA778F19DA674000C7C92A /* KKNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA778E19DA674000C7C92A /* KKNewsTableViewCell.m */; };
+		27DA779319DA784500C7C92A /* KKNewsFeaturedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA779119DA784500C7C92A /* KKNewsFeaturedTableViewCell.m */; };
+		27DA779419DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27DA779219DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib */; };
 		7F0534EB19A1801E008CCDD9 /* JJVPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0534EA19A1801E008CCDD9 /* JJVPreviewViewController.xib */; };
 		7F0534ED19A1B187008CCDD9 /* JJVPreviewViewController_iPad-landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0534EC19A1B187008CCDD9 /* JJVPreviewViewController_iPad-landscape.xib */; };
 		7F0798BB195BBE8500D022A0 /* JJVStoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0798BA195BBE8500D022A0 /* JJVStoryItem.m */; };
@@ -79,6 +81,9 @@
 		27DA778B19DA657300C7C92A /* KKNewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKNewsTableViewCell.xib; sourceTree = "<group>"; };
 		27DA778D19DA674000C7C92A /* KKNewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNewsTableViewCell.h; sourceTree = "<group>"; };
 		27DA778E19DA674000C7C92A /* KKNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNewsTableViewCell.m; sourceTree = "<group>"; };
+		27DA779019DA784500C7C92A /* KKNewsFeaturedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNewsFeaturedTableViewCell.h; sourceTree = "<group>"; };
+		27DA779119DA784500C7C92A /* KKNewsFeaturedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNewsFeaturedTableViewCell.m; sourceTree = "<group>"; };
+		27DA779219DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKNewsFeaturedTableViewCell.xib; sourceTree = "<group>"; };
 		7F0534EA19A1801E008CCDD9 /* JJVPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVPreviewViewController.xib; sourceTree = "<group>"; };
 		7F0534EC19A1B187008CCDD9 /* JJVPreviewViewController_iPad-landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "JJVPreviewViewController_iPad-landscape.xib"; sourceTree = "<group>"; };
 		7F0798B9195BBE8500D022A0 /* JJVStoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVStoryItem.h; sourceTree = "<group>"; };
@@ -201,6 +206,9 @@
 				27DA778B19DA657300C7C92A /* KKNewsTableViewCell.xib */,
 				27DA778D19DA674000C7C92A /* KKNewsTableViewCell.h */,
 				27DA778E19DA674000C7C92A /* KKNewsTableViewCell.m */,
+				27DA779019DA784500C7C92A /* KKNewsFeaturedTableViewCell.h */,
+				27DA779119DA784500C7C92A /* KKNewsFeaturedTableViewCell.m */,
+				27DA779219DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -417,6 +425,7 @@
 				27DA778C19DA657300C7C92A /* KKNewsTableViewCell.xib in Resources */,
 				7F98B3101954E5CE00C1A344 /* InfoPlist.strings in Resources */,
 				7F98B3181954E5CE00C1A344 /* Images.xcassets in Resources */,
+				27DA779419DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib in Resources */,
 				7F2B33CA1968BAC1006888CC /* JJVReaderViewController.xib in Resources */,
 				7FF95889199479AA0029D39D /* JJVSportsViewController.xib in Resources */,
 				7F0534EB19A1801E008CCDD9 /* JJVPreviewViewController.xib in Resources */,
@@ -491,6 +500,7 @@
 				7F67D13E1996B92A002743E5 /* JJVMapViewController.m in Sources */,
 				7F2B33C91968BAC1006888CC /* JJVReaderViewController.m in Sources */,
 				7F0798BE195BC28800D022A0 /* JJVStoryItemStore.m in Sources */,
+				27DA779319DA784500C7C92A /* KKNewsFeaturedTableViewCell.m in Sources */,
 				7F2B33D01968E734006888CC /* JJVPageModelController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
