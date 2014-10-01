@@ -13,10 +13,9 @@
 #import "JJVStoryItemStore.h"
 #import "JJVStoryItem.h"
 
-@interface KKNewsViewController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface KKNewsViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) UICollectionView *collectionView;
 
 @property (nonatomic, strong) NSArray *newsArticles;
 @end
@@ -27,7 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //[self setUpTableView];
+    [self setUpTableView];
     
     self.navigationItem.title = @"News";
     self.tabBarItem.image = [UIImage imageNamed:@"newspaper_25"];
@@ -37,7 +36,7 @@
         self.newsArticles = [[JJVStoryItemStore sharedStore] allItems];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-               //[self.tableView reloadData];
+               [self.tableView reloadData];
         });
      
     }];
@@ -56,7 +55,7 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    self.tableView.backgroundColor = [UIColor darkGrayColor];
+    self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"KKNewsTableViewCell" bundle:nil]forCellReuseIdentifier:@"NewsCell"];
@@ -65,10 +64,6 @@
     [self.view addSubview:self.tableView];
 }
 
--(void)setUpCollectionView
-{
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-}
 
 #pragma mark - UITableViewDataSource Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -92,11 +87,11 @@
             return [self setUpFeaturedTableViewCellForTableView:tableView atIndexPath:indexPath];
             break;
         case 1:
-            return [self setUpNewsTableViewCellForTableView:tableView];
+            return [self setUpFeaturedTableViewCellForTableView:tableView atIndexPath:indexPath];
             break;
             
         default:
-            return [self setUpNewsTableViewCellForTableView:tableView];
+            return [self setUpFeaturedTableViewCellForTableView:tableView atIndexPath:indexPath];
             break;
     }
 }
@@ -106,7 +101,7 @@
     KKNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsCell"];
     
     cell.backgroundColor = [UIColor clearColor];
-    cell.contentView.backgroundColor = [UIColor darkGrayColor];
+    //cell.contentView.backgroundColor = [UIColor l];
     
     return cell;
 }
@@ -121,27 +116,36 @@
     cell.articleTitle.text = item.title;
     cell.articleTimeLabel.text = item.date;
     
+    UIFontDescriptor* Descriptor = [UIFontDescriptor fontDescriptorWithFontAttributes:@{
+                                                                                        UIFontDescriptorFamilyAttribute : @"Georgia"
+                                                                                        }];
+    cell.articlePreviewTextView.text = item.excerptParsed;
+    cell.articlePreviewTextView.font = [UIFont fontWithDescriptor:Descriptor size:14.0f];
+    NSLog(@"%@", item.date);
+    cell.articleTimeLabel.text = @"Test";
+    
     [[KKNewsAPI sharedUtilities] downloadImageForUrl:item.imageUrl withCompletionBlock:^(BOOL success, NSError *error, UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            cell.imageView.image = nil;
             cell.articleImageView.clipsToBounds = YES;
             cell.articleImageView.image = image;
-            cell.articleImageView.frame = CGRectMake(0, 0, self.view.frame.size.width, 300);
+            //cell.articleImageView.frame = CGRectMake(0, 0, self.view.frame.size.width, 300);
         });
     }];
     
     
     cell.backgroundColor = [UIColor clearColor];
-    cell.contentView.backgroundColor = [UIColor darkGrayColor];
+   // cell.contentView.backgroundColor = [UIColor darkGrayColor];
     
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0)
+    //if (indexPath.section == 0)
         return 300.0f;
-    else
-        return 170.0f;
+    //else
+        //return 170.0f;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
