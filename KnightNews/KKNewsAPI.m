@@ -111,6 +111,7 @@
     
 }
 
+/* Assumes the date string is in the format "yyyy-MM-dd XXXXXXXXX"*/
 -(NSDate*)getDateFromJsonDateKeyValue:(NSString*)date
 {
     if (date)
@@ -148,6 +149,10 @@
     }failure:^(AFHTTPRequestOperation *op, NSError *error){
         
         //self.imageView.image = [UIImage imageNamed:@"news_error.png"];
+        if (completionBlock)
+        {
+            completionBlock(NO, nil, [UIImage imageNamed:@"news_error.png"]);
+        }
     }];
     [request start];
 }

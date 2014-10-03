@@ -14,6 +14,7 @@
 #import "JJVStoryItem.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "NSDate+NSDate_TimeAgo.h"
+#import "JJVReaderViewController.h"
 
 @interface KKNewsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -22,7 +23,22 @@
 @property (nonatomic, strong) NSArray *newsArticles;
 @end
 
+
 @implementation KKNewsViewController
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.navigationItem.title = @"News";
+        self.tabBarItem.image = [UIImage imageNamed:@"newspaper_25"];
+        self.tabBarItem.selectedImage = [UIImage imageNamed:@"newspaper_25"];
+        self.tabBarItem.title = @"News";
+        
+    }
+    
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,9 +46,7 @@
     
     [self setUpTableView];
     
-    self.navigationItem.title = @"News";
-    self.tabBarItem.image = [UIImage imageNamed:@"newspaper_25"];
-    self.tabBarItem.title = @"News";
+
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
@@ -40,7 +54,10 @@
         self.newsArticles = [[JJVStoryItemStore sharedStore] allItems];
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            
                [self.tableView reloadData];
+            self.tableView.contentSize = CGSizeMake(self.view.frame.size.width, 316 * self.newsArticles.count);
+
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self fadeInView:self.tableView];
         });
@@ -120,6 +137,7 @@
     
     JJVStoryItem *item = (JJVStoryItem*)[self.newsArticles objectAtIndex:indexPath.section];
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.articleImageView.image = nil;
     cell.articleImageView.alpha = 0.0;
     cell.articleAuthorLabel.text = item.author;
@@ -130,7 +148,7 @@
                                                                                         UIFontDescriptorFamilyAttribute : @"Georgia"
                                                                                         }];
     cell.articlePreviewTextView.text = item.excerptParsed;
-    cell.articlePreviewTextView.font = [UIFont fontWithDescriptor:Descriptor size:15.0f];
+    cell.articlePreviewTextView.font = [UIFont fontWithDescriptor:Descriptor size:14.0f];
     cell.articlePreviewTextView.textColor = [UIColor darkGrayColor];
     NSLog(@"%@", item.date);
    // cell.articleTimeLabel.text = @"Test";
@@ -202,6 +220,21 @@
 }*/
 
 #pragma mark - UITableViewDelegate Methods
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //NSLog(@"TAP");
+    JJVReaderViewController *readerView = [[JJVReaderViewController alloc]
+                                           initWithNibName:nil bundle:nil];
+    
+    //pass the selected story along to the reader view
+    JJVStoryItem *story = [self.newsArticles objectAtIndex:indexPath.section];
+    
+    readerView.item = story;
+    
+    //push the reader view controller onto the screen
+    [self.navigationController pushViewController:readerView
+                                         animated:YES];
+}
 /*
 #pragma mark - Navigation
 
