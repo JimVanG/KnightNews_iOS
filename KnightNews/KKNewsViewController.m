@@ -17,7 +17,7 @@
 
 @interface KKNewsViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) UITableView *tableView;
+//@property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, strong) NSArray *newsArticles;
 @end
@@ -45,23 +45,7 @@
     
     [self setUpTableView];
     
-
-    
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
-    [[KKNewsAPI sharedUtilities] downloadNewsFeedWithCompletionBlock:^(BOOL success, NSError *error) {
-        self.newsArticles = [[JJVStoryItemStore sharedStore] allItems];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-               [self.tableView reloadData];
-            self.tableView.contentSize = CGSizeMake(self.view.frame.size.width, 316 * self.newsArticles.count);
-
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            [self fadeInView:self.tableView];
-        });
-     
-    }];
+    [self getData];
     
 }
 
@@ -83,9 +67,38 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"KKNewsTableViewCell" bundle:nil]forCellReuseIdentifier:@"NewsCell"];
         [self.tableView registerNib:[UINib nibWithNibName:@"KKNewsFeaturedTableViewCell" bundle:nil]forCellReuseIdentifier:@"FeaturedNewsCell"];
     
-    [self.view addSubview:self.tableView];
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    [refresh addTarget:self action:@selector(getData)
+      forControlEvents:UIControlEventValueChanged];
+   // [refresh setTintColor:[UIColor darkGrayColor]];
+    
+    self.refreshControl = refresh;
+    self.refreshControl.layer.zPosition = self.tableView.backgroundView.layer.zPosition + 1;
+    
+    //[self.view addSubview:self.tableView];
     
     self.tableView.alpha = 0;
+}
+
+-(void)getData
+{
+    if (!self.refreshControl.isRefreshing)
+        [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
+    
+    [[KKNewsAPI sharedUtilities] downloadNewsFeedWithCompletionBlock:^(BOOL success, NSError *error) {
+        self.newsArticles = [[JJVStoryItemStore sharedStore] allItems];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self.tableView reloadData];
+            self.tableView.contentSize = CGSizeMake(self.view.frame.size.width, 316 * self.newsArticles.count);
+            [self.refreshControl endRefreshing];
+            [MBProgressHUD hideHUDForView:self.tableView animated:YES];
+            [self fadeInView:self.tableView];
+        });
+        
+    }];
+    
 }
 
 
