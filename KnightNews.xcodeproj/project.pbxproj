@@ -410,9 +410,10 @@
 				ORGANIZATIONNAME = "james van gaasbeck";
 				TargetAttributes = {
 					7F98B3011954E5CE00C1A344 = {
-						DevelopmentTeam = 2A26R2PHTD;
+						DevelopmentTeam = GUN8E359E3;
 					};
 					7F98B31C1954E5CE00C1A344 = {
+						DevelopmentTeam = GUN8E359E3;
 						TestTargetID = 7F98B3011954E5CE00C1A344;
 					};
 				};
@@ -687,6 +688,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KnightNews.app/KnightNews";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -700,6 +703,7 @@
 				);
 				INFOPLIST_FILE = "KnightNewsTests/KnightNewsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -709,6 +713,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KnightNews.app/KnightNews";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -718,6 +724,7 @@
 				GCC_PREFIX_HEADER = "KnightNews/KnightNews-Prefix.pch";
 				INFOPLIST_FILE = "KnightNewsTests/KnightNewsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};

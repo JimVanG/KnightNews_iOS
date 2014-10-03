@@ -12,6 +12,7 @@
 #import "KKNewsAPI.h"
 #import "JJVStoryItemStore.h"
 #import "JJVStoryItem.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface KKNewsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -32,11 +33,17 @@
     self.tabBarItem.image = [UIImage imageNamed:@"newspaper_25"];
     self.tabBarItem.title = @"News";
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     [[KKNewsAPI sharedUtilities] downloadNewsFeedWithCompletionBlock:^(BOOL success, NSError *error) {
         self.newsArticles = [[JJVStoryItemStore sharedStore] allItems];
         
         dispatch_async(dispatch_get_main_queue(), ^{
                [self.tableView reloadData];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [UIView animateWithDuration:0.5 animations:^{
+                self.tableView.alpha = 1.0;
+            }];
         });
      
     }];
@@ -62,6 +69,8 @@
         [self.tableView registerNib:[UINib nibWithNibName:@"KKNewsFeaturedTableViewCell" bundle:nil]forCellReuseIdentifier:@"FeaturedNewsCell"];
     
     [self.view addSubview:self.tableView];
+    
+    self.tableView.alpha = 0;
 }
 
 
