@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27D061BF19DF3335002B262E /* NSDate+NSDate_TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D061BE19DF3335002B262E /* NSDate+NSDate_TimeAgo.m */; };
 		27DA778319DA5CCE00C7C92A /* KKNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA778219DA5CCE00C7C92A /* KKNewsViewController.m */; };
 		27DA778C19DA657300C7C92A /* KKNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27DA778B19DA657300C7C92A /* KKNewsTableViewCell.xib */; };
 		27DA778F19DA674000C7C92A /* KKNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA778E19DA674000C7C92A /* KKNewsTableViewCell.m */; };
@@ -77,6 +78,8 @@
 /* Begin PBXFileReference section */
 		1B6995472A89423EA9451C68 /* libPods-KnightNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KnightNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		204D10E97C3B476089833AD6 /* Pods-KnightNews.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightNews.xcconfig"; path = "Pods/Pods-KnightNews.xcconfig"; sourceTree = "<group>"; };
+		27D061BD19DF3335002B262E /* NSDate+NSDate_TimeAgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+NSDate_TimeAgo.h"; sourceTree = "<group>"; };
+		27D061BE19DF3335002B262E /* NSDate+NSDate_TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+NSDate_TimeAgo.m"; sourceTree = "<group>"; };
 		27DA778119DA5CCE00C7C92A /* KKNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNewsViewController.h; sourceTree = "<group>"; };
 		27DA778219DA5CCE00C7C92A /* KKNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNewsViewController.m; sourceTree = "<group>"; };
 		27DA778B19DA657300C7C92A /* KKNewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKNewsTableViewCell.xib; sourceTree = "<group>"; };
@@ -229,6 +232,8 @@
 			children = (
 				27DA779619DAF54300C7C92A /* KKNewsAPI.h */,
 				27DA779719DAF54300C7C92A /* KKNewsAPI.m */,
+				27D061BD19DF3335002B262E /* NSDate+NSDate_TimeAgo.h */,
+				27D061BE19DF3335002B262E /* NSDate+NSDate_TimeAgo.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -506,6 +511,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27D061BF19DF3335002B262E /* NSDate+NSDate_TimeAgo.m in Sources */,
 				7FF95888199479AA0029D39D /* JJVSportsViewController.m in Sources */,
 				7FCF43551992B56C00D2087C /* JJVEventsTableViewCell.m in Sources */,
 				7F685A25199321A9003E9177 /* JJVPreviewViewController.m in Sources */,

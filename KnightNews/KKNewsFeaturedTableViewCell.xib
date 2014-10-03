@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
@@ -27,7 +26,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3 d" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itj-ss-SHq">
-                        <rect key="frame" x="216" y="207" width="94" height="21"/>
+                        <rect key="frame" x="210" y="207" width="94" height="21"/>
                         <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="12"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -50,7 +49,7 @@
                 <outlet property="articleTimeLabel" destination="Itj-ss-SHq" id="UEz-jx-Bed"/>
                 <outlet property="articleTitle" destination="VQP-48-Fb8" id="fGE-Aq-Q4i"/>
             </connections>
-            <point key="canvasLocation" x="245" y="301.5"/>
+            <point key="canvasLocation" x="245" y="315"/>
         </tableViewCell>
     </objects>
     <resources>

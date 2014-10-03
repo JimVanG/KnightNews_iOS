@@ -92,6 +92,7 @@
         storyItem.title = post[@"title_plain"];
         storyItem.contents = post[@"content"];
         storyItem.excerpt = post[@"excerpt"];
+        storyItem.date = [self getDateFromJsonDateKeyValue:post[@"date"]];
         //storyItem.date = post[DATE_CONSTANT2];
         
         //these fields are in their own seperate dictionaries
@@ -108,6 +109,25 @@
         
     }
     
+}
+
+-(NSDate*)getDateFromJsonDateKeyValue:(NSString*)date
+{
+    if (date)
+    {
+        NSArray *components = [date componentsSeparatedByString:@" "];
+        // Convert string to date object
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"yyyy-MM-dd"];
+        if (components[0]) {
+            NSDate *date = [dateFormat dateFromString:components[0]];
+            return date;
+        }
+        else
+            return nil;
+    }
+    else
+        return nil;
 }
 
 -(void)downloadImageForUrl:(NSString*)aUrl withCompletionBlock:(KKImageRetrievedCompletionBlock)completionBlock

@@ -13,6 +13,7 @@
 #import "JJVStoryItemStore.h"
 #import "JJVStoryItem.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "NSDate+NSDate_TimeAgo.h"
 
 @interface KKNewsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -123,7 +124,7 @@
     cell.articleImageView.alpha = 0.0;
     cell.articleAuthorLabel.text = item.author;
     cell.articleTitle.text = item.title;
-    cell.articleTimeLabel.text = item.date;
+    cell.articleTimeLabel.text = [item.date timeAgo];
     
     UIFontDescriptor* Descriptor = [UIFontDescriptor fontDescriptorWithFontAttributes:@{
                                                                                         UIFontDescriptorFamilyAttribute : @"Georgia"
@@ -132,7 +133,7 @@
     cell.articlePreviewTextView.font = [UIFont fontWithDescriptor:Descriptor size:15.0f];
     cell.articlePreviewTextView.textColor = [UIColor darkGrayColor];
     NSLog(@"%@", item.date);
-    cell.articleTimeLabel.text = @"Test";
+   // cell.articleTimeLabel.text = @"Test";
     
     [[KKNewsAPI sharedUtilities] downloadImageForUrl:item.imageUrl withCompletionBlock:^(BOOL success, NSError *error, UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
