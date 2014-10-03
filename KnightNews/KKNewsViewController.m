@@ -41,9 +41,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
                [self.tableView reloadData];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
-            [UIView animateWithDuration:0.5 animations:^{
-                self.tableView.alpha = 1.0;
-            }];
+            [self fadeInView:self.tableView];
         });
      
     }];
@@ -121,6 +119,8 @@
     
     JJVStoryItem *item = (JJVStoryItem*)[self.newsArticles objectAtIndex:indexPath.section];
     
+    cell.articleImageView.image = nil;
+    cell.articleImageView.alpha = 0.0;
     cell.articleAuthorLabel.text = item.author;
     cell.articleTitle.text = item.title;
     cell.articleTimeLabel.text = item.date;
@@ -135,10 +135,19 @@
     
     [[KKNewsAPI sharedUtilities] downloadImageForUrl:item.imageUrl withCompletionBlock:^(BOOL success, NSError *error, UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            cell.imageView.image = nil;
-            cell.articleImageView.clipsToBounds = YES;
-            cell.articleImageView.image = image;
-            //cell.articleImageView.frame = CGRectMake(0, 0, self.view.frame.size.width, 300);
+            
+            if (image) {
+                cell.imageView.image = nil;
+                cell.articleImageView.clipsToBounds = YES;
+                cell.articleImageView.image = image;
+                cell.articleImageView.layer.cornerRadius = 20.0;
+                [self fadeInView:cell.articleImageView];
+                //cell.articleImageView.frame = CGRectMake(10, 0, self.view.frame.size.width-20, 300);
+            }
+            else{
+                cell.imageView.image = [UIImage imageNamed:@"news_error"];
+                [self fadeInView:cell.articleImageView];
+            }
         });
     }];
     
@@ -147,6 +156,15 @@
    // cell.contentView.backgroundColor = [UIColor darkGrayColor];
     
     return cell;
+}
+
+
+/*Assumes the alpha of aView is set to 0.0 */
+-(void)fadeInView:(UIView*)aView
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        aView.alpha = 1.0;
+    }];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
