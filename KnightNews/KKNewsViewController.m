@@ -77,7 +77,7 @@
     
     //[self.view addSubview:self.tableView];
     
-    self.tableView.alpha = 0;
+    self.tableView.alpha = 1.0;
 }
 
 -(void)getData
@@ -113,7 +113,7 @@
     if (self.newsArticles)
         return self.newsArticles.count;
     else
-        return 1;
+        return 0;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
