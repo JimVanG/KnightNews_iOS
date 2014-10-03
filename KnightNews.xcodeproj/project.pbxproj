@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271F5BC119DF41AC00B020DC /* KKNewsImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 271F5BC019DF41AC00B020DC /* KKNewsImageCache.m */; };
+		27D061BF19DF3335002B262E /* NSDate+NSDate_TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D061BE19DF3335002B262E /* NSDate+NSDate_TimeAgo.m */; };
+		27DA778319DA5CCE00C7C92A /* KKNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA778219DA5CCE00C7C92A /* KKNewsViewController.m */; };
+		27DA779319DA784500C7C92A /* KKNewsFeaturedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA779119DA784500C7C92A /* KKNewsFeaturedTableViewCell.m */; };
+		27DA779419DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27DA779219DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib */; };
+		27DA779819DAF54300C7C92A /* KKNewsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA779719DAF54300C7C92A /* KKNewsAPI.m */; };
 		7F0534EB19A1801E008CCDD9 /* JJVPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0534EA19A1801E008CCDD9 /* JJVPreviewViewController.xib */; };
 		7F0534ED19A1B187008CCDD9 /* JJVPreviewViewController_iPad-landscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0534EC19A1B187008CCDD9 /* JJVPreviewViewController_iPad-landscape.xib */; };
 		7F0798BB195BBE8500D022A0 /* JJVStoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0798BA195BBE8500D022A0 /* JJVStoryItem.m */; };
@@ -71,6 +77,17 @@
 /* Begin PBXFileReference section */
 		1B6995472A89423EA9451C68 /* libPods-KnightNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KnightNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		204D10E97C3B476089833AD6 /* Pods-KnightNews.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightNews.xcconfig"; path = "Pods/Pods-KnightNews.xcconfig"; sourceTree = "<group>"; };
+		271F5BBF19DF41AC00B020DC /* KKNewsImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNewsImageCache.h; sourceTree = "<group>"; };
+		271F5BC019DF41AC00B020DC /* KKNewsImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNewsImageCache.m; sourceTree = "<group>"; };
+		27D061BD19DF3335002B262E /* NSDate+NSDate_TimeAgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+NSDate_TimeAgo.h"; sourceTree = "<group>"; };
+		27D061BE19DF3335002B262E /* NSDate+NSDate_TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+NSDate_TimeAgo.m"; sourceTree = "<group>"; };
+		27DA778119DA5CCE00C7C92A /* KKNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNewsViewController.h; sourceTree = "<group>"; };
+		27DA778219DA5CCE00C7C92A /* KKNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNewsViewController.m; sourceTree = "<group>"; };
+		27DA779019DA784500C7C92A /* KKNewsFeaturedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNewsFeaturedTableViewCell.h; sourceTree = "<group>"; };
+		27DA779119DA784500C7C92A /* KKNewsFeaturedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNewsFeaturedTableViewCell.m; sourceTree = "<group>"; };
+		27DA779219DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKNewsFeaturedTableViewCell.xib; sourceTree = "<group>"; };
+		27DA779619DAF54300C7C92A /* KKNewsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNewsAPI.h; sourceTree = "<group>"; };
+		27DA779719DAF54300C7C92A /* KKNewsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNewsAPI.m; sourceTree = "<group>"; };
 		7F0534EA19A1801E008CCDD9 /* JJVPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVPreviewViewController.xib; sourceTree = "<group>"; };
 		7F0534EC19A1B187008CCDD9 /* JJVPreviewViewController_iPad-landscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "JJVPreviewViewController_iPad-landscape.xib"; sourceTree = "<group>"; };
 		7F0798B9195BBE8500D022A0 /* JJVStoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVStoryItem.h; sourceTree = "<group>"; };
@@ -178,6 +195,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		276AA40419DB11FA001C3611 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				27DA779019DA784500C7C92A /* KKNewsFeaturedTableViewCell.h */,
+				27DA779119DA784500C7C92A /* KKNewsFeaturedTableViewCell.m */,
+				27DA779219DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
+		27DA778019DA5BF700C7C92A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				27DA778119DA5CCE00C7C92A /* KKNewsViewController.h */,
+				27DA778219DA5CCE00C7C92A /* KKNewsViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		27DA778A19DA655E00C7C92A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				276AA40419DB11FA001C3611 /* TableView */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		27DA779519DAF52F00C7C92A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				27DA779619DAF54300C7C92A /* KKNewsAPI.h */,
+				27DA779719DAF54300C7C92A /* KKNewsAPI.m */,
+				27D061BD19DF3335002B262E /* NSDate+NSDate_TimeAgo.h */,
+				27D061BE19DF3335002B262E /* NSDate+NSDate_TimeAgo.m */,
+				271F5BBF19DF41AC00B020DC /* KKNewsImageCache.h */,
+				271F5BC019DF41AC00B020DC /* KKNewsImageCache.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		7F98B2F91954E5CE00C1A344 = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +284,9 @@
 		7F98B30B1954E5CE00C1A344 /* KnightNews */ = {
 			isa = PBXGroup;
 			children = (
+				27DA779519DAF52F00C7C92A /* Model */,
+				27DA778A19DA655E00C7C92A /* View */,
+				27DA778019DA5BF700C7C92A /* Controller */,
 				7F98B3141954E5CE00C1A344 /* JJVAppDelegate.h */,
 				7F98B3151954E5CE00C1A344 /* JJVAppDelegate.m */,
 				7F685A22199321A9003E9177 /* JJVPreviewViewController.h */,
@@ -352,9 +412,10 @@
 				ORGANIZATIONNAME = "james van gaasbeck";
 				TargetAttributes = {
 					7F98B3011954E5CE00C1A344 = {
-						DevelopmentTeam = 2A26R2PHTD;
+						DevelopmentTeam = GUN8E359E3;
 					};
 					7F98B31C1954E5CE00C1A344 = {
+						DevelopmentTeam = GUN8E359E3;
 						TestTargetID = 7F98B3011954E5CE00C1A344;
 					};
 				};
@@ -387,6 +448,7 @@
 				7FA2530D199FBDFA0069F2AB /* JJVWebViewController.xib in Resources */,
 				7F98B3101954E5CE00C1A344 /* InfoPlist.strings in Resources */,
 				7F98B3181954E5CE00C1A344 /* Images.xcassets in Resources */,
+				27DA779419DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib in Resources */,
 				7F2B33CA1968BAC1006888CC /* JJVReaderViewController.xib in Resources */,
 				7FF95889199479AA0029D39D /* JJVSportsViewController.xib in Resources */,
 				7F0534EB19A1801E008CCDD9 /* JJVPreviewViewController.xib in Resources */,
@@ -445,11 +507,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27D061BF19DF3335002B262E /* NSDate+NSDate_TimeAgo.m in Sources */,
 				7FF95888199479AA0029D39D /* JJVSportsViewController.m in Sources */,
 				7FCF43551992B56C00D2087C /* JJVEventsTableViewCell.m in Sources */,
 				7F685A25199321A9003E9177 /* JJVPreviewViewController.m in Sources */,
+				271F5BC119DF41AC00B020DC /* KKNewsImageCache.m in Sources */,
+				27DA778319DA5CCE00C7C92A /* KKNewsViewController.m in Sources */,
 				7F98B3361954E61A00C1A344 /* JJVNewsTableViewController.m in Sources */,
 				7F0798BB195BBE8500D022A0 /* JJVStoryItem.m in Sources */,
+				27DA779819DAF54300C7C92A /* KKNewsAPI.m in Sources */,
 				7F61DE571991A05600C90C83 /* JJVEventItem.m in Sources */,
 				7F61DE541991A02E00C90C83 /* JJVEventsTableViewController.m in Sources */,
 				7F2B33D81968EE62006888CC /* JJVPageRootViewController.m in Sources */,
@@ -459,6 +525,7 @@
 				7F67D13E1996B92A002743E5 /* JJVMapViewController.m in Sources */,
 				7F2B33C91968BAC1006888CC /* JJVReaderViewController.m in Sources */,
 				7F0798BE195BC28800D022A0 /* JJVStoryItemStore.m in Sources */,
+				27DA779319DA784500C7C92A /* KKNewsFeaturedTableViewCell.m in Sources */,
 				7F2B33D01968E734006888CC /* JJVPageModelController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -623,6 +690,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KnightNews.app/KnightNews";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -636,6 +705,7 @@
 				);
 				INFOPLIST_FILE = "KnightNewsTests/KnightNewsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -645,6 +715,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KnightNews.app/KnightNews";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -654,6 +726,7 @@
 				GCC_PREFIX_HEADER = "KnightNews/KnightNews-Prefix.pch";
 				INFOPLIST_FILE = "KnightNewsTests/KnightNewsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
