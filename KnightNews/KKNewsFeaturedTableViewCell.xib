@@ -15,25 +15,27 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This Really is a super long headline to test multiple lien" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQP-48-Fb8">
-                        <rect key="frame" x="10" y="161" width="300" height="44"/>
+                        <rect key="frame" x="10" y="165" width="300" height="45"/>
                         <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
+                        <color key="textColor" red="0.24931795634920639" green="0.24931795634920639" blue="0.24931795634920639" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By John Doe, Title here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMH-m2-dJf">
-                        <rect key="frame" x="10" y="201" width="199" height="21"/>
+                        <rect key="frame" x="10" y="207" width="199" height="21"/>
                         <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="12"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3 d" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itj-ss-SHq">
-                        <rect key="frame" x="216" y="205" width="94" height="21"/>
+                        <rect key="frame" x="216" y="207" width="94" height="21"/>
                         <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="12"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Hong Kong streets are pakced with thousands of demonstrators bracing for the possiblity of a police crackdown." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYf-0y-15f">
-                        <rect key="frame" x="10" y="222" width="296" height="73.5"/>
-                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="14"/>
+                        <rect key="frame" x="5" y="222" width="296" height="73.5"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="news_error" translatesAutoresizingMaskIntoConstraints="NO" id="1hi-HH-oSW">

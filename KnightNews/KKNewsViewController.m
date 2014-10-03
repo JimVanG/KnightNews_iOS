@@ -129,7 +129,8 @@
                                                                                         UIFontDescriptorFamilyAttribute : @"Georgia"
                                                                                         }];
     cell.articlePreviewTextView.text = item.excerptParsed;
-    cell.articlePreviewTextView.font = [UIFont fontWithDescriptor:Descriptor size:14.0f];
+    cell.articlePreviewTextView.font = [UIFont fontWithDescriptor:Descriptor size:15.0f];
+    cell.articlePreviewTextView.textColor = [UIColor darkGrayColor];
     NSLog(@"%@", item.date);
     cell.articleTimeLabel.text = @"Test";
     
@@ -140,7 +141,7 @@
                 cell.imageView.image = nil;
                 cell.articleImageView.clipsToBounds = YES;
                 cell.articleImageView.image = image;
-                cell.articleImageView.layer.cornerRadius = 20.0;
+                //cell.articleImageView.layer.cornerRadius = 30.0;
                 [self fadeInView:cell.articleImageView];
                 //cell.articleImageView.frame = CGRectMake(10, 0, self.view.frame.size.width-20, 300);
             }
