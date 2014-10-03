@@ -10,8 +10,6 @@
 		271F5BC119DF41AC00B020DC /* KKNewsImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 271F5BC019DF41AC00B020DC /* KKNewsImageCache.m */; };
 		27D061BF19DF3335002B262E /* NSDate+NSDate_TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D061BE19DF3335002B262E /* NSDate+NSDate_TimeAgo.m */; };
 		27DA778319DA5CCE00C7C92A /* KKNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA778219DA5CCE00C7C92A /* KKNewsViewController.m */; };
-		27DA778C19DA657300C7C92A /* KKNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27DA778B19DA657300C7C92A /* KKNewsTableViewCell.xib */; };
-		27DA778F19DA674000C7C92A /* KKNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA778E19DA674000C7C92A /* KKNewsTableViewCell.m */; };
 		27DA779319DA784500C7C92A /* KKNewsFeaturedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA779119DA784500C7C92A /* KKNewsFeaturedTableViewCell.m */; };
 		27DA779419DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27DA779219DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib */; };
 		27DA779819DAF54300C7C92A /* KKNewsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA779719DAF54300C7C92A /* KKNewsAPI.m */; };
@@ -85,9 +83,6 @@
 		27D061BE19DF3335002B262E /* NSDate+NSDate_TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+NSDate_TimeAgo.m"; sourceTree = "<group>"; };
 		27DA778119DA5CCE00C7C92A /* KKNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNewsViewController.h; sourceTree = "<group>"; };
 		27DA778219DA5CCE00C7C92A /* KKNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNewsViewController.m; sourceTree = "<group>"; };
-		27DA778B19DA657300C7C92A /* KKNewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKNewsTableViewCell.xib; sourceTree = "<group>"; };
-		27DA778D19DA674000C7C92A /* KKNewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNewsTableViewCell.h; sourceTree = "<group>"; };
-		27DA778E19DA674000C7C92A /* KKNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNewsTableViewCell.m; sourceTree = "<group>"; };
 		27DA779019DA784500C7C92A /* KKNewsFeaturedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNewsFeaturedTableViewCell.h; sourceTree = "<group>"; };
 		27DA779119DA784500C7C92A /* KKNewsFeaturedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNewsFeaturedTableViewCell.m; sourceTree = "<group>"; };
 		27DA779219DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKNewsFeaturedTableViewCell.xib; sourceTree = "<group>"; };
@@ -203,9 +198,6 @@
 		276AA40419DB11FA001C3611 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				27DA778B19DA657300C7C92A /* KKNewsTableViewCell.xib */,
-				27DA778D19DA674000C7C92A /* KKNewsTableViewCell.h */,
-				27DA778E19DA674000C7C92A /* KKNewsTableViewCell.m */,
 				27DA779019DA784500C7C92A /* KKNewsFeaturedTableViewCell.h */,
 				27DA779119DA784500C7C92A /* KKNewsFeaturedTableViewCell.m */,
 				27DA779219DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib */,
@@ -454,7 +446,6 @@
 				7F67D13F1996B92A002743E5 /* JJVMapViewController.xib in Resources */,
 				7F685A2919941C4F003E9177 /* JJVEventsTableViewController.xib in Resources */,
 				7FA2530D199FBDFA0069F2AB /* JJVWebViewController.xib in Resources */,
-				27DA778C19DA657300C7C92A /* KKNewsTableViewCell.xib in Resources */,
 				7F98B3101954E5CE00C1A344 /* InfoPlist.strings in Resources */,
 				7F98B3181954E5CE00C1A344 /* Images.xcassets in Resources */,
 				27DA779419DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib in Resources */,
@@ -526,7 +517,6 @@
 				7F0798BB195BBE8500D022A0 /* JJVStoryItem.m in Sources */,
 				27DA779819DAF54300C7C92A /* KKNewsAPI.m in Sources */,
 				7F61DE571991A05600C90C83 /* JJVEventItem.m in Sources */,
-				27DA778F19DA674000C7C92A /* KKNewsTableViewCell.m in Sources */,
 				7F61DE541991A02E00C90C83 /* JJVEventsTableViewController.m in Sources */,
 				7F2B33D81968EE62006888CC /* JJVPageRootViewController.m in Sources */,
 				7FA2530C199FBDFA0069F2AB /* JJVWebViewController.m in Sources */,

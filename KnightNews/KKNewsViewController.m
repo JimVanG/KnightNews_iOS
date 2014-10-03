@@ -8,7 +8,6 @@
 
 #import "KKNewsViewController.h"
 #import "KKNewsFeaturedTableViewCell.h"
-#import "KKNewsTableViewCell.h"
 #import "KKNewsAPI.h"
 #import "JJVStoryItemStore.h"
 #import "JJVStoryItem.h"
@@ -121,15 +120,6 @@
     }
 }
 
--(KKNewsTableViewCell *)setUpNewsTableViewCellForTableView:(UITableView *)tableView
-{
-    KKNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsCell"];
-    
-    cell.backgroundColor = [UIColor clearColor];
-    //cell.contentView.backgroundColor = [UIColor l];
-    
-    return cell;
-}
 
 -(KKNewsFeaturedTableViewCell *)setUpFeaturedTableViewCellForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath*)indexPath
 {
@@ -157,7 +147,6 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if (image) {
-                cell.imageView.image = nil;
                 cell.articleImageView.clipsToBounds = YES;
                 cell.articleImageView.image = image;
                 //cell.articleImageView.layer.cornerRadius = 30.0;
