@@ -67,7 +67,6 @@
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithRequest:req completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        //NSLog(@"%@", jsonObject);
         
         [self parseJSONObject: jsonObject];
         
@@ -165,7 +164,6 @@
         
     }failure:^(AFHTTPRequestOperation *op, NSError *error){
         
-        //self.imageView.image = [UIImage imageNamed:@"news_error.png"];
         if (completionBlock)
         {
             completionBlock(NO, nil, [UIImage imageNamed:@"news_error.png"]);

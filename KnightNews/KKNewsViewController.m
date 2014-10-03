@@ -17,8 +17,6 @@
 
 @interface KKNewsViewController () <UITableViewDataSource, UITableViewDelegate>
 
-//@property (nonatomic, strong) UITableView *tableView;
-
 @property (nonatomic, strong) NSArray *newsArticles;
 @end
 
@@ -60,34 +58,31 @@
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    
     self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.tableView registerNib:[UINib nibWithNibName:@"KKNewsFeaturedTableViewCell" bundle:nil]forCellReuseIdentifier:@"FeaturedNewsCell"];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"KKNewsTableViewCell" bundle:nil]forCellReuseIdentifier:@"NewsCell"];
-        [self.tableView registerNib:[UINib nibWithNibName:@"KKNewsFeaturedTableViewCell" bundle:nil]forCellReuseIdentifier:@"FeaturedNewsCell"];
-    
+    // UIRefreshControl
     UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
     [refresh addTarget:self action:@selector(getData)
       forControlEvents:UIControlEventValueChanged];
-   // [refresh setTintColor:[UIColor darkGrayColor]];
-    
     self.refreshControl = refresh;
     self.refreshControl.layer.zPosition = self.tableView.backgroundView.layer.zPosition + 1;
-    
-    //[self.view addSubview:self.tableView];
     
     self.tableView.alpha = 1.0;
 }
 
 -(void)getData
 {
+    // Make sure we arent refreshing
     if (!self.refreshControl.isRefreshing)
         [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
     
+    // Fetch the data.
     [[KKNewsAPI sharedUtilities] downloadNewsFeedWithCompletionBlock:^(BOOL success, NSError *error) {
         self.newsArticles = [[JJVStoryItemStore sharedStore] allItems];
         
+        // Get on the main queue .
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [self.tableView reloadData];
@@ -153,8 +148,6 @@
     cell.articlePreviewTextView.text = item.excerptParsed;
     cell.articlePreviewTextView.font = [UIFont fontWithDescriptor:Descriptor size:14.0f];
     cell.articlePreviewTextView.textColor = [UIColor darkGrayColor];
-    NSLog(@"%@", item.date);
-   // cell.articleTimeLabel.text = @"Test";
     
     [[KKNewsAPI sharedUtilities] downloadImageForUrl:item.imageUrl withCompletionBlock:^(BOOL success, NSError *error, UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -191,10 +184,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //if (indexPath.section == 0)
         return 300.0f;
-    //else
-        //return 170.0f;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -208,18 +198,6 @@
 {
     return 10.0f;
 }
-
-/*-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 5.0f;
-}
-
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 5)];
-    footerView.backgroundColor = [UIColor clearColor];
-    return footerView;
-}*/
 
 #pragma mark - UITableViewDelegate Methods
 
@@ -237,17 +215,5 @@
     [self.navigationController pushViewController:readerView
                                          animated:YES];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-#pragma mark - UICollectionViewDataSource
-
 
 @end
