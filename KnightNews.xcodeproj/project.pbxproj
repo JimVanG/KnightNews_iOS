@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271F5BC119DF41AC00B020DC /* KKNewsImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 271F5BC019DF41AC00B020DC /* KKNewsImageCache.m */; };
 		27D061BF19DF3335002B262E /* NSDate+NSDate_TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D061BE19DF3335002B262E /* NSDate+NSDate_TimeAgo.m */; };
 		27DA778319DA5CCE00C7C92A /* KKNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA778219DA5CCE00C7C92A /* KKNewsViewController.m */; };
 		27DA778C19DA657300C7C92A /* KKNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27DA778B19DA657300C7C92A /* KKNewsTableViewCell.xib */; };
@@ -78,6 +79,8 @@
 /* Begin PBXFileReference section */
 		1B6995472A89423EA9451C68 /* libPods-KnightNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KnightNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		204D10E97C3B476089833AD6 /* Pods-KnightNews.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightNews.xcconfig"; path = "Pods/Pods-KnightNews.xcconfig"; sourceTree = "<group>"; };
+		271F5BBF19DF41AC00B020DC /* KKNewsImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNewsImageCache.h; sourceTree = "<group>"; };
+		271F5BC019DF41AC00B020DC /* KKNewsImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNewsImageCache.m; sourceTree = "<group>"; };
 		27D061BD19DF3335002B262E /* NSDate+NSDate_TimeAgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+NSDate_TimeAgo.h"; sourceTree = "<group>"; };
 		27D061BE19DF3335002B262E /* NSDate+NSDate_TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+NSDate_TimeAgo.m"; sourceTree = "<group>"; };
 		27DA778119DA5CCE00C7C92A /* KKNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNewsViewController.h; sourceTree = "<group>"; };
@@ -234,6 +237,8 @@
 				27DA779719DAF54300C7C92A /* KKNewsAPI.m */,
 				27D061BD19DF3335002B262E /* NSDate+NSDate_TimeAgo.h */,
 				27D061BE19DF3335002B262E /* NSDate+NSDate_TimeAgo.m */,
+				271F5BBF19DF41AC00B020DC /* KKNewsImageCache.h */,
+				271F5BC019DF41AC00B020DC /* KKNewsImageCache.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -515,6 +520,7 @@
 				7FF95888199479AA0029D39D /* JJVSportsViewController.m in Sources */,
 				7FCF43551992B56C00D2087C /* JJVEventsTableViewCell.m in Sources */,
 				7F685A25199321A9003E9177 /* JJVPreviewViewController.m in Sources */,
+				271F5BC119DF41AC00B020DC /* KKNewsImageCache.m in Sources */,
 				27DA778319DA5CCE00C7C92A /* KKNewsViewController.m in Sources */,
 				7F98B3361954E61A00C1A344 /* JJVNewsTableViewController.m in Sources */,
 				7F0798BB195BBE8500D022A0 /* JJVStoryItem.m in Sources */,

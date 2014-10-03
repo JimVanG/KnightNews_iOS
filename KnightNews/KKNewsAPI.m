@@ -11,10 +11,12 @@
 #import "JJVStoryItemStore.h"
 #import "Constants.h"
 #import <AFNetworking/AFNetworking.h>
+#import "KKNewsImageCache.h"
 
 @interface KKNewsAPI()
 
 @property (nonatomic) NSURLSession *session;
+@property (nonatomic, strong) KKNewsImageCache *imageCache;
 
 @end
 
@@ -44,6 +46,8 @@
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
         _session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:nil];
         
+        self.imageCache = [[KKNewsImageCache alloc] init];
+        
     }
     
     return self;
@@ -53,7 +57,10 @@
 -(void)downloadNewsFeedWithCompletionBlock:(KKNewsRetrievedCompletionBlock)completionBlock
 {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: YES];
-    NSString *requestString = @"http://knightnews.com/api/get_recent_posts/";
+    
+   // NSString *requestString = @"http://knightnews.com/api/get_recent_posts/";
+    NSString *requestString = @"http://knightnews.com/api/get_recent_posts/?count=20";
+
     NSURL *url = [NSURL URLWithString:requestString];
     NSURLRequest *req = [NSURLRequest requestWithURL: url];
     
@@ -133,17 +140,27 @@
 
 -(void)downloadImageForUrl:(NSString*)aUrl withCompletionBlock:(KKImageRetrievedCompletionBlock)completionBlock
 {
+   if ([self.imageCache getImageFromCacheWithKey:aUrl])
+   {
+       if (completionBlock)
+       {
+           completionBlock(YES, nil, [self.imageCache getImageFromCacheWithKey:aUrl]);
+       }
+   }
+    else
+    {
     AFHTTPRequestOperation *request = [[AFHTTPRequestOperation alloc] initWithRequest:
                                        [NSURLRequest requestWithURL:
                                         [NSURL URLWithString: aUrl]]];
     request.responseSerializer = [AFImageResponseSerializer serializer];
     [request setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *op, id response){
         
+        [self.imageCache addImageToCache:response withKey:aUrl];
         //self.imageView.image = response;
         if (completionBlock)
         {
             NSLog(@"%@", response);
-            completionBlock(YES, nil, response);
+            completionBlock(YES, nil, [self.imageCache getImageFromCacheWithKey:aUrl]);
         }
         
     }failure:^(AFHTTPRequestOperation *op, NSError *error){
@@ -155,6 +172,7 @@
         }
     }];
     [request start];
+    }
 }
 
 @end
