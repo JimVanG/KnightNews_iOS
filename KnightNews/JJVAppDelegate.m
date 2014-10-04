@@ -12,6 +12,7 @@
 #import "JJVSportsViewController.h"
 #import "JJVMapViewController.h"
 #import "JJVStoryItemStore.h"
+#import "KKNewsViewController.h"
 #import <Parse/Parse.h>
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
@@ -68,7 +69,7 @@
                                                             withCornerRadius:0]];
     [[UITabBar appearance] setTintColor: UIColorFromRGB(0xCFB53B)];
     
-    JJVPageRootViewController *nvc = [[JJVPageRootViewController alloc] init];
+    KKNewsViewController *nvc = [[KKNewsViewController alloc] init];
     JJVEventsTableViewController *evc = [[JJVEventsTableViewController alloc] init];
     JJVSportsViewController *svc = [[JJVSportsViewController alloc] init];
     JJVMapViewController *mvc = [[JJVMapViewController alloc] init];

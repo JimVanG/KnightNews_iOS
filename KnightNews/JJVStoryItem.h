@@ -14,7 +14,7 @@
 //some public properties that define the story object
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *author;
-@property (nonatomic, strong) NSString *date;
+@property (nonatomic, strong) NSDate *date;
 @property (nonatomic, strong) NSString *excerpt;
 @property (nonatomic, strong) NSString *excerptParsed;
 @property (nonatomic, strong) NSString *contents;
