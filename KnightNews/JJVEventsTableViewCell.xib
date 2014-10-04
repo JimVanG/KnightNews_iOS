@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -15,7 +16,6 @@
                 <subviews>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DH-TY-N7t">
                         <rect key="frame" x="20" y="2" width="144" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="144" id="yDa-YZ-mXN"/>
                             <constraint firstAttribute="height" constant="21" id="zLb-S2-Y3b"/>
@@ -26,7 +26,6 @@
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desc" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="216" translatesAutoresizingMaskIntoConstraints="NO" id="qab-zw-HlB">
                         <rect key="frame" x="20" y="26" width="216" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="216" id="AGn-ae-AAo"/>
                             <constraint firstAttribute="height" constant="17" id="zoN-up-yN7"/>
@@ -35,14 +34,13 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMO-9g-6hw">
-                        <rect key="frame" x="249" y="11" width="60" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMO-9g-6hw">
+                        <rect key="frame" x="172" y="11" width="137" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="T6m-wr-9df"/>
-                            <constraint firstAttribute="width" constant="60" id="lnw-x8-FXC"/>
+                            <constraint firstAttribute="width" constant="137" id="lnw-x8-FXC"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -50,11 +48,11 @@
                     <constraint firstAttribute="bottom" secondItem="qab-zw-HlB" secondAttribute="bottom" id="09H-CG-Rbn"/>
                     <constraint firstItem="0DH-TY-N7t" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="1Gr-sf-yRu"/>
                     <constraint firstAttribute="trailing" secondItem="IMO-9g-6hw" secondAttribute="trailing" constant="11" id="83O-mG-RXk"/>
-                    <constraint firstItem="IMO-9g-6hw" firstAttribute="leading" secondItem="0DH-TY-N7t" secondAttribute="trailing" constant="85" id="8bt-Tt-cyl"/>
+                    <constraint firstItem="IMO-9g-6hw" firstAttribute="leading" secondItem="0DH-TY-N7t" secondAttribute="trailing" constant="8" id="8bt-Tt-cyl"/>
                     <constraint firstAttribute="centerY" secondItem="IMO-9g-6hw" secondAttribute="centerY" id="Fai-NY-bI0"/>
                     <constraint firstItem="qab-zw-HlB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="QNZ-NV-e9A"/>
                     <constraint firstItem="0DH-TY-N7t" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="YFF-Ix-WpY"/>
-                    <constraint firstItem="IMO-9g-6hw" firstAttribute="leading" secondItem="qab-zw-HlB" secondAttribute="trailing" constant="13" id="wbR-Fo-KlL"/>
+                    <constraint firstItem="IMO-9g-6hw" firstAttribute="leading" secondItem="qab-zw-HlB" secondAttribute="trailing" constant="-64" id="wbR-Fo-KlL"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -64,4 +62,9 @@
             </connections>
         </tableViewCell>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

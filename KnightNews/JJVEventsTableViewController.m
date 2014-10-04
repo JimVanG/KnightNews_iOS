@@ -77,7 +77,9 @@ NSString *const EVENT_DESC = @"event_desc";
 {
     self.element = elementName;
     
-    if ([self.element isEqualToString:@"events"]) {
+    //each new event item starts with "event_name" so this we will need to create a new
+    //event item object here.
+    if ([self.element isEqualToString: EVENT_NAME]) {
         self.eventItem = [[JJVEventItem alloc] init];
         
         self.tempTitle = [[NSMutableString alloc] init];
@@ -114,6 +116,7 @@ NSString *const EVENT_DESC = @"event_desc";
         //The way that the XML is formed, after we have parsed the
         //eventDescription we have parsed the entire event object.
         [self.items addObject: self.eventItem];
+        
     }
 }
 
@@ -146,8 +149,10 @@ NSString *const EVENT_DESC = @"event_desc";
     JJVEventItem *e = [self.items objectAtIndex: indexPath.item];
     // Configure the cell...
     cell.nameLabel.text = e.title;
-    cell.descriptionLabel.text = e.desc;
-    cell.dateLabel.text = e.date;
+    cell.descriptionLabel.text = [e.desc stringByTrimmingCharactersInSet:
+                                  [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    cell.dateLabel.text = [e.date stringByTrimmingCharactersInSet:
+                           [NSCharacterSet whitespaceAndNewlineCharacterSet]]; 
     
     return cell;
 }
