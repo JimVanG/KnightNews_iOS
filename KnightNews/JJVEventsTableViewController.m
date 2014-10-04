@@ -149,8 +149,10 @@ NSString *const EVENT_DESC = @"event_desc";
     JJVEventItem *e = [self.items objectAtIndex: indexPath.item];
     // Configure the cell...
     cell.nameLabel.text = e.title;
-    cell.descriptionLabel.text = e.desc;
-    cell.dateLabel.text = e.date;
+    cell.descriptionLabel.text = [e.desc stringByTrimmingCharactersInSet:
+                                  [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    cell.dateLabel.text = [e.date stringByTrimmingCharactersInSet:
+                           [NSCharacterSet whitespaceAndNewlineCharacterSet]]; 
     
     return cell;
 }
