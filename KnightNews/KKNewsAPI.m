@@ -56,6 +56,7 @@
 #pragma mark - Request Methods
 -(void)downloadNewsFeedWithCompletionBlock:(KKNewsRetrievedCompletionBlock)completionBlock
 {
+    [[JJVStoryItemStore sharedStore] removeAllStories];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: YES];
     
    // NSString *requestString = @"http://knightnews.com/api/get_recent_posts/";
