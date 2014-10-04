@@ -89,6 +89,7 @@
             self.tableView.contentSize = CGSizeMake(self.view.frame.size.width, 316 * self.newsArticles.count);
             [self.refreshControl endRefreshing];
             [MBProgressHUD hideHUDForView:self.tableView animated:YES];
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: NO];
             [self fadeInView:self.tableView];
         });
         

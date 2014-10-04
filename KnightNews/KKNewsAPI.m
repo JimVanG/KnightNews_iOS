@@ -71,6 +71,8 @@
         
         [self parseJSONObject: jsonObject];
         
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: NO];
+        
         if (completionBlock)
         {
             completionBlock(YES, error);
