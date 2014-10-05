@@ -52,7 +52,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Interface Setup Methods 
+#pragma mark - Interface Setup Methods
 -(void)setUpTableView
 {
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
@@ -143,9 +143,14 @@
     cell.articleTitle.text = item.title;
     cell.articleTimeLabel.text = [item.date timeAgo];
     
-    UIFontDescriptor* Descriptor = [UIFontDescriptor fontDescriptorWithFontAttributes:@{
-                                                                                        UIFontDescriptorFamilyAttribute : @"Georgia"
-                                                                                        }];
+    UIFontDescriptor* Descriptor = [UIFontDescriptor fontDescriptorWithFontAttributes:
+                                                @{UIFontDescriptorFamilyAttribute:
+                                                      @"Georgia"}];
+    //set the textview up to truncate the tail
+    cell.articlePreviewTextView.scrollEnabled = NO;
+    cell.articlePreviewTextView.textContainer.maximumNumberOfLines = 0;
+    cell.articlePreviewTextView.textContainer.lineBreakMode = NSLineBreakByTruncatingTail;
+    
     cell.articlePreviewTextView.text = item.excerptParsed;
     cell.articlePreviewTextView.font = [UIFont fontWithDescriptor:Descriptor size:14.0f];
     cell.articlePreviewTextView.textColor = [UIColor darkGrayColor];
@@ -169,7 +174,7 @@
     
     
     cell.backgroundColor = [UIColor clearColor];
-   // cell.contentView.backgroundColor = [UIColor darkGrayColor];
+    // cell.contentView.backgroundColor = [UIColor darkGrayColor];
     
     return cell;
 }
@@ -185,7 +190,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        return 300.0f;
+    return 300.0f;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
