@@ -32,9 +32,21 @@
     [Parse setApplicationId:@"keKOe5UZxrEWyX3UX4NQMLXsajd1xmG2t7op7FhP"
                   clientKey:@"0qqLP5RyNi2iF9OuHzeMJhs2VxmDOLc77uZ7yX7C"];
     
-    [application registerForRemoteNotificationTypes: UIRemoteNotificationTypeAlert
-                                                    | UIRemoteNotificationTypeBadge |
-                                                    UIRemoteNotificationTypeSound];
+    
+    //-- Set Notification (will only work in Xcode 6 +)
+    if ([application respondsToSelector:@selector(isRegisteredForRemoteNotifications)])
+    {
+        // iOS 8 Notifications
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+        
+        [application registerForRemoteNotifications];
+    }
+    else
+    {
+        // iOS < 8 Notifications
+        [application registerForRemoteNotificationTypes:
+         (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
+    }
     
     if (application.applicationState != UIApplicationStateBackground) {
         // Track an app open here if we launch with a push, unless
