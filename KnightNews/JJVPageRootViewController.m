@@ -276,7 +276,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 
 -(void)tap:(UITapGestureRecognizer *)gr
 {
-    //NSLog(@"TAP");
+ /*   //NSLog(@"TAP");
     JJVReaderViewController *readerView = [[JJVReaderViewController alloc]
                                            initWithNibName:nil bundle:nil];
     
@@ -288,7 +288,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     
     //push the reader view controller onto the screen
     [self.navigationController pushViewController:readerView
-                                         animated:YES];
+                                         animated:YES];*/
 }
 
 
