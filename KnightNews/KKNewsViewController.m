@@ -14,6 +14,7 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "NSDate+NSDate_TimeAgo.h"
 #import "JJVReaderViewController.h"
+#import "JJVPageRootViewController.h"
 
 @interface KKNewsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -209,7 +210,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //NSLog(@"TAP");
-    JJVReaderViewController *readerView = [[JJVReaderViewController alloc]
+   /* JJVReaderViewController *readerView = [[JJVReaderViewController alloc]
                                            initWithNibName:nil bundle:nil];
     
     //pass the selected story along to the reader view
@@ -219,7 +220,10 @@
     
     //push the reader view controller onto the screen
     [self.navigationController pushViewController:readerView
-                                         animated:YES];
+                                         animated:YES];*/
+    JJVPageRootViewController *pageRootVC = [[JJVPageRootViewController alloc] init];
+    pageRootVC.index = [[JJVStoryItemStore sharedStore] indexOfStory:[self.newsArticles objectAtIndex:indexPath.section]];
+    [self.navigationController pushViewController:pageRootVC animated:YES];
 }
 
 @end

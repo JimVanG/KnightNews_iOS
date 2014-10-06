@@ -9,14 +9,15 @@
 #import <Foundation/Foundation.h>
 
 #import "JJVPreviewViewController.h"
+#import "KKNewsPreviewViewController.h"
 
 @class JJVReaderViewController;
 
 @interface JJVPageModelController : NSObject <UIPageViewControllerDataSource>
 
-@property (strong, nonatomic) JJVPreviewViewController *currentViewController;
+@property (strong, nonatomic) KKNewsPreviewViewController *currentViewController;
 
--(JJVPreviewViewController *)viewControllerAtIndex:(NSUInteger)index;
--(NSUInteger)indexOfViewController:(JJVPreviewViewController *)viewController;
+-(KKNewsPreviewViewController *)viewControllerAtIndex:(NSUInteger)index;
+-(NSUInteger)indexOfViewController:(KKNewsPreviewViewController *)viewController;
 
 @end
