@@ -22,5 +22,7 @@
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 
+@property (nonatomic) NSUInteger index;
+
 
 @end

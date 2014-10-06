@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		271F5BC119DF41AC00B020DC /* KKNewsImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 271F5BC019DF41AC00B020DC /* KKNewsImageCache.m */; };
+		2790A50E19E2446D0009E12E /* KKNewsPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2790A50C19E2446D0009E12E /* KKNewsPreviewViewController.m */; };
+		2790A50F19E2446D0009E12E /* KKNewsPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2790A50D19E2446D0009E12E /* KKNewsPreviewViewController.xib */; };
 		27D061BF19DF3335002B262E /* NSDate+NSDate_TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D061BE19DF3335002B262E /* NSDate+NSDate_TimeAgo.m */; };
 		27DA778319DA5CCE00C7C92A /* KKNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA778219DA5CCE00C7C92A /* KKNewsViewController.m */; };
 		27DA779319DA784500C7C92A /* KKNewsFeaturedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA779119DA784500C7C92A /* KKNewsFeaturedTableViewCell.m */; };
@@ -79,6 +81,9 @@
 		204D10E97C3B476089833AD6 /* Pods-KnightNews.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightNews.xcconfig"; path = "Pods/Pods-KnightNews.xcconfig"; sourceTree = "<group>"; };
 		271F5BBF19DF41AC00B020DC /* KKNewsImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNewsImageCache.h; sourceTree = "<group>"; };
 		271F5BC019DF41AC00B020DC /* KKNewsImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNewsImageCache.m; sourceTree = "<group>"; };
+		2790A50B19E2446D0009E12E /* KKNewsPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNewsPreviewViewController.h; sourceTree = "<group>"; };
+		2790A50C19E2446D0009E12E /* KKNewsPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNewsPreviewViewController.m; sourceTree = "<group>"; };
+		2790A50D19E2446D0009E12E /* KKNewsPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKNewsPreviewViewController.xib; sourceTree = "<group>"; };
 		27D061BD19DF3335002B262E /* NSDate+NSDate_TimeAgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+NSDate_TimeAgo.h"; sourceTree = "<group>"; };
 		27D061BE19DF3335002B262E /* NSDate+NSDate_TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+NSDate_TimeAgo.m"; sourceTree = "<group>"; };
 		27DA778119DA5CCE00C7C92A /* KKNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNewsViewController.h; sourceTree = "<group>"; };
@@ -210,6 +215,9 @@
 			children = (
 				27DA778119DA5CCE00C7C92A /* KKNewsViewController.h */,
 				27DA778219DA5CCE00C7C92A /* KKNewsViewController.m */,
+				2790A50B19E2446D0009E12E /* KKNewsPreviewViewController.h */,
+				2790A50C19E2446D0009E12E /* KKNewsPreviewViewController.m */,
+				2790A50D19E2446D0009E12E /* KKNewsPreviewViewController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -455,6 +463,7 @@
 				7FA25308199FB3CE0069F2AB /* JJVPreviewViewController_iPad.xib in Resources */,
 				7F0534ED19A1B187008CCDD9 /* JJVPreviewViewController_iPad-landscape.xib in Resources */,
 				7F1A940319985D350057873B /* JJVPreviewViewController_iphone4.xib in Resources */,
+				2790A50F19E2446D0009E12E /* KKNewsPreviewViewController.xib in Resources */,
 				7FCF43561992B56C00D2087C /* JJVEventsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,6 +534,7 @@
 				7F67D13E1996B92A002743E5 /* JJVMapViewController.m in Sources */,
 				7F2B33C91968BAC1006888CC /* JJVReaderViewController.m in Sources */,
 				7F0798BE195BC28800D022A0 /* JJVStoryItemStore.m in Sources */,
+				2790A50E19E2446D0009E12E /* KKNewsPreviewViewController.m in Sources */,
 				27DA779319DA784500C7C92A /* KKNewsFeaturedTableViewCell.m in Sources */,
 				7F2B33D01968E734006888CC /* JJVPageModelController.m in Sources */,
 			);
