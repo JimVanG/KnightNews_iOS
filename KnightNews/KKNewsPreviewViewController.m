@@ -56,7 +56,8 @@
     //[self.articleWebView loadHTMLString: self.item.contents
                          //baseURL: [NSURL URLWithString: self.item.url]];
     
-    [self.articleWebView loadHTMLString:[NSString stringWithFormat:@"<html><body style=\"background-color: white; font-size: 13; font-family: Georgia; color: #333333\">%@</body></html>", self.item.contents] baseURL: [NSURL URLWithString:self.item.url]];
+    [self.articleWebView  loadHTMLString:[NSString stringWithFormat:@"<div id ='foo' align='justify' style='font-size:13px; font-family:georgia; color:#333333';>%@<div>",self.item.contents] baseURL:[NSURL URLWithString:self.item.url]];
+
 }
 
 
