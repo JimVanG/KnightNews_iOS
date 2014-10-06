@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class JJVStoryItem;
+
 @interface KKNewsPreviewViewController : UIViewController
+
+@property (nonatomic, strong) JJVStoryItem *item;
+
 
 @end

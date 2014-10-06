@@ -10,8 +10,10 @@
 #import "JJVWebViewController.h"
 #import "KKNewsAPI.h"
 #import "JJVStoryItem.h"
+#import "NSDate+NSDate_TimeAgo.h"
 
 @interface KKNewsPreviewViewController () <UIWebViewDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *articleDateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *articleImagView;
 @property (weak, nonatomic) IBOutlet UILabel *articleTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *articleAuthorLabel;
@@ -38,6 +40,7 @@
 {
     self.articleAuthorLabel.text = self.item.author;
     self.articleTitleLabel.text = self.item.title;
+    self.articleDateLabel.text = [self.item.date timeAgo];
     
     [[KKNewsAPI sharedUtilities] downloadImageForUrl:self.item.imageUrl withCompletionBlock:^(BOOL success, NSError *error, UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -50,8 +53,10 @@
     self.articleWebView.mediaPlaybackRequiresUserAction = NO;
     self.articleWebView.scalesPageToFit = NO;
     //very important to load the base url so videos play
-    [self.articleWebView loadHTMLString: self.item.contents
-                         baseURL: [NSURL URLWithString: self.item.url]];
+    //[self.articleWebView loadHTMLString: self.item.contents
+                         //baseURL: [NSURL URLWithString: self.item.url]];
+    
+    [self.articleWebView loadHTMLString:[NSString stringWithFormat:@"<html><body style=\"background-color: white; font-size: 13; font-family: Georgia; color: #333333\">%@</body></html>", self.item.contents] baseURL: [NSURL URLWithString:self.item.url]];
 }
 
 
