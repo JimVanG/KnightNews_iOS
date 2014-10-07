@@ -15,7 +15,6 @@
 #import "NSDate+NSDate_TimeAgo.h"
 #import "JJVReaderViewController.h"
 #import "JJVPageRootViewController.h"
-#import "UITableViewCell+KKAutoLayoutDynamicHeightCalculation.h"
 
 @interface KKNewsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -177,8 +176,20 @@
     }];
 }
 
+// iOS 6+ code here
+// Pre iOS 6 code here
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self heightForBasicCellAtIndexPath:indexPath];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8)
+    {
+        // your code
+        return [self heightForBasicCellAtIndexPath:indexPath];
+
+    }
+    else
+    {
+        return UITableViewAutomaticDimension;
+    }
 }
 
 - (CGFloat)heightForBasicCellAtIndexPath:(NSIndexPath *)indexPath {
