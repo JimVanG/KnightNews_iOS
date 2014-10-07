@@ -80,6 +80,8 @@
                     <exclude reference="Uxc-fF-3Id"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="IJB-5e-YN1"/>
+                    <exclude reference="TuQ-Pk-Cbh"/>
                     <exclude reference="Mgh-EK-enc"/>
                     <exclude reference="TIt-FM-JSL"/>
                     <exclude reference="cL6-BN-1Az"/>
@@ -89,8 +91,6 @@
                     <exclude reference="Ial-UZ-XP2"/>
                     <exclude reference="YOE-W1-2Cu"/>
                     <exclude reference="YOG-hY-rNS"/>
-                    <exclude reference="IJB-5e-YN1"/>
-                    <exclude reference="TuQ-Pk-Cbh"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -101,6 +101,8 @@
                     <include reference="Uxc-fF-3Id"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="IJB-5e-YN1"/>
+                    <include reference="TuQ-Pk-Cbh"/>
                     <include reference="Mgh-EK-enc"/>
                     <include reference="TIt-FM-JSL"/>
                     <include reference="cL6-BN-1Az"/>
@@ -110,8 +112,6 @@
                     <include reference="Ial-UZ-XP2"/>
                     <include reference="YOE-W1-2Cu"/>
                     <include reference="YOG-hY-rNS"/>
-                    <include reference="IJB-5e-YN1"/>
-                    <include reference="TuQ-Pk-Cbh"/>
                 </mask>
             </variation>
         </view>

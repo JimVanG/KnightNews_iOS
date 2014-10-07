@@ -62,6 +62,8 @@
     self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"KKNewsFeaturedTableViewCell" bundle:nil]forCellReuseIdentifier:@"FeaturedNewsCell"];
+    self.tableView.estimatedRowHeight = 400;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     // UIRefreshControl
     UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
@@ -85,10 +87,11 @@
         
         // Get on the main queue .
         dispatch_async(dispatch_get_main_queue(), ^{
-            
+
             [self.tableView reloadData];
-            self.tableView.contentSize = CGSizeMake(self.view.frame.size.width, 316 * self.newsArticles.count);
             [self.refreshControl endRefreshing];
+
+           // self.tableView.contentSize = CGSizeMake(self.view.frame.size.width, 316 * self.newsArticles.count);
             [MBProgressHUD hideHUDForView:self.tableView animated:YES];
             [self fadeInView:self.tableView];
         });
@@ -147,7 +150,7 @@
                                                                                         UIFontDescriptorFamilyAttribute : @"Georgia"
                                                                                         }];
     cell.articlePreviewTextView.text = item.excerptParsed;
-    cell.articlePreviewTextView.font = [UIFont fontWithDescriptor:Descriptor size:14.0f];
+    cell.articlePreviewTextView.font = [UIFont fontWithDescriptor:Descriptor size:12.0f];
     cell.articlePreviewTextView.textColor = [UIColor darkGrayColor];
     
     [[KKNewsAPI sharedUtilities] downloadImageForUrl:item.imageUrl withCompletionBlock:^(BOOL success, NSError *error, UIImage *image) {
@@ -183,22 +186,22 @@
     }];
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+/*-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
         return 300.0f;
-}
+}*/
 
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+/*-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 10)];
     footerView.backgroundColor = [UIColor clearColor];
     return footerView;
-}
+}*/
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+/*-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 10.0f;
-}
+}*/
 
 #pragma mark - UITableViewDelegate Methods
 
