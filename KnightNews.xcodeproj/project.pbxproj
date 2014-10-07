@@ -11,6 +11,7 @@
 		2790A50E19E2446D0009E12E /* KKNewsPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2790A50C19E2446D0009E12E /* KKNewsPreviewViewController.m */; };
 		2790A50F19E2446D0009E12E /* KKNewsPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2790A50D19E2446D0009E12E /* KKNewsPreviewViewController.xib */; };
 		27D061BF19DF3335002B262E /* NSDate+NSDate_TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D061BE19DF3335002B262E /* NSDate+NSDate_TimeAgo.m */; };
+		27D43B5A19E497B300E8E98F /* UITableViewCell+KKAutoLayoutDynamicHeightCalculation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D43B5919E497B300E8E98F /* UITableViewCell+KKAutoLayoutDynamicHeightCalculation.m */; };
 		27DA778319DA5CCE00C7C92A /* KKNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA778219DA5CCE00C7C92A /* KKNewsViewController.m */; };
 		27DA779319DA784500C7C92A /* KKNewsFeaturedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA779119DA784500C7C92A /* KKNewsFeaturedTableViewCell.m */; };
 		27DA779419DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27DA779219DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib */; };
@@ -86,6 +87,8 @@
 		2790A50D19E2446D0009E12E /* KKNewsPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKNewsPreviewViewController.xib; sourceTree = "<group>"; };
 		27D061BD19DF3335002B262E /* NSDate+NSDate_TimeAgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+NSDate_TimeAgo.h"; sourceTree = "<group>"; };
 		27D061BE19DF3335002B262E /* NSDate+NSDate_TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+NSDate_TimeAgo.m"; sourceTree = "<group>"; };
+		27D43B5819E497B300E8E98F /* UITableViewCell+KKAutoLayoutDynamicHeightCalculation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+KKAutoLayoutDynamicHeightCalculation.h"; sourceTree = "<group>"; };
+		27D43B5919E497B300E8E98F /* UITableViewCell+KKAutoLayoutDynamicHeightCalculation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+KKAutoLayoutDynamicHeightCalculation.m"; sourceTree = "<group>"; };
 		27DA778119DA5CCE00C7C92A /* KKNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNewsViewController.h; sourceTree = "<group>"; };
 		27DA778219DA5CCE00C7C92A /* KKNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNewsViewController.m; sourceTree = "<group>"; };
 		27DA779019DA784500C7C92A /* KKNewsFeaturedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNewsFeaturedTableViewCell.h; sourceTree = "<group>"; };
@@ -206,6 +209,8 @@
 				27DA779019DA784500C7C92A /* KKNewsFeaturedTableViewCell.h */,
 				27DA779119DA784500C7C92A /* KKNewsFeaturedTableViewCell.m */,
 				27DA779219DA784500C7C92A /* KKNewsFeaturedTableViewCell.xib */,
+				27D43B5819E497B300E8E98F /* UITableViewCell+KKAutoLayoutDynamicHeightCalculation.h */,
+				27D43B5919E497B300E8E98F /* UITableViewCell+KKAutoLayoutDynamicHeightCalculation.m */,
 			);
 			name = TableView;
 			sourceTree = "<group>";
@@ -519,6 +524,7 @@
 				27D061BF19DF3335002B262E /* NSDate+NSDate_TimeAgo.m in Sources */,
 				7FF95888199479AA0029D39D /* JJVSportsViewController.m in Sources */,
 				7FCF43551992B56C00D2087C /* JJVEventsTableViewCell.m in Sources */,
+				27D43B5A19E497B300E8E98F /* UITableViewCell+KKAutoLayoutDynamicHeightCalculation.m in Sources */,
 				7F685A25199321A9003E9177 /* JJVPreviewViewController.m in Sources */,
 				271F5BC119DF41AC00B020DC /* KKNewsImageCache.m in Sources */,
 				27DA778319DA5CCE00C7C92A /* KKNewsViewController.m in Sources */,
@@ -611,7 +617,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -645,7 +651,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;

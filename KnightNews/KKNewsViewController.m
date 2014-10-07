@@ -15,6 +15,7 @@
 #import "NSDate+NSDate_TimeAgo.h"
 #import "JJVReaderViewController.h"
 #import "JJVPageRootViewController.h"
+#import "UITableViewCell+KKAutoLayoutDynamicHeightCalculation.h"
 
 @interface KKNewsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -117,25 +118,15 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    switch (indexPath.section)
-    {
-        case 0:
-            return [self setUpFeaturedTableViewCellForTableView:tableView atIndexPath:indexPath];
-            break;
-        case 1:
-            return [self setUpFeaturedTableViewCellForTableView:tableView atIndexPath:indexPath];
-            break;
-            
-        default:
-            return [self setUpFeaturedTableViewCellForTableView:tableView atIndexPath:indexPath];
-            break;
-    }
+    
+    KKNewsFeaturedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeaturedNewsCell"];
+
+    return [self setUpFeaturedTableViewCellForTableView:cell atIndexPath:indexPath];
 }
 
 
--(KKNewsFeaturedTableViewCell *)setUpFeaturedTableViewCellForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath*)indexPath
+-(KKNewsFeaturedTableViewCell *)setUpFeaturedTableViewCellForTableView:(KKNewsFeaturedTableViewCell *)cell atIndexPath:(NSIndexPath*)indexPath
 {
-    KKNewsFeaturedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeaturedNewsCell"];
     
     JJVStoryItem *item = (JJVStoryItem*)[self.newsArticles objectAtIndex:indexPath.section];
     
@@ -184,6 +175,29 @@
     [UIView animateWithDuration:0.3 animations:^{
         aView.alpha = 1.0;
     }];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self heightForBasicCellAtIndexPath:indexPath];
+}
+
+- (CGFloat)heightForBasicCellAtIndexPath:(NSIndexPath *)indexPath {
+    static KKNewsFeaturedTableViewCell *sizingCell = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sizingCell = [self.tableView dequeueReusableCellWithIdentifier:@"FeaturedNewsCell"];
+    });
+    
+    [self setUpFeaturedTableViewCellForTableView:sizingCell atIndexPath:indexPath];
+    return [self calculateHeightForConfiguredSizingCell:sizingCell];
+}
+
+- (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
+    [sizingCell setNeedsLayout];
+    [sizingCell layoutIfNeeded];
+    
+    CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return size.height;
 }
 
 /*-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
