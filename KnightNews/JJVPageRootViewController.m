@@ -64,7 +64,12 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         
        // [self fetchFeed];
 
+        UIBarButtonItem *shareButton = [[UIBarButtonItem alloc]
+                                        initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                        target:self
+                                        action:@selector(shareAction:)];
         
+        self.navigationItem.rightBarButtonItem = shareButton;
         self.navigationItem.title = @"News";
         self.tabBarItem.image = [UIImage imageNamed:@"newspaper_25"];
         self.tabBarItem.title = @"News";
