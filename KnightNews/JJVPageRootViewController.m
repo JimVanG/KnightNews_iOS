@@ -38,9 +38,6 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 @property (nonatomic, assign) NSInteger currentPosition;
 
 
-@property (nonatomic, strong) UIScrollView *scrollView;
-
-
 @end
 
 @implementation JJVPageRootViewController

@@ -33,6 +33,9 @@
                                         target:self
                                         action:@selector(shareAction:)];
         self.navigationItem.rightBarButtonItem = shareButton;
+        
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style: UIBarButtonItemStyleBordered target:self action:@selector(headBack:)];
+        self.navigationItem.leftBarButtonItem = backButton;
     }
     return self;
 }
@@ -66,6 +69,12 @@
                                             @[self.webView.request.URL.absoluteString]
                                             applicationActivities: nil];
     [self presentViewController: controller animated: YES completion: nil];
+}
+
+-(void) headBack:(id)sender
+{
+    [self dismissViewControllerAnimated: YES completion:nil];
+    
 }
 
 # pragma mark UIWebview Delegate methods

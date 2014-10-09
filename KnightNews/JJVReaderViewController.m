@@ -31,6 +31,11 @@
                                         target:self
                                         action:@selector(shareAction:)];
         self.navigationItem.rightBarButtonItem = shareButton;
+        
+    
+        
+        
+
 
     }
     return self;
@@ -63,6 +68,8 @@
     [self.webView loadHTMLString: item.contents
                          baseURL: [NSURL URLWithString: item.url]];
     
+
+    
 }
 
 
@@ -80,6 +87,8 @@
     [self presentViewController: controller animated: YES completion: nil];
 }
 
+
+
 #pragma mark UIWebview Delegate Methods
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -88,7 +97,11 @@
 //        [[UIApplication sharedApplication] openURL:[request URL]];
         JJVWebViewController *webVC = [[JJVWebViewController alloc] init];
         webVC.urlRequest = request;
-        [self.navigationController pushViewController: webVC animated: YES];
+        //[self.navigationController pushViewController: webVC animated: YES];
+        
+        UINavigationController *navController = [[UINavigationController alloc]
+                                                 initWithRootViewController:webVC];
+        [self presentViewController: navController animated:YES completion:nil];
         return NO;
     }
     
