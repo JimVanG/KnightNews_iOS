@@ -14,6 +14,7 @@
 #import "JJVPreviewViewController.h"
 #import "JJVReaderViewController.h"
 #import "MBProgressHUD.h"
+#import "KKNewsPreviewViewController.h"
 
 NSString *const TITLE_CONSTANT2 = @"title_plain";
 NSString *const URL_CONSTANT2 = @"url";
@@ -56,12 +57,8 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     if (self) {
         // Custom initialization
         
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+       // [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         
-        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-        _session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:nil];
-        
-        [self fetchFeed];
 
         
         self.navigationItem.title = @"News";
@@ -83,6 +80,9 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     self.pageViewController.delegate = self;
     
     //the rest of the UI is set up after we've successfully retrieved our request.
+    
+    [self setUpUI];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -104,14 +104,13 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 -(void)setUpUI
 {
     
-    self.startingViewController = [self.modelController viewControllerAtIndex: 0];
+    self.startingViewController = [self.modelController viewControllerAtIndex: self.index];
     
     [self.pageViewController setViewControllers: @[self.startingViewController ] direction:UIPageViewControllerNavigationDirectionForward
                                        animated:YES
                                      completion:nil];
     
-    self.pageViewController.dataSource = self.modelController;
-    
+    self.pageViewController.dataSource = self.modelController;    
     //[self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
     
@@ -168,9 +167,11 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         return;
     }
     //get the current view controller being displayed
-    JJVPreviewViewController *current = [pageViewController.viewControllers lastObject];
+    KKNewsPreviewViewController *current = [pageViewController.viewControllers lastObject];
     
     self.currentPosition = [[JJVStoryItemStore sharedStore] indexOfStory: current.item];
+   // KKNewsPreviewViewController *current = [pageViewController.viewControllers lastObject];
+   // self.currentPosition = [[JJVStoryItemStore sharedStore] indexOfStory: current.item];
 }
 
 //Uncomment if using a page flip animation
@@ -271,7 +272,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 
 -(void)tap:(UITapGestureRecognizer *)gr
 {
-    //NSLog(@"TAP");
+ /*   //NSLog(@"TAP");
     JJVReaderViewController *readerView = [[JJVReaderViewController alloc]
                                            initWithNibName:nil bundle:nil];
     
@@ -283,7 +284,7 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     
     //push the reader view controller onto the screen
     [self.navigationController pushViewController:readerView
-                                         animated:YES];
+                                         animated:YES];*/
 }
 
 

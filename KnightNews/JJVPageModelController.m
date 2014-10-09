@@ -35,7 +35,7 @@
 
 #pragma mark - Convenience Methods for PageViewController
 
-- (JJVPreviewViewController *)viewControllerAtIndex:(NSUInteger)index
+- (KKNewsPreviewViewController *)viewControllerAtIndex:(NSUInteger)index
 {
     // Return the data view controller for the given index.
     if (([[JJVStoryItemStore sharedStore] numberOfStories] == 0) ||
@@ -43,7 +43,7 @@
         return nil;
     }
     
-    // Create a new view controller and pass suitable data.
+   /* // Create a new view controller and pass suitable data.
     JJVPreviewViewController *pre = nil;
     if (!IS_IPHONE_5 && !IS_IPAD) {
         pre = [[JJVPreviewViewController alloc]
@@ -58,15 +58,21 @@
     }
 
     JJVStoryItem *story = [[JJVStoryItemStore sharedStore] getItemAt: index];
-    pre.item = story;
-    self.currentViewController = pre;
-    return pre;
+    pre.item = story;*/
+    
+    JJVStoryItem *story = [[JJVStoryItemStore sharedStore] getItemAt: index];
+
+    KKNewsPreviewViewController *vc = [[KKNewsPreviewViewController alloc] init];
+    vc.item = story;
+    self.currentViewController = vc;
+    return vc;
 }
 
-- (NSUInteger)indexOfViewController:(JJVPreviewViewController *)viewController
+- (NSUInteger)indexOfViewController:(KKNewsPreviewViewController *)viewController
 {
     // Return the index of the given data view controller.
     return [[JJVStoryItemStore sharedStore] indexOfStory: viewController.item];
+    //return 1;
 
 }
 
@@ -74,7 +80,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    NSUInteger index = [self indexOfViewController:(JJVPreviewViewController *)viewController];
+    NSUInteger index = [self indexOfViewController:(KKNewsPreviewViewController *)viewController];
 
     if ((index == 0) || (index == NSNotFound)) {
         return nil;
@@ -87,7 +93,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    NSUInteger index = [self indexOfViewController:(JJVPreviewViewController *)viewController];
+    NSUInteger index = [self indexOfViewController:(KKNewsPreviewViewController *)viewController];
 
     if (index == NSNotFound) {
         return nil;
