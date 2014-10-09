@@ -1,47 +1,68 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="300" id="KGk-i7-Jjw" customClass="KKNewsFeaturedTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="KKNewsFeaturedTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="287"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This Really is a super long headline to test multiple lien" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQP-48-Fb8">
-                        <rect key="frame" x="10" y="165" width="300" height="45"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQP-48-Fb8">
+                        <rect key="frame" x="10" y="169" width="300" height="19.5"/>
                         <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
                         <color key="textColor" red="0.24931795634920639" green="0.24931795634920639" blue="0.24931795634920639" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By John Doe, Title here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMH-m2-dJf">
-                        <rect key="frame" x="10" y="207" width="199" height="21"/>
-                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By John Doe, Title here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMH-m2-dJf">
+                        <rect key="frame" x="10" y="196" width="135.5" height="15"/>
+                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="13"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3 d" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itj-ss-SHq">
-                        <rect key="frame" x="209" y="211" width="94" height="14"/>
-                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="12"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Hong Kong streets are pakced with thousands of demonstrators bracing for the possiblity of a police crackdown." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYf-0y-15f">
-                        <rect key="frame" x="5" y="222" width="296" height="73.5"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Hong Kong streets are pakced with thousands of demonstrators bracing for the possiblity of a police crackdown." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYf-0y-15f">
+                        <rect key="frame" x="5" y="212" width="296" height="63"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1hi-HH-oSW">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1hi-HH-oSW">
                         <rect key="frame" x="10" y="0.0" width="300" height="159.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="300" id="o56-mS-yAS"/>
+                            <constraint firstAttribute="height" constant="159.5" id="yIs-Ul-I2s"/>
+                        </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" text="3 d" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itj-ss-SHq">
+                        <rect key="frame" x="291" y="196" width="18" height="14"/>
+                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="aMH-m2-dJf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="0Px-rF-eST"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="1hi-HH-oSW" secondAttribute="trailing" constant="2" id="5UQ-H7-txL"/>
+                    <constraint firstItem="aMH-m2-dJf" firstAttribute="top" secondItem="VQP-48-Fb8" secondAttribute="bottom" constant="7.5" id="7pa-tl-bFh"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="xYf-0y-15f" secondAttribute="trailing" constant="11" id="Aq9-A6-F5M"/>
+                    <constraint firstItem="aMH-m2-dJf" firstAttribute="baseline" secondItem="Itj-ss-SHq" secondAttribute="baseline" constant="1" id="DUP-nE-Lqv"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Itj-ss-SHq" secondAttribute="trailing" constant="2.5" id="F64-fe-BqV"/>
+                    <constraint firstItem="VQP-48-Fb8" firstAttribute="top" secondItem="1hi-HH-oSW" secondAttribute="bottom" constant="9.5" id="Nw4-yt-j3d"/>
+                    <constraint firstItem="Itj-ss-SHq" firstAttribute="top" secondItem="VQP-48-Fb8" secondAttribute="bottom" constant="7.5" id="ReG-Ta-F3K"/>
+                    <constraint firstItem="VQP-48-Fb8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="UeI-2J-bs9"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="xYf-0y-15f" secondAttribute="bottom" constant="4" id="Zey-RS-0cJ"/>
+                    <constraint firstItem="1hi-HH-oSW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="i6B-8F-gtf"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="VQP-48-Fb8" secondAttribute="trailing" constant="2" id="jn1-j6-0eU"/>
+                    <constraint firstItem="1hi-HH-oSW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="n8z-rG-L4S"/>
+                    <constraint firstItem="xYf-0y-15f" firstAttribute="top" secondItem="aMH-m2-dJf" secondAttribute="bottom" constant="1" id="oq1-xv-Ceb"/>
+                    <constraint firstItem="xYf-0y-15f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-3" id="pJi-8e-J1Z"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="articleAuthorLabel" destination="aMH-m2-dJf" id="WOF-8D-qj6"/>
@@ -50,7 +71,7 @@
                 <outlet property="articleTimeLabel" destination="Itj-ss-SHq" id="UEz-jx-Bed"/>
                 <outlet property="articleTitle" destination="VQP-48-Fb8" id="fGE-Aq-Q4i"/>
             </connections>
-            <point key="canvasLocation" x="245" y="315"/>
+            <point key="canvasLocation" x="245" y="258.5"/>
         </tableViewCell>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

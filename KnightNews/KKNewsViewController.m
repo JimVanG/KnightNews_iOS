@@ -14,6 +14,7 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "NSDate+NSDate_TimeAgo.h"
 #import "JJVReaderViewController.h"
+#import "JJVPageRootViewController.h"
 
 @interface KKNewsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -61,6 +62,8 @@
     self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"KKNewsFeaturedTableViewCell" bundle:nil]forCellReuseIdentifier:@"FeaturedNewsCell"];
+    self.tableView.estimatedRowHeight = 400;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     // UIRefreshControl
     UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
@@ -84,10 +87,11 @@
         
         // Get on the main queue .
         dispatch_async(dispatch_get_main_queue(), ^{
-            
+
             [self.tableView reloadData];
-            self.tableView.contentSize = CGSizeMake(self.view.frame.size.width, 316 * self.newsArticles.count);
             [self.refreshControl endRefreshing];
+
+           // self.tableView.contentSize = CGSizeMake(self.view.frame.size.width, 316 * self.newsArticles.count);
             [MBProgressHUD hideHUDForView:self.tableView animated:YES];
             [self fadeInView:self.tableView];
         });
@@ -113,25 +117,15 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    switch (indexPath.section)
-    {
-        case 0:
-            return [self setUpFeaturedTableViewCellForTableView:tableView atIndexPath:indexPath];
-            break;
-        case 1:
-            return [self setUpFeaturedTableViewCellForTableView:tableView atIndexPath:indexPath];
-            break;
-            
-        default:
-            return [self setUpFeaturedTableViewCellForTableView:tableView atIndexPath:indexPath];
-            break;
-    }
+    
+    KKNewsFeaturedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeaturedNewsCell"];
+
+    return [self setUpFeaturedTableViewCellForTableView:cell atIndexPath:indexPath];
 }
 
 
--(KKNewsFeaturedTableViewCell *)setUpFeaturedTableViewCellForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath*)indexPath
+-(KKNewsFeaturedTableViewCell *)setUpFeaturedTableViewCellForTableView:(KKNewsFeaturedTableViewCell *)cell atIndexPath:(NSIndexPath*)indexPath
 {
-    KKNewsFeaturedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeaturedNewsCell"];
     
     JJVStoryItem *item = (JJVStoryItem*)[self.newsArticles objectAtIndex:indexPath.section];
     
@@ -146,7 +140,7 @@
                                                                                         UIFontDescriptorFamilyAttribute : @"Georgia"
                                                                                         }];
     cell.articlePreviewTextView.text = item.excerptParsed;
-    cell.articlePreviewTextView.font = [UIFont fontWithDescriptor:Descriptor size:14.0f];
+    cell.articlePreviewTextView.font = [UIFont fontWithDescriptor:Descriptor size:12.0f];
     cell.articlePreviewTextView.textColor = [UIColor darkGrayColor];
     
     [[KKNewsAPI sharedUtilities] downloadImageForUrl:item.imageUrl withCompletionBlock:^(BOOL success, NSError *error, UIImage *image) {
@@ -182,28 +176,63 @@
     }];
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-        return 300.0f;
+// iOS 6+ code here
+// Pre iOS 6 code here
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8)
+    {
+        // your code
+        return [self heightForBasicCellAtIndexPath:indexPath];
+
+    }
+    else
+    {
+        return UITableViewAutomaticDimension;
+    }
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+- (CGFloat)heightForBasicCellAtIndexPath:(NSIndexPath *)indexPath {
+    static KKNewsFeaturedTableViewCell *sizingCell = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sizingCell = [self.tableView dequeueReusableCellWithIdentifier:@"FeaturedNewsCell"];
+    });
+    
+    [self setUpFeaturedTableViewCellForTableView:sizingCell atIndexPath:indexPath];
+    return [self calculateHeightForConfiguredSizingCell:sizingCell];
+}
+
+- (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
+    [sizingCell setNeedsLayout];
+    [sizingCell layoutIfNeeded];
+    
+    CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return size.height;
+}
+
+/*-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+        return 300.0f;
+}*/
+
+/*-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 10)];
     footerView.backgroundColor = [UIColor clearColor];
     return footerView;
-}
+}*/
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+/*-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 10.0f;
-}
+}*/
 
 #pragma mark - UITableViewDelegate Methods
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //NSLog(@"TAP");
-    JJVReaderViewController *readerView = [[JJVReaderViewController alloc]
+   /* JJVReaderViewController *readerView = [[JJVReaderViewController alloc]
                                            initWithNibName:nil bundle:nil];
     
     //pass the selected story along to the reader view
@@ -213,7 +242,10 @@
     
     //push the reader view controller onto the screen
     [self.navigationController pushViewController:readerView
-                                         animated:YES];
+                                         animated:YES];*/
+    JJVPageRootViewController *pageRootVC = [[JJVPageRootViewController alloc] init];
+    pageRootVC.index = [[JJVStoryItemStore sharedStore] indexOfStory:[self.newsArticles objectAtIndex:indexPath.section]];
+    [self.navigationController pushViewController:pageRootVC animated:YES];
 }
 
 @end
