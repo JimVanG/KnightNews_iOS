@@ -67,9 +67,12 @@
     
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithRequest:req completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: NO];
+        
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
         [self parseJSONObject: jsonObject];
+        
         
         if (completionBlock)
         {
