@@ -97,7 +97,7 @@
         JJVStoryItem *storyItem = [[JJVStoryItem alloc] init];
         
         //storyItem.position = count++;
-        NSLog(@"%@", post);
+        //NSLog(@"%@", post);
         storyItem.url = post[@"url"];
         storyItem.title = post[@"title_plain"];
         storyItem.contents = post[@"content"];
