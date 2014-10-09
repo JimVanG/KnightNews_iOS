@@ -59,10 +59,6 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
         
        // [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         
-        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-        _session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:nil];
-        
-       // [self fetchFeed];
 
         
         self.navigationItem.title = @"News";
