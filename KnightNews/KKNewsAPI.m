@@ -67,9 +67,12 @@
     
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithRequest:req completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: NO];
+        
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
         [self parseJSONObject: jsonObject];
+        
         
         if (completionBlock)
         {
@@ -94,7 +97,7 @@
         JJVStoryItem *storyItem = [[JJVStoryItem alloc] init];
         
         //storyItem.position = count++;
-        NSLog(@"%@", post);
+        //NSLog(@"%@", post);
         storyItem.url = post[@"url"];
         storyItem.title = post[@"title_plain"];
         storyItem.contents = post[@"content"];

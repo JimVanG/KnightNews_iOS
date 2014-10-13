@@ -231,18 +231,6 @@
 #pragma mark - UITableViewDelegate Methods
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //NSLog(@"TAP");
-   /* JJVReaderViewController *readerView = [[JJVReaderViewController alloc]
-                                           initWithNibName:nil bundle:nil];
-    
-    //pass the selected story along to the reader view
-    JJVStoryItem *story = [self.newsArticles objectAtIndex:indexPath.section];
-    
-    readerView.item = story;
-    
-    //push the reader view controller onto the screen
-    [self.navigationController pushViewController:readerView
-                                         animated:YES];*/
     JJVPageRootViewController *pageRootVC = [[JJVPageRootViewController alloc] init];
     pageRootVC.index = [[JJVStoryItemStore sharedStore] indexOfStory:[self.newsArticles objectAtIndex:indexPath.section]];
     [self.navigationController pushViewController:pageRootVC animated:YES];

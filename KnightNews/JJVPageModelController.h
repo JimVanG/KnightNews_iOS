@@ -15,9 +15,9 @@
 
 @interface JJVPageModelController : NSObject <UIPageViewControllerDataSource>
 
-@property (strong, nonatomic) KKNewsPreviewViewController *currentViewController;
+@property (strong, nonatomic) JJVReaderViewController *currentViewController;
 
--(KKNewsPreviewViewController *)viewControllerAtIndex:(NSUInteger)index;
--(NSUInteger)indexOfViewController:(KKNewsPreviewViewController *)viewController;
+-(JJVReaderViewController *)viewControllerAtIndex:(NSUInteger)index;
+-(NSUInteger)indexOfViewController:(JJVReaderViewController *)viewController;
 
 @end

@@ -34,14 +34,8 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 @interface JJVPageRootViewController () <UIGestureRecognizerDelegate>
 
 @property (readonly, strong, nonatomic) JJVPageModelController *modelController;
-@property (strong, nonatomic) JJVPreviewViewController *startingViewController;
-@property (nonatomic) NSURLSession *session;
-@property (nonatomic, copy) NSMutableArray *items;
+@property (strong, nonatomic) JJVReaderViewController *startingViewController;
 @property (nonatomic, assign) NSInteger currentPosition;
-
-@property (nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
-
-@property (nonatomic, strong) UIScrollView *scrollView;
 
 
 @end
@@ -56,20 +50,6 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     self = [super init];
     if (self) {
         // Custom initialization
-        
-       // [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        
-        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-        _session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:nil];
-        
-       // [self fetchFeed];
-
-        UIBarButtonItem *shareButton = [[UIBarButtonItem alloc]
-                                        initWithBarButtonSystemItem:UIBarButtonSystemItemAction
-                                        target:self
-                                        action:@selector(shareAction:)];
-        
-        self.navigationItem.rightBarButtonItem = shareButton;
         self.navigationItem.title = @"News";
         self.tabBarItem.image = [UIImage imageNamed:@"newspaper_25"];
         self.tabBarItem.title = @"News";
@@ -126,22 +106,6 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     
     [self.pageViewController didMoveToParentViewController:self];
     
-    self.tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
-    //need to add the gesture recognizer to the scrollview of the pageViewer in order for it to
-    //work with the taps
-    for (UIView *view in self.pageViewController.view.subviews) {
-        if([view isKindOfClass:[UIScrollView class]])
-        {
-            self.scrollView = (UIScrollView *)view;
-        }
-    }
-    
-    self.tapRecognizer.delegate = self;
-    self.tapRecognizer.cancelsTouchesInView = NO;
-    self.tapRecognizer.delaysTouchesBegan = YES;
-    
-    [self.scrollView addGestureRecognizer: self.tapRecognizer];
-    
     self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
 }
 
@@ -179,8 +143,6 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
     KKNewsPreviewViewController *current = [pageViewController.viewControllers lastObject];
     
     self.currentPosition = [[JJVStoryItemStore sharedStore] indexOfStory: current.item];
-   // KKNewsPreviewViewController *current = [pageViewController.viewControllers lastObject];
-   // self.currentPosition = [[JJVStoryItemStore sharedStore] indexOfStory: current.item];
 }
 
 //Uncomment if using a page flip animation
@@ -213,126 +175,6 @@ NSString *const CUSTOM_FIELD_CONSTANT2 = @"custom_fields";
 //
 //
 //    return UIPageViewControllerSpineLocationMid;
-//}
-
-
-#pragma mark - Networking methods
-
-- (void)fetchFeed
-{
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: YES];
-    NSString *requestString = @"http://knightnews.com/api/get_recent_posts/";
-    NSURL *url = [NSURL URLWithString:requestString];
-    NSURLRequest *req = [NSURLRequest requestWithURL: url];
-    
-    NSURLSessionDataTask *dataTask = [self.session dataTaskWithRequest:req completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        //NSLog(@"%@", jsonObject);
-        
-        [self parseJSONObject: jsonObject];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible: NO];
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            [self setUpUI];
-            [dataTask cancel];
-        });
-        
-    }];
-    [dataTask resume];
-}
-
--(void)parseJSONObject:(NSDictionary *)jsonObject
-{
-    //get the list of posts (top most level of the JSON object)
-    self.items = jsonObject[POSTS_CONSTANT2];
-    
-    //int count = 0;
-    //get each posts attributes, each post is stored in a dictionary
-    for (NSDictionary *post in self.items) {
-        JJVStoryItem *storyItem = [[JJVStoryItem alloc] init];
-        
-        //storyItem.position = count++;
-        
-        storyItem.url = post[URL_CONSTANT2];
-        storyItem.title = post[TITLE_CONSTANT2];
-        storyItem.contents = post[CONTENT_CONSTANT2];
-        storyItem.excerpt = post[EXCERPT_CONSTANT2];
-        //storyItem.date = post[DATE_CONSTANT2];
-        
-        //these fields are in their own seperate dictionaries
-        NSDictionary *innerDictionary = post[AUTHOR_CONSTANT2];
-        storyItem.author = innerDictionary[NAME_CONSTANT2];
-        
-        innerDictionary = post[CUSTOM_FIELD_CONSTANT2];
-        NSArray *customFieldsArray = innerDictionary[IMAGE_CONSTANT2];
-        //image url is inside of an array inside of a dictionary
-        storyItem.imageUrl = customFieldsArray[0];
-
-        //add to our store
-        [[JJVStoryItemStore sharedStore] addItem: storyItem];
-        
-    }
-    
-}
-
-#pragma mark - Gesture recognizer methods
-
--(void)tap:(UITapGestureRecognizer *)gr
-{
- /*   //NSLog(@"TAP");
-    JJVReaderViewController *readerView = [[JJVReaderViewController alloc]
-                                           initWithNibName:nil bundle:nil];
-    
-    //pass the selected story along to the reader view
-    JJVStoryItem *story = [[JJVStoryItemStore sharedStore]
-                           getItemAt: self.currentPosition];
-    
-    readerView.item = story;
-    
-    //push the reader view controller onto the screen
-    [self.navigationController pushViewController:readerView
-                                         animated:YES];*/
-}
-
-
-//-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-//{
-//
-//
-//    if( UIInterfaceOrientationIsLandscape(toInterfaceOrientation)
-//        && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-//    {
-//        [[NSBundle mainBundle] loadNibNamed: @"JJVPreviewViewController_iPad-landscape"
-//                                      owner: [[JJVPreviewViewController alloc] init]
-//                                    options: nil];
-//        [self viewDidLoad];
-//
-//    }
-//    else if( UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation)
-//               && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-//    {
-//        [[NSBundle mainBundle] loadNibNamed: @"JJVPreviewViewController_iPad"
-//                                      owner: [JJVPreviewViewController class]
-//                                    options: nil];
-//        [self viewDidLoad];
-//    }
-//}
-//
-//
-//+ (id)loadNibNamed:(NSString *)nibName ofClass:(Class)objClass {
-//    if (nibName && objClass) {
-//        NSArray *objects = [[NSBundle mainBundle] loadNibNamed:nibName
-//                                                         owner:nil
-//                                                       options:nil];
-//        for (id currentObject in objects ){
-//            if ([currentObject isKindOfClass:objClass])
-//                return currentObject;
-//        }
-//    }
-//
-//    return nil;
 //}
 
 @end

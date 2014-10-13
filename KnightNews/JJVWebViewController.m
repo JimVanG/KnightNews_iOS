@@ -33,6 +33,9 @@
                                         target:self
                                         action:@selector(shareAction:)];
         self.navigationItem.rightBarButtonItem = shareButton;
+        
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style: UIBarButtonItemStyleBordered target:self action:@selector(headBack:)];
+        self.navigationItem.leftBarButtonItem = backButton;
     }
     return self;
 }
@@ -59,6 +62,12 @@
     self.cancelBarButton.enabled = self.webView.loading;
 }
 
+
+-(void) headBack:(id)sender
+{
+    [self dismissViewControllerAnimated: YES completion:nil];
+    
+}
 
 # pragma mark UIWebview Delegate methods
 

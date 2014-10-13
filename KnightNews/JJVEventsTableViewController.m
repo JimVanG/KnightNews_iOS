@@ -152,7 +152,7 @@ NSString *const EVENT_DESC = @"event_desc";
     cell.descriptionLabel.text = [e.desc stringByTrimmingCharactersInSet:
                                   [NSCharacterSet whitespaceAndNewlineCharacterSet]];
     cell.dateLabel.text = [e.date stringByTrimmingCharactersInSet:
-                           [NSCharacterSet whitespaceAndNewlineCharacterSet]]; 
+                           [NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     return cell;
 }
