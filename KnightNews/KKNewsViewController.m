@@ -183,7 +183,7 @@
     if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8)
     {
         // your code
-        return [self heightForBasicCellAtIndexPath:indexPath];
+       return [self heightForBasicCellAtIndexPath:indexPath];
 
     }
     else

@@ -59,14 +59,6 @@
     self.cancelBarButton.enabled = self.webView.loading;
 }
 
-- (void)shareAction:(id)sender
-{
-    UIActivityViewController *controller = [[UIActivityViewController alloc]
-                                            initWithActivityItems:
-                                            @[self.webView.request.URL.absoluteString]
-                                            applicationActivities: nil];
-    [self presentViewController: controller animated: YES completion: nil];
-}
 
 # pragma mark UIWebview Delegate methods
 
