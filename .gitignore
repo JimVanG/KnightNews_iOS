@@ -27,6 +27,7 @@ DerivedData
 # Project
 KnightNews.xcworkspace/xcuserdata
 KnightNews.xcworkspace/*.xcuserdata
+KnightNews.xcworkspace/*.xcuserdatad
 KnightNews.xcworkspace/project.xcworkspace
 KnightNews/KnightNews.xcodeproj/project.xcworkspace
 KnightNews/KnightNews.xcodeproj/xcuserdata
