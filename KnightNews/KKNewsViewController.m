@@ -15,6 +15,7 @@
 #import "NSDate+NSDate_TimeAgo.h"
 #import "JJVReaderViewController.h"
 #import "JJVPageRootViewController.h"
+#import "JJVSettingsTableViewController.h"
 
 @interface KKNewsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -32,6 +33,12 @@
         self.tabBarItem.image = [UIImage imageNamed:@"newspaper_25"];
         self.tabBarItem.selectedImage = [UIImage imageNamed:@"newspaper_25"];
         self.tabBarItem.title = @"News";
+        
+        UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
+                                        initWithBarButtonSystemItem: UIBarButtonSystemItemReply
+                                        target:self
+                                        action:@selector(infoAction:)];
+        self.navigationItem.leftBarButtonItem = infoButton;
         
     }
     
@@ -51,6 +58,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)infoAction:(id)sender
+{
+    JJVSettingsTableViewController *settings = [[JJVSettingsTableViewController alloc] init];
+    [self presentModalViewController: settings animated:YES];
+    
 }
 
 #pragma mark - Interface Setup Methods
@@ -231,12 +245,9 @@
 #pragma mark - UITableViewDelegate Methods
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //    JJVPageRootViewController *pageRootVC = [[JJVPageRootViewController alloc] init];
-    //    pageRootVC.index = [[JJVStoryItemStore sharedStore] indexOfStory:[self.newsArticles objectAtIndex:indexPath.section]];
     
     JJVReaderViewController *readerVC = [[JJVReaderViewController alloc] init];
-    NSInteger row  = indexPath.section;
-    readerVC.item = [self.newsArticles objectAtIndex: row];
+    readerVC.item = [self.newsArticles objectAtIndex: indexPath.section];
     
     [self.navigationController pushViewController: readerVC animated:YES];
 }
