@@ -97,11 +97,11 @@
 //        [[UIApplication sharedApplication] openURL:[request URL]];
         JJVWebViewController *webVC = [[JJVWebViewController alloc] init];
         webVC.urlRequest = request;
-        //[self.navigationController pushViewController: webVC animated: YES];
+        [self.navigationController pushViewController: webVC animated: YES];
         
-        UINavigationController *navController = [[UINavigationController alloc]
-                                                 initWithRootViewController:webVC];
-        [self presentViewController: navController animated:YES completion:nil];
+//        UINavigationController *navController = [[UINavigationController alloc]
+//                                                 initWithRootViewController:webVC];
+//        [self presentViewController: navController animated:YES completion:nil];
         return NO;
     }
     

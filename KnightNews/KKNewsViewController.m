@@ -53,7 +53,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Interface Setup Methods 
+#pragma mark - Interface Setup Methods
 -(void)setUpTableView
 {
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
@@ -87,11 +87,11 @@
         
         // Get on the main queue .
         dispatch_async(dispatch_get_main_queue(), ^{
-
+            
             [self.tableView reloadData];
             [self.refreshControl endRefreshing];
-
-           // self.tableView.contentSize = CGSizeMake(self.view.frame.size.width, 316 * self.newsArticles.count);
+            
+            // self.tableView.contentSize = CGSizeMake(self.view.frame.size.width, 316 * self.newsArticles.count);
             [MBProgressHUD hideHUDForView:self.tableView animated:YES];
             [self fadeInView:self.tableView];
         });
@@ -119,7 +119,7 @@
 {
     
     KKNewsFeaturedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeaturedNewsCell"];
-
+    
     return [self setUpFeaturedTableViewCellForTableView:cell atIndexPath:indexPath];
 }
 
@@ -162,7 +162,7 @@
     
     
     cell.backgroundColor = [UIColor clearColor];
-   // cell.contentView.backgroundColor = [UIColor darkGrayColor];
+    // cell.contentView.backgroundColor = [UIColor darkGrayColor];
     
     return cell;
 }
@@ -184,7 +184,7 @@
     {
         // your code
         return [self heightForBasicCellAtIndexPath:indexPath];
-
+        
     }
     else
     {
@@ -212,28 +212,33 @@
 }
 
 /*-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-        return 300.0f;
-}*/
+ {
+ return 300.0f;
+ }*/
 
 /*-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 10)];
-    footerView.backgroundColor = [UIColor clearColor];
-    return footerView;
-}*/
+ {
+ UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 10)];
+ footerView.backgroundColor = [UIColor clearColor];
+ return footerView;
+ }*/
 
 /*-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 10.0f;
-}*/
+ {
+ return 10.0f;
+ }*/
 
 #pragma mark - UITableViewDelegate Methods
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    JJVPageRootViewController *pageRootVC = [[JJVPageRootViewController alloc] init];
-    pageRootVC.index = [[JJVStoryItemStore sharedStore] indexOfStory:[self.newsArticles objectAtIndex:indexPath.section]];
-    [self.navigationController pushViewController:pageRootVC animated:YES];
+    //    JJVPageRootViewController *pageRootVC = [[JJVPageRootViewController alloc] init];
+    //    pageRootVC.index = [[JJVStoryItemStore sharedStore] indexOfStory:[self.newsArticles objectAtIndex:indexPath.section]];
+    
+    JJVReaderViewController *readerVC = [[JJVReaderViewController alloc] init];
+    NSInteger row  = indexPath.section;
+    readerVC.item = [self.newsArticles objectAtIndex: row];
+    
+    [self.navigationController pushViewController: readerVC animated:YES];
 }
 
 @end
