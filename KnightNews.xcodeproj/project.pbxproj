@@ -22,6 +22,8 @@
 		7F13FD2A19C3A8D2005649FD /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F13FD2919C3A8D2005649FD /* FacebookSDK.framework */; };
 		7F15F80619E62EF000015BC2 /* KKNewsPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F15F80419E62EF000015BC2 /* KKNewsPreviewViewController.m */; };
 		7F15F80719E62EF000015BC2 /* KKNewsPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F15F80519E62EF000015BC2 /* KKNewsPreviewViewController.xib */; };
+		7F15F80B19F19B5D00015BC2 /* JJVSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F15F80919F19B5D00015BC2 /* JJVSettingsTableViewController.m */; };
+		7F15F80C19F19B5D00015BC2 /* JJVSettingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F15F80A19F19B5D00015BC2 /* JJVSettingsTableViewController.xib */; };
 		7F1A940319985D350057873B /* JJVPreviewViewController_iphone4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F1A940219985D350057873B /* JJVPreviewViewController_iphone4.xib */; };
 		7F2B33C91968BAC1006888CC /* JJVReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B33C71968BAC1006888CC /* JJVReaderViewController.m */; };
 		7F2B33CA1968BAC1006888CC /* JJVReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F2B33C81968BAC1006888CC /* JJVReaderViewController.xib */; };
@@ -102,6 +104,9 @@
 		7F15F80319E62EF000015BC2 /* KKNewsPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNewsPreviewViewController.h; sourceTree = "<group>"; };
 		7F15F80419E62EF000015BC2 /* KKNewsPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNewsPreviewViewController.m; sourceTree = "<group>"; };
 		7F15F80519E62EF000015BC2 /* KKNewsPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKNewsPreviewViewController.xib; sourceTree = "<group>"; };
+		7F15F80819F19B5D00015BC2 /* JJVSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVSettingsTableViewController.h; sourceTree = "<group>"; };
+		7F15F80919F19B5D00015BC2 /* JJVSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVSettingsTableViewController.m; sourceTree = "<group>"; };
+		7F15F80A19F19B5D00015BC2 /* JJVSettingsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVSettingsTableViewController.xib; sourceTree = "<group>"; };
 		7F1A940219985D350057873B /* JJVPreviewViewController_iphone4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVPreviewViewController_iphone4.xib; sourceTree = "<group>"; };
 		7F2B33C61968BAC1006888CC /* JJVReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVReaderViewController.h; sourceTree = "<group>"; };
 		7F2B33C71968BAC1006888CC /* JJVReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVReaderViewController.m; sourceTree = "<group>"; };
@@ -312,6 +317,9 @@
 				7F67D13D1996B92A002743E5 /* JJVMapViewController.xib */,
 				7F98B3341954E61A00C1A344 /* JJVNewsTableViewController.h */,
 				7F98B3351954E61A00C1A344 /* JJVNewsTableViewController.m */,
+				7F15F80819F19B5D00015BC2 /* JJVSettingsTableViewController.h */,
+				7F15F80919F19B5D00015BC2 /* JJVSettingsTableViewController.m */,
+				7F15F80A19F19B5D00015BC2 /* JJVSettingsTableViewController.xib */,
 				7F2B33C61968BAC1006888CC /* JJVReaderViewController.h */,
 				7F2B33C71968BAC1006888CC /* JJVReaderViewController.m */,
 				7F2B33C81968BAC1006888CC /* JJVReaderViewController.xib */,
@@ -452,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F67D13F1996B92A002743E5 /* JJVMapViewController.xib in Resources */,
+				7F15F80C19F19B5D00015BC2 /* JJVSettingsTableViewController.xib in Resources */,
 				7F685A2919941C4F003E9177 /* JJVEventsTableViewController.xib in Resources */,
 				7FA2530D199FBDFA0069F2AB /* JJVWebViewController.xib in Resources */,
 				7F98B3101954E5CE00C1A344 /* InfoPlist.strings in Resources */,
@@ -532,6 +541,7 @@
 				7F98B3121954E5CE00C1A344 /* main.m in Sources */,
 				7F98B3161954E5CE00C1A344 /* JJVAppDelegate.m in Sources */,
 				7F67D13E1996B92A002743E5 /* JJVMapViewController.m in Sources */,
+				7F15F80B19F19B5D00015BC2 /* JJVSettingsTableViewController.m in Sources */,
 				7F2B33C91968BAC1006888CC /* JJVReaderViewController.m in Sources */,
 				7F0798BE195BC28800D022A0 /* JJVStoryItemStore.m in Sources */,
 				7F15F80619E62EF000015BC2 /* KKNewsPreviewViewController.m in Sources */,
