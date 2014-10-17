@@ -10,6 +10,9 @@
 
 @interface JJVSettingsTableViewController ()
 
+@property (nonatomic, strong) NSMutableArray *settingsDataArray;
+
+
 @end
 
 @implementation JJVSettingsTableViewController
@@ -22,6 +25,17 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    NSArray *aboutArray = [[NSArray alloc] initWithObjects:@"About", nil];
+    NSDictionary *aboutItemsArrayDict = [NSDictionary dictionaryWithObject: aboutArray
+                                                                    forKey: @"data"];
+    [self.settingsDataArray addObject: aboutItemsArrayDict];
+    
+    //contributions section
+    NSArray *contributionsArray = [[NSArray alloc] initWithObjects:@"App main (GitHub)", nil];
+    NSDictionary *contributionsArrayDict = [NSDictionary dictionaryWithObject: contributionsArray
+                                                                       forKey: @"data"];
+    [self.settingsDataArray addObject: contributionsArrayDict];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,27 +45,48 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     
-    // Configure the cell...
+    return [self.settingsDataArray count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+    NSDictionary *dict = [self.settingsDataArray objectAtIndex: section];
+    NSArray *array = [dict objectForKey: @"data"];
+    return [array count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    if(section == 0){
+        return @"About KnightNews";
+    }
+    if(section == 1){
+        return @"Contribute to KnightNews for iOS";
+    }else{
+        return @"";
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"UISettingsTableViewController" forIndexPath:indexPath];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                      reuseIdentifier:@"UISettingsTableViewController"];
+    }
+    
+    NSDictionary *dictionary = [self.settingsDataArray objectAtIndex: indexPath.section];
+    NSArray *array = [dictionary objectForKey: @"data"];
+    NSString *cellValue = [array objectAtIndex: indexPath.row];
+    cell.textLabel.text = cellValue;
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -87,21 +122,20 @@
 }
 */
 
-/*
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here, for example:
     // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
+    NSString *selectedCell = nil;
+    NSDictionary *dictionary = [self.settingsDataArray objectAtIndex:indexPath.section];
+    NSArray *array = [dictionary objectForKey:@"data"];
+    selectedCell = [array objectAtIndex:indexPath.row];
     
-    // Pass the selected object to the new view controller.
+    NSLog(@"%@", selectedCell);
     
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
 }
-*/
 
 /*
 #pragma mark - Navigation
