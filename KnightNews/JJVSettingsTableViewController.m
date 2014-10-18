@@ -7,6 +7,7 @@
 //
 
 #import "JJVSettingsTableViewController.h"
+#import "JJVWebViewController.h"
 
 @interface JJVSettingsTableViewController ()
 
@@ -16,6 +17,16 @@
 @end
 
 @implementation JJVSettingsTableViewController
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        self.navigationItem.title = @"Info";
+        
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,7 +47,7 @@
     [self.settingsDataArray addObject: aboutItemsArrayDict];
     
     //contributions section
-    NSArray *contributionsArray = [[NSArray alloc] initWithObjects:@"App main (GitHub)", nil];
+    NSArray *contributionsArray = [[NSArray alloc] initWithObjects:@"App Repository (GitHub)", nil];
     NSDictionary *contributionsArrayDict = [NSDictionary dictionaryWithObject: contributionsArray
                                                                        forKey: @"data"];
     [self.settingsDataArray addObject: contributionsArrayDict];
@@ -137,7 +148,31 @@
     NSArray *array = [dictionary objectForKey:@"data"];
     selectedCell = [array objectAtIndex:indexPath.row];
     
-    NSLog(@"%@", selectedCell);
+    
+    
+    switch (indexPath.section) {
+        case 0:{
+            //Open up About VC
+
+            break;
+        }
+            
+        case 1:{
+            //Open up About repo link in our webview
+            
+            JJVWebViewController *webVC = [[JJVWebViewController alloc] init];
+            webVC.urlRequest = [NSURLRequest requestWithURL:
+                                [NSURL URLWithString:
+                                 @"https://github.com/JimVanG/KnightNews_iOS"]];
+            [self.navigationController pushViewController: webVC animated: YES];
+            
+            break;
+        }
+        default:{
+            NSLog(@"%@", selectedCell);
+            break;
+        }
+    }
     
 }
 

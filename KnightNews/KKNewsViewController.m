@@ -38,7 +38,10 @@
                                         initWithBarButtonSystemItem: UIBarButtonSystemItemReply
                                         target:self
                                         action:@selector(infoAction:)];
-        self.navigationItem.leftBarButtonItem = infoButton;
+        
+
+
+       self.navigationItem.leftBarButtonItem = infoButton;
         
     }
     
@@ -63,7 +66,7 @@
 - (void)infoAction:(id)sender
 {
     JJVSettingsTableViewController *settings = [[JJVSettingsTableViewController alloc] init];
-    [self presentModalViewController: settings animated:YES];
+    [self.navigationController pushViewController: settings animated: YES];
     
 }
 
