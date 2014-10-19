@@ -29,6 +29,8 @@
 		7F2B33CA1968BAC1006888CC /* JJVReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F2B33C81968BAC1006888CC /* JJVReaderViewController.xib */; };
 		7F2B33D01968E734006888CC /* JJVPageModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B33CF1968E734006888CC /* JJVPageModelController.m */; };
 		7F2B33D81968EE62006888CC /* JJVPageRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B33D71968EE62006888CC /* JJVPageRootViewController.m */; };
+		7F4FE3A019F3744400017BC7 /* JJVAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4FE39E19F3744400017BC7 /* JJVAboutViewController.m */; };
+		7F4FE3A119F3744400017BC7 /* JJVAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F4FE39F19F3744400017BC7 /* JJVAboutViewController.xib */; };
 		7F61DE541991A02E00C90C83 /* JJVEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F61DE531991A02E00C90C83 /* JJVEventsTableViewController.m */; };
 		7F61DE571991A05600C90C83 /* JJVEventItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F61DE561991A05600C90C83 /* JJVEventItem.m */; };
 		7F67D13E1996B92A002743E5 /* JJVMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F67D13C1996B92A002743E5 /* JJVMapViewController.m */; };
@@ -115,6 +117,9 @@
 		7F2B33CF1968E734006888CC /* JJVPageModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVPageModelController.m; sourceTree = "<group>"; };
 		7F2B33D61968EE62006888CC /* JJVPageRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVPageRootViewController.h; sourceTree = "<group>"; };
 		7F2B33D71968EE62006888CC /* JJVPageRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVPageRootViewController.m; sourceTree = "<group>"; };
+		7F4FE39D19F3744400017BC7 /* JJVAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVAboutViewController.h; sourceTree = "<group>"; };
+		7F4FE39E19F3744400017BC7 /* JJVAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVAboutViewController.m; sourceTree = "<group>"; };
+		7F4FE39F19F3744400017BC7 /* JJVAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJVAboutViewController.xib; sourceTree = "<group>"; };
 		7F61DE521991A02E00C90C83 /* JJVEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVEventsTableViewController.h; sourceTree = "<group>"; };
 		7F61DE531991A02E00C90C83 /* JJVEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJVEventsTableViewController.m; sourceTree = "<group>"; };
 		7F61DE551991A05600C90C83 /* JJVEventItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJVEventItem.h; sourceTree = "<group>"; };
@@ -319,6 +324,9 @@
 				7F98B3351954E61A00C1A344 /* JJVNewsTableViewController.m */,
 				7F15F80819F19B5D00015BC2 /* JJVSettingsTableViewController.h */,
 				7F15F80919F19B5D00015BC2 /* JJVSettingsTableViewController.m */,
+				7F4FE39D19F3744400017BC7 /* JJVAboutViewController.h */,
+				7F4FE39E19F3744400017BC7 /* JJVAboutViewController.m */,
+				7F4FE39F19F3744400017BC7 /* JJVAboutViewController.xib */,
 				7F15F80A19F19B5D00015BC2 /* JJVSettingsTableViewController.xib */,
 				7F2B33C61968BAC1006888CC /* JJVReaderViewController.h */,
 				7F2B33C71968BAC1006888CC /* JJVReaderViewController.m */,
@@ -474,6 +482,7 @@
 				7F1A940319985D350057873B /* JJVPreviewViewController_iphone4.xib in Resources */,
 				7F15F80719E62EF000015BC2 /* KKNewsPreviewViewController.xib in Resources */,
 				7FCF43561992B56C00D2087C /* JJVEventsTableViewCell.xib in Resources */,
+				7F4FE3A119F3744400017BC7 /* JJVAboutViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +536,7 @@
 			files = (
 				27D061BF19DF3335002B262E /* NSDate+NSDate_TimeAgo.m in Sources */,
 				7FF95888199479AA0029D39D /* JJVSportsViewController.m in Sources */,
+				7F4FE3A019F3744400017BC7 /* JJVAboutViewController.m in Sources */,
 				7FCF43551992B56C00D2087C /* JJVEventsTableViewCell.m in Sources */,
 				7F685A25199321A9003E9177 /* JJVPreviewViewController.m in Sources */,
 				271F5BC119DF41AC00B020DC /* KKNewsImageCache.m in Sources */,
