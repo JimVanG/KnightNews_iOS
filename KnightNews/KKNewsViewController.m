@@ -138,7 +138,10 @@
     
     KKNewsFeaturedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeaturedNewsCell"];
     
-    return [self setUpFeaturedTableViewCellForTableView:cell atIndexPath:indexPath];
+    if (self.newsArticles.count > 0)
+        return [self setUpFeaturedTableViewCellForTableView:cell atIndexPath:indexPath];
+    else
+        return cell;
 }
 
 
