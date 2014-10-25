@@ -159,13 +159,6 @@
         }
             
         case 1:{
-            //Open up repo link in our webviewVC
-//            JJVWebViewController *webVC = [[JJVWebViewController alloc] init];
-//            webVC.urlRequest = [NSURLRequest requestWithURL:
-//                                [NSURL URLWithString:
-//                                 @"https://github.com/JimVanG/KnightNews_iOS"]];
-//            [self.navigationController pushViewController: webVC animated: YES];
-            
             //Open app in Safari
             [[UIApplication sharedApplication] openURL:
                                   [NSURL URLWithString:
