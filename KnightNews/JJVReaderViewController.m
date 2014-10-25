@@ -9,6 +9,7 @@
 #import "JJVReaderViewController.h"
 #import "JJVStoryItem.h"
 #import "JJVWebViewController.h"
+#import "NSDate+NSDate_TimeAgo.h"
 
 @interface JJVReaderViewController () <UIWebViewDelegate>
 
@@ -65,7 +66,9 @@
     self.webView.mediaPlaybackRequiresUserAction = NO;
     
     //very important to load the base url so videos play
-    [self.webView loadHTMLString: item.contents
+    
+    NSString *newHtmlString = [NSString stringWithFormat:@"<h1 style='color:#333333'>%@</h1><div style='color:#999999;font-style:italic;'><div style='float:left;'>%@</div><div style='float:right'>%@</div></div><br><p style='color:#333333'>%@</p>", item.title, item.author, [item.date timeAgo], item.contents];
+    [self.webView loadHTMLString: newHtmlString
                          baseURL: [NSURL URLWithString: item.url]];
     
 

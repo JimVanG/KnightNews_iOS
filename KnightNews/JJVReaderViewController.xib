@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JJVReaderViewController">
@@ -38,13 +39,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <webView contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b69-rp-wEJ">
-                    <rect key="frame" x="0.0" y="140" width="320" height="428"/>
+                    <rect key="frame" x="0.0" y="65" width="320" height="503"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </webView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="b69-rp-wEJ" firstAttribute="top" secondItem="uLk-7K-RSQ" secondAttribute="bottom" constant="1" id="4wC-xy-HdO"/>
+                <constraint firstItem="b69-rp-wEJ" firstAttribute="top" secondItem="uLk-7K-RSQ" secondAttribute="bottom" constant="-74" id="4wC-xy-HdO"/>
                 <constraint firstItem="uLk-7K-RSQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7Rb-H8-OVh"/>
                 <constraint firstItem="uLk-7K-RSQ" firstAttribute="top" secondItem="jUj-nD-LE2" secondAttribute="bottom" constant="1" id="8lX-f3-Nts"/>
                 <constraint firstAttribute="trailing" secondItem="b69-rp-wEJ" secondAttribute="trailing" id="IXc-d6-G8V"/>
