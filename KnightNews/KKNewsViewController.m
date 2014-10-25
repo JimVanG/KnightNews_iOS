@@ -81,6 +81,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"KKNewsFeaturedTableViewCell" bundle:nil]forCellReuseIdentifier:@"FeaturedNewsCell"];
     self.tableView.estimatedRowHeight = 400;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0);
     
     // UIRefreshControl
     UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
@@ -160,13 +161,16 @@
     cell.articlePreviewTextView.font = [UIFont fontWithDescriptor:Descriptor size:12.0f];
     cell.articlePreviewTextView.textColor = [UIColor darkGrayColor];
     
+    
+    cell.articleImageView.contentMode = UIViewContentModeScaleAspectFill;
+    cell.articleImageView.clipsToBounds = YES;
+    cell.articleImageView.layer.cornerRadius = 5.0;
     [[KKNewsAPI sharedUtilities] downloadImageForUrl:item.imageUrl withCompletionBlock:^(BOOL success, NSError *error, UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if (image) {
-                cell.articleImageView.clipsToBounds = YES;
                 cell.articleImageView.image = image;
-                //cell.articleImageView.layer.cornerRadius = 30.0;
+               
                 [self fadeInView:cell.articleImageView];
                 //cell.articleImageView.frame = CGRectMake(10, 0, self.view.frame.size.width-20, 300);
             }
