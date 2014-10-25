@@ -159,7 +159,7 @@
         }
             
         case 1:{
-            //Open app in Safari
+            //Open url in Safari
             [[UIApplication sharedApplication] openURL:
                                   [NSURL URLWithString:
                                    @"https://github.com/JimVanG/KnightNews_iOS"]];

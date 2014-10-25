@@ -64,6 +64,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)shareAction:(id)sender
+{
+    UIActivityViewController *controller = [[UIActivityViewController alloc]
+                                            initWithActivityItems:
+                                            @[self.webView.request.URL.absoluteString]
+                                            applicationActivities: nil];
+    [self presentViewController: controller animated: YES completion: nil];
+}
+
 - (void)updateButtons
 {
     self.forwardBarButton.enabled = self.webView.canGoForward;
