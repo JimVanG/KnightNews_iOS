@@ -34,14 +34,17 @@
         self.tabBarItem.selectedImage = [UIImage imageNamed:@"newspaper_25"];
         self.tabBarItem.title = @"News";
         
-        UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
+      /*  UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
                                         initWithBarButtonSystemItem: UIBarButtonSystemItemReply
                                         target:self
-                                        action:@selector(infoAction:)];
+                                        action:@selector(infoAction:)];*/
         
+        UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+        [infoButton addTarget:self action:@selector(infoAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+        UIBarButtonItem *infoBarButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
 
-
-       self.navigationItem.leftBarButtonItem = infoButton;
+       self.navigationItem.leftBarButtonItem = infoBarButton;
         
     }
     
@@ -152,7 +155,7 @@
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.articleImageView.image = nil;
-    cell.articleImageView.alpha = 0.0;
+    //cell.articleImageView.alpha = 0.0;
     cell.articleAuthorLabel.text = item.author;
     cell.articleTitle.text = item.title;
     cell.articleTimeLabel.text = [item.date timeAgo];
@@ -167,19 +170,19 @@
     
     cell.articleImageView.contentMode = UIViewContentModeScaleAspectFill;
     cell.articleImageView.clipsToBounds = YES;
-    cell.articleImageView.layer.cornerRadius = 5.0;
+    cell.articleImageView.layer.cornerRadius = 3.0;
     [[KKNewsAPI sharedUtilities] downloadImageForUrl:item.imageUrl withCompletionBlock:^(BOOL success, NSError *error, UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if (image) {
                 cell.articleImageView.image = image;
                
-                [self fadeInView:cell.articleImageView];
+                //[self fadeInView:cell.articleImageView];
                 //cell.articleImageView.frame = CGRectMake(10, 0, self.view.frame.size.width-20, 300);
             }
             else{
                 cell.imageView.image = [UIImage imageNamed:@"news_error"];
-                [self fadeInView:cell.articleImageView];
+                //[self fadeInView:cell.articleImageView];
             }
         });
     }];
