@@ -162,7 +162,7 @@
         //self.imageView.image = response;
         if (completionBlock)
         {
-            NSLog(@"%@", response);
+            //NSLog(@"%@", response);
             completionBlock(YES, nil, [self.imageCache getImageFromCacheWithKey:aUrl]);
         }
         

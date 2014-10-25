@@ -34,10 +34,19 @@
                                         action:@selector(shareAction:)];
         self.navigationItem.rightBarButtonItem = shareButton;
         
-        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style: UIBarButtonItemStyleBordered target:self action:@selector(headBack:)];
-        self.navigationItem.leftBarButtonItem = backButton;
+
+        //        if (!self.navigationItem.leftBarButtonItem) {
+        //            UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"News" style: UIBarButtonItemStyleBordered target:self action:@selector(headBack:)];
+        //            self.navigationItem.leftBarButtonItem = backButton;
+        //        }
+        
     }
     return self;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+
 }
 
 - (void)viewDidLoad

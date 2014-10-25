@@ -8,8 +8,9 @@
 
 #import "JJVMapViewController.h"
 
-@interface JJVMapViewController ()
+@interface JJVMapViewController () <CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -22,6 +23,7 @@
         // Custom initialization
         self.tabBarItem.image = [UIImage imageNamed:@"map_25"];
         self.tabBarItem.title = @"Map";
+        
     }
     return self;
 }
@@ -29,6 +31,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    
+    self.locationManager.delegate = self;
+    
+    CLAuthorizationStatus authorizationStatus= [CLLocationManager authorizationStatus];
+    
+    if (authorizationStatus == kCLAuthorizationStatusAuthorized ||
+        authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        
+        //use their location if we have access to it
+        [self.locationManager startUpdatingLocation];
+        _mapView.showsUserLocation = YES;
+        
+    }
+    else{
+        if(([self.locationManager respondsToSelector:
+             @selector(requestWhenInUseAuthorization)])) {
+            
+            //ask if we can use their location when in the app
+            [self.locationManager requestWhenInUseAuthorization];
+            //start using their location
+            [self.locationManager startUpdatingLocation];
+            _mapView.showsUserLocation = YES;
+        }
+    }
     
     CLLocationCoordinate2D ucf = {28.602428, -81.200060};
     
