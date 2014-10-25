@@ -18,7 +18,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQP-48-Fb8">
                         <rect key="frame" x="10" y="169" width="300" height="19.5"/>
                         <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
-                        <color key="textColor" red="0.24931795634920639" green="0.24931795634920639" blue="0.24931795634920639" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By John Doe, Title here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMH-m2-dJf">
