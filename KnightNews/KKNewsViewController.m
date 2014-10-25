@@ -34,14 +34,17 @@
         self.tabBarItem.selectedImage = [UIImage imageNamed:@"newspaper_25"];
         self.tabBarItem.title = @"News";
         
-        UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
+      /*  UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
                                         initWithBarButtonSystemItem: UIBarButtonSystemItemReply
                                         target:self
-                                        action:@selector(infoAction:)];
+                                        action:@selector(infoAction:)];*/
         
+        UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+        [infoButton addTarget:self action:@selector(infoAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+        UIBarButtonItem *infoBarButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
 
-
-       self.navigationItem.leftBarButtonItem = infoButton;
+       self.navigationItem.leftBarButtonItem = infoBarButton;
         
     }
     
@@ -81,6 +84,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"KKNewsFeaturedTableViewCell" bundle:nil]forCellReuseIdentifier:@"FeaturedNewsCell"];
     self.tableView.estimatedRowHeight = 400;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0);
     
     // UIRefreshControl
     UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
@@ -137,7 +141,10 @@
     
     KKNewsFeaturedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FeaturedNewsCell"];
     
-    return [self setUpFeaturedTableViewCellForTableView:cell atIndexPath:indexPath];
+    if (self.newsArticles.count > 0)
+        return [self setUpFeaturedTableViewCellForTableView:cell atIndexPath:indexPath];
+    else
+        return cell;
 }
 
 
@@ -148,7 +155,7 @@
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.articleImageView.image = nil;
-    cell.articleImageView.alpha = 0.0;
+    //cell.articleImageView.alpha = 0.0;
     cell.articleAuthorLabel.text = item.author;
     cell.articleTitle.text = item.title;
     cell.articleTimeLabel.text = [item.date timeAgo];
@@ -160,19 +167,22 @@
     cell.articlePreviewTextView.font = [UIFont fontWithDescriptor:Descriptor size:12.0f];
     cell.articlePreviewTextView.textColor = [UIColor darkGrayColor];
     
+    
+    cell.articleImageView.contentMode = UIViewContentModeScaleAspectFill;
+    cell.articleImageView.clipsToBounds = YES;
+    cell.articleImageView.layer.cornerRadius = 3.0;
     [[KKNewsAPI sharedUtilities] downloadImageForUrl:item.imageUrl withCompletionBlock:^(BOOL success, NSError *error, UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if (image) {
-                cell.articleImageView.clipsToBounds = YES;
                 cell.articleImageView.image = image;
-                //cell.articleImageView.layer.cornerRadius = 30.0;
-                [self fadeInView:cell.articleImageView];
+               
+                //[self fadeInView:cell.articleImageView];
                 //cell.articleImageView.frame = CGRectMake(10, 0, self.view.frame.size.width-20, 300);
             }
             else{
                 cell.imageView.image = [UIImage imageNamed:@"news_error"];
-                [self fadeInView:cell.articleImageView];
+                //[self fadeInView:cell.articleImageView];
             }
         });
     }];
@@ -200,8 +210,9 @@
     if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8)
     {
         // your code
-        return [self heightForBasicCellAtIndexPath:indexPath];
-        
+       return [self heightForBasicCellAtIndexPath:indexPath];
+
+
     }
     else
     {

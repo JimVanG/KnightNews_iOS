@@ -23,6 +23,38 @@
 
 @implementation KKNewsPreviewViewController
 
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        
+        UIBarButtonItem *shareButton = [[UIBarButtonItem alloc]
+                                        initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                        target:self
+                                        action:@selector(shareAction:)];
+        self.navigationController.navigationItem.rightBarButtonItem = shareButton;
+        
+    }
+    return self;
+}
+
+-(id)init
+{
+    self = [super init];
+    if (self) {
+        
+        UIBarButtonItem *shareButton = [[UIBarButtonItem alloc]
+                                        initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                        target:self
+                                        action:@selector(shareAction:)];
+        self.navigationController.navigationItem.rightBarButtonItem = shareButton;
+        
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -72,6 +104,16 @@
     }
     
     return YES;
+}
+
+#pragma mark - Share target/action 
+- (void)shareAction:(id)sender
+{
+    UIActivityViewController *controller = [[UIActivityViewController alloc]
+                                            initWithActivityItems:
+                                            @[self.articleWebView.request.URL.absoluteString]
+                                            applicationActivities: nil];
+    [self presentViewController: controller animated: YES completion: nil];
 }
 
 /*
