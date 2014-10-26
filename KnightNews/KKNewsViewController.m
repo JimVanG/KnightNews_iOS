@@ -181,7 +181,7 @@
                 //cell.articleImageView.frame = CGRectMake(10, 0, self.view.frame.size.width-20, 300);
             }
             else{
-                cell.imageView.image = [UIImage imageNamed:@"news_error"];
+                cell.articleImageView.image = [UIImage imageNamed:@"news_error"];
                 //[self fadeInView:cell.articleImageView];
             }
         });
